@@ -18,21 +18,6 @@
       setInterval(nextSlide, 5000); // 5s per slide
     });
 
-
-
-// const videos = document.querySelectorAll('.hover-video');
-
-// videos.forEach(video => {
-//   video.addEventListener('mouseenter', () => {
-//     video.currentTime = 0;
-//     video.play();
-//   });
-
-//   video.addEventListener('mouseleave', () => {
-//     video.pause();
-//   });
-// });
-
 const videos = document.querySelectorAll('.hover-video');
 
 videos.forEach(video => {
