@@ -23,25 +23,31 @@ const videos = document.querySelectorAll('.hover-video');
 videos.forEach(video => {
   let reverseInterval;
 
-  video.addEventListener('mouseenter', () => {
-    clearInterval(reverseInterval); // stop reverse if running
+  const playForward = () => {
+    clearInterval(reverseInterval);
     video.currentTime = 0;
     video.play();
-  });
+  };
 
-  video.addEventListener('mouseleave', () => {
+  const reversePlay = () => {
     video.pause();
-
-    // Start fake reverse playback
     reverseInterval = setInterval(() => {
       if (video.currentTime <= 0.1) {
         clearInterval(reverseInterval);
         video.currentTime = 0;
       } else {
-        video.currentTime -= 0.033; // decrease time to simulate reverse
+        video.currentTime -= 0.033;
       }
     }, 30);
-  });
+  };
+
+  // Desktop hover
+  video.addEventListener('mouseenter', playForward);
+  video.addEventListener('mouseleave', reversePlay);
+
+  // Mobile touch
+  video.addEventListener('touchstart', playForward);
+  video.addEventListener('touchend', reversePlay);
 });
 
 
