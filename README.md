@@ -1,2 +1,2 @@
-# shubhitsardana.github.io
-Personal Website
+# Personal-Website
+This is my personal website
