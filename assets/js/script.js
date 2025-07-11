@@ -29,25 +29,9 @@ videos.forEach(video => {
     video.play();
   };
 
-  const reversePlay = () => {
-    video.pause();
-    reverseInterval = setInterval(() => {
-      if (video.currentTime <= 0.1) {
-        clearInterval(reverseInterval);
-        video.currentTime = 0;
-      } else {
-        video.currentTime -= 0.033;
-      }
-    }, 30);
-  };
-
-  // Desktop hover
   video.addEventListener('mouseenter', playForward);
-  video.addEventListener('mouseleave', reversePlay);
-
-  // Mobile touch
-  video.addEventListener('touchstart', playForward);
-  video.addEventListener('touchend', reversePlay);
+  video.addEventListener('mouseleave', video.pause());
 });
+
 
 
