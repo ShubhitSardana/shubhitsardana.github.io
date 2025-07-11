@@ -239,7 +239,7 @@ nav {
   position: sticky;
   top: 0;
   background: transparent;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(17px);
   padding: 10px 0;
   z-index: 5;
   width: 100vw;
