@@ -22,7 +22,7 @@ This is the source code for my personal website, where I share my academic journ
 ├── js/ # Slideshow and other scripts
 │ └── slideshow.js
 └── README.md # You're here
-
+/
 
 ## 🛠 Technologies
 
