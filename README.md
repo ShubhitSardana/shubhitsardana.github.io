@@ -11,19 +11,6 @@ This is the source code for my personal website, where I share my academic journ
 - Clean semantic HTML and modular CSS
 - Custom styles without external frameworks
 
-## 📁 Project Structure
-
-/
-├── index.html # Main landing page
-├── assets/ # Static files (images, icons)
-│ └── images/
-├── css/ # Custom styles
-│ └── style.css
-├── js/ # Slideshow and other scripts
-│ └── slideshow.js
-└── README.md # You're here
-/
-
 ## 🛠 Technologies
 
 - HTML5
