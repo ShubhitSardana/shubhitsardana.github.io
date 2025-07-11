@@ -34,6 +34,8 @@
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
 
   /* Spacing & Shadows */
   --section-padding: 80px;
@@ -151,7 +153,7 @@ h5 {
 
 strong {
   color: var(--blue-ryb);
-  font-weight: var(--fw-500);
+  font-weight: bolder;
 }
 
 a {
@@ -951,6 +953,14 @@ iframe {
   .interesting-research-image img {
     max-width: 100%;
   }
+  .address p {
+  max-width: 80vw;
+  text-align: justify;
+  }
+  nav ul {
+    padding: 0px 10px;
+  }
+
 }
 
 @media (max-width: 650px) {
@@ -963,7 +973,5 @@ iframe {
     border-radius: 7px;
   }
   
-  nav ul {
-    padding: 0px 10px;
-  }
+
 }
