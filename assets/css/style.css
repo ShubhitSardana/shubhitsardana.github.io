@@ -53,7 +53,6 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -73,7 +72,6 @@ html {
 body {
   background-color: var(--rich-black-fogra-29);
   color: var(--light-gray);
-  font-size: 1.6rem;
 }
 
 body {
@@ -207,7 +205,6 @@ main {
 /* THICK LINE */
 
 .thick-line {
-  border: none;
   height: 4px;
   background-color: #b9b9b9;
   width: 60%;
@@ -218,7 +215,6 @@ main {
 /* THIN LINE */
 
 .thin-line {
-  border: none;
   height: 4px;
   background-color: #b9b9b9;
   width: 30%;
@@ -229,7 +225,6 @@ main {
 /* UNDER LINE */
 
 .under-line {
-  border: none;
   height: 4px;
   background-color: #b9b9b9;
   width: 10%;
@@ -243,12 +238,9 @@ main {
 nav {
   position: sticky;
   top: 0;
-  background: hsla(0, 0%, 0%, 0.7);
+  background: transparent;
   backdrop-filter: blur(7px);
   padding: 10px 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: 1px solid var(--raisin-black);
   z-index: 5;
   width: 100vw;
   max-width: 100vw;
@@ -405,7 +397,6 @@ section ul li {
   object-fit: cover;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out,
     filter 1s ease-in-out 0.1s;
-  /* subtle delay for smoother blur */
 }
 
 /* 📝 Text */
@@ -459,7 +450,6 @@ section ul > li {
   background-color: var(--rich-black-fogra-39);
   padding: var(--card-padding);
   margin: 0px;
-  padding: 10px;
   box-shadow: var(--shadow-2);
   transition: transform var(--transition-1);
   max-width: 60vw;
@@ -474,8 +464,7 @@ section ul > li {
   font-size: 1rem;
 }
 /* ========================================================================= */
-/*                    
-BUTTON STYLES                                  */
+/*                            BUTTON STYLES                                  */
 /* ========================================================================= */
 .button {
   display: inline-flex;
@@ -513,7 +502,7 @@ BUTTON STYLES                                  */
 }
 
 /* ========================================================================= */
-/*                             CV                              */
+/*                                      CV                                   */
 /* ========================================================================= */
 
 .pdf-actions {
@@ -527,7 +516,7 @@ BUTTON STYLES                                  */
   .pdf-embed-container {
     position: relative;
     padding-top: 85vh;
-    max-width: 70vw;
+    max-width: 60vw;
     margin-inline: auto;
     background-color: var(--rich-black-fogra-39);
     border-radius: 7px;
@@ -539,14 +528,13 @@ BUTTON STYLES                                  */
     position: absolute;
     top: 0;
     left: 0;
-    width: 70vw;
+    width: 60vw;
     height: 85vh;
-    border: none;
   }
 
   position: relative;
   padding-top: 85vh;
-  max-width: 70vw;
+  max-width: 60vw;
   margin-inline: auto;
   background-color: var(--rich-black-fogra-39);
   border-radius: 7px;
@@ -558,9 +546,8 @@ BUTTON STYLES                                  */
   position: absolute;
   top: 0;
   left: 0;
-  width: 70vw;
+  width: 60vw;
   height: 85vh;
-  border: none;
 }
 
 .cv header h2 {
@@ -568,7 +555,7 @@ BUTTON STYLES                                  */
 }
 
 /* ========================================================================= */
-/*                                  Ongoing Projects                            */
+/*                               Ongoing Projects                            */
 /* ========================================================================= */
 
 .ongoing-projects {
@@ -587,8 +574,16 @@ BUTTON STYLES                                  */
   text-align: justify;
 }
 
+.ongoing-projects ul {
+  padding: 0px;
+}
+
+.ongoing-projects li {
+  padding: 10px;
+}
+
 /* ========================================================================= */
-/*                                  CONFEENCE                            */
+/*                                    CONFEENCE                              */
 /* ========================================================================= */
 
 .conference-presentations {
@@ -607,8 +602,16 @@ BUTTON STYLES                                  */
   text-align: justify;
 }
 
+.conference-presentations ul {
+  padding: 0px;
+}
+
+.conference-presentations li {
+  padding: 10px;
+}
+
 /* ========================================================================= */
-/*                                  BLOG                            */
+/*                                      BLOG                                 */
 /* ========================================================================= */
 
 .blog {
@@ -626,8 +629,20 @@ BUTTON STYLES                                  */
 
 .blog div {
   max-width: 60vw;
-  padding: 0px 10px 10px 10px;
+  /* padding: 0px 30px 10px 30px; */
   margin: 0px auto;
+}
+
+.blog-abstract {
+  padding: 10px;
+}
+
+.blog ul {
+  padding: 0px;
+}
+
+.blog li {
+  padding: 10px;
 }
 
 .blog-abstract {
@@ -686,6 +701,9 @@ BUTTON STYLES                                  */
 /* ========================================================================= */
 /*                                  CONTACT                                  */
 /* ========================================================================= */
+.contact {
+  margin-bottom: 50px;
+}
 
 .contact-div-1 {
   width: 70%;
@@ -693,8 +711,7 @@ BUTTON STYLES                                  */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 50px;
   margin: 0 auto;
 }
 
@@ -702,7 +719,6 @@ BUTTON STYLES                                  */
   margin: auto;
 }
 
-.contact-details,
 .map-box,
 .google-form {
   flex-direction: row;
@@ -737,7 +753,6 @@ iframe {
     margin: auto;
   }
   width: 40vw;
-  border: none;
   border-radius: 7px;
 }
 
@@ -750,30 +765,26 @@ iframe {
   text-align: justify;
 }
 
+.contact-details {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.map-box {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: none;
+}
+
 /* ========================================================================= */
 /*                                 RESPONSIVE                                */
 /* ========================================================================= */
-@media (max-width: 1500px) {
-  .pdf-embed-container {
-    position: relative;
-    padding-top: 85vh;
-    max-width: 80vw;
-    margin-inline: auto;
-    background-color: var(--rich-black-fogra-39);
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow: var(--shadow-2);
-  }
-
-  .pdf-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80vw;
-    height: 85vh;
-    border: none;
-  }
-}
 
 @media (max-width: 1280px) {
   section h2 {
@@ -821,7 +832,6 @@ iframe {
     padding: 5px 0;
     padding-left: 5px;
     padding-right: 5px;
-    border-bottom: 1px solid var(--raisin-black);
     z-index: 5;
     width: 100vw;
     max-width: 100vw;
@@ -875,16 +885,6 @@ iframe {
     text-align: left;
   }
 
-  .map-box {
-    max-width: 90vw;
-    margin: 0 auto;
-  }
-
-  .map-box iframe {
-    width: 100%;
-    height: 450px;
-  }
-
   .contact-div-1 {
     display: flex;
     flex-direction: column-reverse;
@@ -900,14 +900,16 @@ iframe {
   }
 
   .map-box {
-    width: 100%;
     max-width: 90vw;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .map-box iframe {
     width: 100%;
+    height: 450px;
+    width: 100%;
     aspect-ratio: 4 / 3;
-    /* border: 0; */
   }
 }
 
@@ -929,7 +931,6 @@ iframe {
     left: 0;
     width: 90vw;
     height: 85vh;
-    border: none;
   }
 
   #home-section,
