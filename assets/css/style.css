@@ -56,7 +56,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border-radius: 8px; */
 }
 
 html {
@@ -68,7 +67,6 @@ body {
   background-color: var(--rich-black-fogra-29);
   color: var(--light-gray);
   font-size: 1.6rem;
-  line-height: 1.7;
 }
 
 body {
@@ -95,7 +93,7 @@ body.active {
 
 ::-webkit-scrollbar-thumb {
   background: var(--raisin-black);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -129,7 +127,6 @@ h2,
 h3,
 h4 {
   color: rgba(245, 245, 245, 0.85);
-  line-height: 1.3;
 }
 
 h2 {
@@ -171,9 +168,7 @@ header>h2 {
 }
 
 p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  /* text-align: justify; */
+  font-size: 1.1rem;
 }
 
 
@@ -214,7 +209,7 @@ main {
   background-color: #b9b9b9;
   width: 60%;
   margin: 2rem auto;
-  border-radius: 4px;
+  border-radius: 7px;
 }
 
 /* THIN LINE */
@@ -225,7 +220,7 @@ main {
   background-color: #b9b9b9;
   width: 30%;
   margin: 2rem auto;
-  border-radius: 4px;
+  border-radius: 7px;
 }
 
 
@@ -237,7 +232,7 @@ main {
   background-color: #b9b9b9;
   width: 10%;
   margin: auto;
-  border-radius: 4px;
+  border-radius: 7px;
 }
 
 
@@ -257,8 +252,7 @@ nav {
   width: 100vw;
   max-width: 100vw;
   max-height: 10vh;
-  font-size: 1rem;
-  line-height: 1.3;
+  font-size: 1.1rem;
 
 }
 
@@ -352,8 +346,6 @@ section ul li {
 }
 
 .home p {
-  font-size: 1.2rem;
-  line-height: 1.5;
   text-align: justify;
 }
 
@@ -366,13 +358,14 @@ section ul li {
   align-items: center;
   justify-content: center;
   max-width: 60vw;
+  margin: 30px;
 }
 
 .shubhit-image-div img {
   width: auto;
-  min-height: 400px;
+  min-height: 35vh;
   margin: 30px;
-  border-radius: 8px;
+  border-radius: 7px;
 }
 
 .home-content {
@@ -432,7 +425,6 @@ section ul li {
   transition: opacity 1.0s ease-in-out 0.1s;
   max-width: 90%;
   white-space: normal;
-  line-height: 1.4;
 }
 
 .overlay-text strong {
@@ -444,7 +436,7 @@ section ul li {
 
 .overlay-text p {
   font-size: 0.9rem;
-  margin: 0;
+  margin: auto;
 }
 
 /* 🚀 Hover */
@@ -475,15 +467,9 @@ section ul>li {
   padding: var(--card-padding);
   margin: 0px;
   padding: 10px;
-  border-radius: 8px;
   box-shadow: var(--shadow-2);
   transition: transform var(--transition-1);
   max-width: 60vw;
-}
-
-.publications p {
-  font-size: 1.0rem;
-  line-height: 1.3;
 }
 
 .blog-post-card {
@@ -491,6 +477,14 @@ section ul>li {
   gap: 25px;
 }
 
+.publications h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.publications p {
+  font-size: 1.0rem;
+}
 /* ========================================================================= */
 /*                    
 BUTTON STYLES                                  */
@@ -500,17 +494,17 @@ BUTTON STYLES                                  */
   align-items: center;
   gap: 10px;
   padding: 12px 12px;
-  border-radius: 8px;
+  border-radius: 7px;
   font-weight: var(--fw-600);
   transition: var(--transition-1);
   height: 50px;
   font-weight: 100;
-  font-size: 17px;
-  margin-bottom: 20px;
+  font-size: 1.0rem;
+  margin-bottom: 2rem;
 }
 
 .button-primary {
-  background-color: var(--blue-ryb);
+  background-color: hsl(0, 0%, 15%);
   color: var(--white);
 }
 
@@ -546,10 +540,10 @@ BUTTON STYLES                                  */
   .pdf-embed-container {
     position: relative;
     padding-top: 85vh;
-    max-width: 50vw;
+    max-width: 70vw;
     margin-inline: auto;
     background-color: var(--rich-black-fogra-39);
-    border-radius: 12px;
+    border-radius: 7px;
     overflow: hidden;
     box-shadow: var(--shadow-2);
   }
@@ -558,17 +552,17 @@ BUTTON STYLES                                  */
     position: absolute;
     top: 0;
     left: 0;
-    width: 50vw;
+    width: 70vw;
     height: 85vh;
     border: none;
   }
 
   position: relative;
   padding-top: 85vh;
-  max-width: 50vw;
+  max-width: 70vw;
   margin-inline: auto;
   background-color: var(--rich-black-fogra-39);
-  border-radius: 12px;
+  border-radius: 7px;
   overflow: hidden;
   box-shadow: var(--shadow-2);
 }
@@ -577,7 +571,7 @@ BUTTON STYLES                                  */
   position: absolute;
   top: 0;
   left: 0;
-  width: 50vw;
+  width: 70vw;
   height: 85vh;
   border: none;
 }
@@ -659,18 +653,18 @@ BUTTON STYLES                                  */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60vw;
   text-align: center;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
 .interesting-research-image img {
-  width: 100%;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 7px;
+  max-height: 40vh;
+  margin: 10px;
 }
 
 .interesting-research-text {
@@ -679,21 +673,15 @@ BUTTON STYLES                                  */
 
 .interesting-research-image-caption {
   text-align: center;
-  font-size: var(--fs-5);
+  font-size: 1rem;
 }
 
-.interesting-research-image img {
-  max-height: 300px;
-}
-
-
-/* MahaKumbh */
+/* VISITS */
 
 .slideshow-container {
   position: relative;
-  height: 500px;
-  margin: 1rem 0;
-  overflow: hidden;
+  height: 40vh;
+  margin: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -704,10 +692,8 @@ BUTTON STYLES                                  */
   height: 100%;
   width: auto;
   object-fit: contain;
-  opacity: 0;
   transition: opacity 1s ease-in-out;
-  /* border-radius: 16px; */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
 }
 
 /* ========================================================================= */
@@ -734,7 +720,7 @@ BUTTON STYLES                                  */
 .google-form {
   flex-direction: row;
   max-width: 30vw;
-  font-size: 20px;
+  font-size: 1.1rem;
 }
 
 .contact-details a {
@@ -759,35 +745,48 @@ BUTTON STYLES                                  */
   text-align: left;
 }
 
-.contact-details p {
-  margin-top: 1rem;
-  font-weight: 500;
-}
-
 iframe {
   .research header h2 {
-    /* text-align: center; */
     margin: auto;
   }
-
   width: 40vw;
   border: none;
-  border-radius: 12px;
+  border-radius: 7px;
 }
 
 .map-box iframe {
   filter: invert(1) hue-rotate(180deg);
 }
 
+.address p {
+  max-width: 50vw;
+  text-align: justify;
+}
 
 /* ========================================================================= */
 /*                                 RESPONSIVE                                */
 /* ========================================================================= */
-/* @media (max-width: 1500px) {
-  .contact-details {
-    text-align: left;
+@media (max-width: 1500px) {
+  .pdf-embed-container {
+    position: relative;
+    padding-top: 85vh;
+    max-width: 80vw;
+    margin-inline: auto;
+    background-color: var(--rich-black-fogra-39);
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
   }
-} */
+
+  .pdf-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 85vh;
+    border: none;
+  }
+}
 
 
 @media (max-width: 1280px) {
@@ -804,42 +803,22 @@ iframe {
     font-size: 1.5rem;
   }
 
-  .home-content p {
-    font-size: 1rem;
-    line-height: 1.3;
-    text-align: justify;
-  }
-
-  .publications p {
-    font-size: 0.9rem;
-    line-height: 1.3;
-  }
-
-  .publications h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
   .ongoing-projects p {
     font-size: 1rem;
-    line-height: 1.3;
   }
 
   .conference-presentations p {
     font-size: 1rem;
-    line-height: 1.3;
   }
 
   .blog p {
     font-size: 1rem;
-    line-height: 1.3;
 
   }
 
   .contact p,
   .contact a {
     font-size: 1rem;
-    line-height: 1.3;
   }
 
   .shubhit-image-div img {
@@ -893,7 +872,9 @@ iframe {
   .blog>div {
     max-width: 90vw;
   }
-
+  .interesting-research-image img {
+    max-width: 80%;
+  }
   .contact-details {
     text-align: left;
     max-width: 90vw;
@@ -914,14 +895,11 @@ iframe {
   .map-box {
     max-width: 90vw;
     margin: 0 auto;
-    /* optional: centers the map */
   }
 
   .map-box iframe {
     width: 100%;
     height: 450px;
-    /* you can also use aspect-ratio instead */
-    /* border: 0; */
   }
 
   .contact-div-1 {
@@ -957,7 +935,7 @@ iframe {
     max-width: 90vw;
     margin-inline: auto;
     background-color: var(--rich-black-fogra-39);
-    border-radius: 12px;
+    border-radius: 7px;
     overflow: hidden;
     box-shadow: var(--shadow-2);
   }
@@ -970,6 +948,7 @@ iframe {
     height: 85vh;
     border: none;
   }
+
   #home-section,
   #research-interests-section,
   #publications-section,
@@ -980,4 +959,22 @@ iframe {
   #contact-section {
     scroll-margin-top: 90px;
   } 
+  .interesting-research-image {
+    max-width: 90vw;
+  }
+  .interesting-research-image img {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .slideshow-container .slide {
+    position: absolute;
+    height: 60%;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 1s ease-in-out;
+    border-radius: 7px;
+  }
 }
