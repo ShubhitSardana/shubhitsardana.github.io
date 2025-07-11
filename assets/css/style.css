@@ -254,6 +254,7 @@ nav ul {
   align-items: center;
   flex-wrap: wrap;
   gap: 0px 30px;
+  padding: 0px 10px;
 }
 
 nav button {
@@ -844,6 +845,7 @@ iframe {
     align-items: center;
     flex-wrap: wrap;
     gap: 5px 15px;
+    padding: 0px 10px;
   }
 
   .home {
@@ -959,5 +961,9 @@ iframe {
     object-fit: contain;
     transition: opacity 1s ease-in-out;
     border-radius: 7px;
+  }
+  
+  nav ul {
+    padding: 0px 10px;
   }
 }
