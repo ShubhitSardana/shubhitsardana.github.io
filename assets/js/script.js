@@ -14,10 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       showSlide(index);
     }
 
+    // Click to advance
+    container.addEventListener("click", nextSlide);
+
     showSlide(index);
     setInterval(nextSlide, 5000);
   });
 });
+
 
 const videos = document.querySelectorAll(".hover-video");
 
