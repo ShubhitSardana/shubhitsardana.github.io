@@ -76,7 +76,7 @@ body {
 }
 
 body {
-  background-image: url("../images/bg.jpg");
+  /* background-image: url("../images/bg.jpg"); */
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
@@ -200,7 +200,7 @@ main {
 #conference-presentations-section,
 #blog-section,
 #contact-section {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 100px;
 }
 
 /* THICK LINE */
@@ -234,19 +234,17 @@ main {
 }
 
 /* ========================================================================= */
-/*                                  NAVBAR                                   */
+/*                          NAVBAR - AESTHETIC UPGRADE                     */
 /* ========================================================================= */
 nav {
   position: sticky;
   top: 0;
-  background: transparent;
-  backdrop-filter: blur(17px);
-  padding: 10px 0;
-  z-index: 5;
-  width: 100vw;
-  max-width: 100vw;
-  max-height: 10vh;
-  font-size: 1.1rem;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(28, 28, 32, 0.7);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav ul {
@@ -254,65 +252,83 @@ nav ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0px 30px;
-  padding: 0px 10px;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 1rem 2rem;
+  list-style: none;
 }
 
-nav button {
+nav a {
+  margin: 10px;
+}
+
+.nav-link {
   color: var(--light-gray);
-  font-size: 17px;
-  font-weight: var(--fw-500);
-  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+
   position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  transition: color 0.4s ease;
 }
 
-nav button::after {
+.nav-link::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--blue-ryb);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-1);
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+
+  transform: scale(0);
+  opacity: 0;
+
+  z-index: -1;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-nav button:hover,
-nav button:focus {
+.nav-link:hover::before,
+.nav-link:focus-visible::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
   color: var(--white);
 }
 
-nav button:hover::after,
-nav button:focus::after {
-  transform: scaleX(1);
+.nav-link.active {
+  color: var(--white);
+}
+
+.nav-link.active::before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: var(--blue-ryb);
 }
 
 /* ========================================================================= */
-/*                                   HOME                                    */
+/*                          HOME - AESTHETIC UPGRADE                     */
 /* ========================================================================= */
-
-section header h2 {
-  text-align: center;
-}
-
-section ul li {
-  margin: 20px;
-  padding: 20px;
-}
 
 .home {
   position: relative;
-  margin: 0px 0px;
-  padding: 0px 0px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background: none;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 120px 2rem;
   overflow: hidden;
-  min-height: 95vh;
 }
 
 .home::before {
@@ -323,147 +339,393 @@ section ul li {
   width: 100%;
   height: 100%;
   background-image: url("../images/Fractals.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  filter: blur(8px) brightness(60%);
-  z-index: 0;
+  filter: blur(10px) brightness(40%);
+  transform: scale(1.1);
+  z-index: -1;
 }
 
-.home img {
-  max-height: 300px;
-}
-
-.home > * {
-  position: relative;
+.home-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
   z-index: 1;
 }
-
-.home p {
-  text-align: justify;
-}
-
-.home header {
-  margin-top: 50px;
-}
-
-.home-img-cntnt {
+.profile-image-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 30px;
+  align-items: center;
+  animation: fadeIn 1s ease-out;
 }
 
-.shubhit-image-div img {
-  width: auto;
-  min-height: 35vh;
-  margin: 30px;
-  border-radius: 7px;
+.profile-image-wrapper {
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--blue-ryb), #111);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profile-image-wrapper img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #1c1c20;
 }
 
 .home-content {
-  max-width: 60vw;
+  color: var(--light-gray);
+  animation: fadeInUp 0.8s 0.2s ease-out backwards;
 }
 
-/* ========================================================================= */
-/*                            RESEARCH INTERESTS                             */
-/* ========================================================================= */
-
-.research-interests-div {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  margin: 0 auto;
-  background-color: black;
+.home-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
-.research header h2 {
-  /* text-align: center; */
-  margin: auto;
+.waving-hand {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
 }
 
-.img-container {
-  position: relative;
-  width: 25%;
-  min-width: 250px;
-  overflow: hidden;
-  box-sizing: border-box;
+.home-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 65ch;
+  margin-bottom: 1.5rem;
 }
 
-/* 🎥 Video transitions */
-.img-container video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out,
-    filter 1s ease-in-out 0.1s;
+.social-links i {
+  font-size: 28px; /* This controls the icon size */
+  line-height: 1; /* Ensures proper vertical alignment */
 }
 
-/* 📝 Text */
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease-in-out 0.1s;
-  max-width: 90%;
-  white-space: normal;
-}
-
-.overlay-text strong {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.overlay-text p {
+.tech-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3em 0.8em;
+  border-radius: 6px;
+  font-family: "Fira Code", "Roboto Mono", monospace;
   font-size: 0.9rem;
-  margin: auto;
+  color: var(--light-gray);
 }
 
-/* 🚀 Hover */
-.img-container:hover video {
-  transform: scale(1.7);
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--light-gray);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.social-links svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 850px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .home-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* ========================================================================= */
+/*             RESEARCH INTERESTS - FULL SECTION GLASS EFFECT                */
+/* ========================================================================= */
+
+.research {
+  width: auto; /* Allow it to shrink-to-fit content, up to a max-width */
+  max-width: 90%; /* Keeps it from touching the viewport edges */
+  margin: 2rem auto; /* Vertical space and centers the section */
+  padding: 3rem; /* Generous inner spacing */
+}
+
+.research h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Adjusted min-width */
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+/* The card is now just a clean container for the video */
+.research-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  /* A more subtle shadow since the container provides the main effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(var(--blue-ryb-rgb), 0.25); /* The glow effect */
+}
+
+.research-card .hover-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.8s ease;
+}
+
+.research-card:hover .hover-video {
   filter: blur(4px);
-  opacity: 0.4;
 }
 
-.img-container:hover .overlay-text {
+/* The dark overlay remains the same to ensure text is readable */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.research-card:hover .card-overlay {
   opacity: 1;
 }
 
+/* ✅ The content panel is now a simple translucent overlay, NOT glass */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  margin: 1rem;
+
+  /* A solid, dark overlay for maximum readability against the blurred video */
+  background: rgba(12, 12, 15, 0.75);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* A slightly brighter border */
+
+  /* We REMOVED backdrop-filter here to avoid a messy glass-on-glass look */
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.research-card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--light-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ========================================================================= */
-/*                                  PUBLICATIONS*/
+/*                   PUBLICATIONS - AESTHETIC UPGRADE                        */
 /* ========================================================================= */
+
 .publications {
+  /* This centers the list on the page */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 4rem 2rem;
 }
 
-section ul > li {
-  background-color: var(--rich-black-fogra-39);
-  padding: var(--card-padding);
-  margin: 0px;
-  box-shadow: var(--shadow-2);
-  transition: transform var(--transition-1);
-  max-width: 60vw;
+.publications h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
 }
 
-.publications h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.publication-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 80ch; /* Limits width for optimal readability */
+
+  /* ✅ This sets up the automatic counter */
+  counter-reset: publications-counter;
 }
 
-.publications p {
-  font-size: 1rem;
+.publication-item {
+  position: relative; /* Needed for the ::before pseudo-element */
+  margin-bottom: 2rem;
+  padding: 2rem;
+  padding-left: 5rem; /* Make space for the large number */
+  overflow: hidden; /* Important for border-radius on pseudo-elements */
+
+  /* ✅ The Glass Effect for each list item */
+  background: rgba(28, 28, 32, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ The magic for the automatic, stylish numbering */
+.publication-item::before {
+  counter-increment: publications-counter;
+  content: counter(publications-counter);
+  position: absolute;
+  top: -0.1em;
+  left: 0.1em;
+  font-size: 6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05); /* Very subtle text color */
+  line-height: 1;
+  z-index: -1;
+}
+
+.publication-item h4 {
+  font-size: 1.4rem;
+  color: var(--white);
+  line-height: 1.3;
+  margin: 0 0 1.5rem 0;
+}
+
+/* This div contains the date and the link button */
+.publication-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.publication-meta time {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  flex-shrink: 0; /* Prevents the date from shrinking on small screens */
+}
+
+/* ✅ The new link button style */
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  border-radius: 999px; /* Pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.publication-link:hover {
+  background-color: var(--blue-ryb); /* Your brand color for hover */
+  border-color: var(--blue-ryb);
+}
+
+/* Styles the little "external link" icon */
+.publication-link i {
+  font-size: 0.8rem;
 }
 /* ========================================================================= */
 /*                            BUTTON STYLES                                  */
@@ -504,470 +766,603 @@ section ul > li {
 }
 
 /* ========================================================================= */
-/*                                      CV                                   */
+/*               CV SECTION - BUTTONS MATCHING NAVBAR STYLE                  */
 /* ========================================================================= */
 
-.pdf-actions {
+.cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.cv h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
+}
+
+/* Container for the action buttons */
+.cv-actions {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
 }
 
-.pdf-embed-container {
-  .pdf-embed-container {
-    position: relative;
-    padding-top: 85vh;
-    max-width: 60vw;
-    margin-inline: auto;
-    background-color: var(--rich-black-fogra-39);
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow: var(--shadow-2);
-  }
+/* ✅ --- NEW BUTTON STYLE --- */
+/* This is the base style for the link, adapted from .nav-link */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
 
-  .pdf-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60vw;
-    height: 85vh;
-  }
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
 
-  position: relative;
-  padding-top: 85vh;
-  max-width: 60vw;
-  margin-inline: auto;
-  background-color: var(--rich-black-fogra-39);
-  border-radius: 7px;
-  overflow: hidden;
-  box-shadow: var(--shadow-2);
+  padding: 0.8em 1.5em;
+  border-radius: 999px; /* Pill shape */
+
+  position: relative; /* Crucial for the pseudo-element */
+  z-index: 1;
+  overflow: hidden; /* Hides the pseudo-element when it's scaled down */
+
+  /* The button starts with a transparent border */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Transition for text color */
+  transition: color 0.4s ease;
 }
 
-.pdf-embed-container iframe {
+/* This is the "pill" that expands on hover */
+.cv-button::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 60vw;
+  width: 100%;
+  height: 100%;
+
+  /* Use your brand color for the expanding background */
+  background-color: #222;
+  border-radius: 999px;
+
+  /* Initial state: scaled down and invisible */
+  transform: scale(0);
+  opacity: 0;
+
+  z-index: -1; /* Place it BEHIND the link text */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* On hover, scale up the pill and change the text color */
+.cv-button:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.cv-button:hover {
+  color: var(--white);
+  border-color: transparent; /* Hide the border when the pill is visible */
+}
+
+.cv-button i {
+  font-size: 0.9rem;
+}
+
+/* --- The Glass Frame (remains unchanged) --- */
+.cv-embed-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.cv-embed-container iframe {
+  display: block;
+  width: 100%;
   height: 85vh;
+  max-height: 800px;
+  border-radius: 8px;
+  border: none;
 }
-
-.cv header h2 {
-  margin: auto;
-}
-
 /* ========================================================================= */
-/*                               Ongoing Projects                            */
+/*                ONGOING PROJECTS - AESTHETIC UPGRADE                       */
 /* ========================================================================= */
 
 .ongoing-projects {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
 }
 
-.ongoing-projects h4,
-.ongoing-projects time {
+.ongoing-projects h2 {
   text-align: center;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
 }
 
-.ongoing-projects p {
-  text-align: justify;
+.project-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 80ch; /* Optimal width for reading long-form text */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* The space between project cards */
 }
 
-.ongoing-projects ul {
-  padding: 0px;
+/* ✅ This is the new glass card for each project */
+.project-card {
+  /* --- The Glass Effect --- */
+  background: rgba(28, 28, 32, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ongoing-projects li {
-  padding: 10px;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Styling for the date metadata */
+.project-date {
+  display: block; /* Puts it on its own line */
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  margin-bottom: 0.75rem;
+}
+
+/* ✅ Styling for the main project title */
+.project-title {
+  font-size: 1.5rem;
+  color: var(--white);
+  line-height: 1.3;
+  margin: 0 0 1rem 0; /* Space below the title */
+}
+
+/* ✅ Styling for the project description */
+.project-description {
+  font-size: 1.05rem; /* Slightly larger for better readability */
+  line-height: 1.7;
+  color: var(--light-gray);
+  margin: 0;
+  text-align: left; /* Justify can create awkward spacing, left-align is often better */
 }
 
 /* ========================================================================= */
-/*                                    CONFEENCE                              */
+/*               CONFERENCE PRESENTATIONS - AESTHETIC UPGRADE                */
 /* ========================================================================= */
 
 .conference-presentations {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
 }
 
-.conference-presentations h4,
-.conference-presentations time {
+.conference-presentations h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
+}
+
+.presentation-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 80ch; /* Optimal width for readability */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between presentation cards */
+}
+
+/* ✅ Reusing the glass card style for consistency */
+.presentation-card {
+  /* --- The Glass Effect --- */
+  background: rgba(28, 28, 32, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presentation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the date metadata */
+.presentation-date {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  margin-bottom: 0.75rem;
+}
+
+/* Styling for the main presentation title */
+.presentation-title {
+  font-size: 1.5rem;
+  color: var(--white);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+}
+
+/* Styling for the presentation description */
+.presentation-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--light-gray);
+  margin: 0;
   text-align: left;
 }
 
-.conference-presentations p {
-  text-align: justify;
-}
-
-.conference-presentations ul {
-  padding: 0px;
-}
-
-.conference-presentations li {
-  padding: 10px;
-}
-
 /* ========================================================================= */
-/*                                      BLOG                                 */
+/*                      BLOG - FULL AESTHETIC OVERHAUL                       */
 /* ========================================================================= */
 
 .blog {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-.blog h4,
-.blog time,
-.blog h5 {
-  text-align: center;
-}
-
-.blog div {
-  max-width: 60vw;
-  /* padding: 0px 30px 10px 30px; */
-  margin: 0px auto;
-}
-
-.blog-abstract {
-  padding: 10px;
-}
-
-.blog ul {
-  padding: 0px;
-}
-
-.blog li {
-  padding: 10px;
-}
-
-.blog-abstract {
-  text-align: justify;
-}
-
-/* RESEARCHES I FOUND INTERESTING */
-
-.interesting-research-image {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 60vw;
+  padding: 4rem 2rem;
+}
+
+.blog h2 {
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
 }
 
-.interesting-research-image img {
-  max-width: 50%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 7px;
-  max-height: 40vh;
-  margin: 10px;
-}
-
-.interesting-research-text {
-  text-align: justify;
-}
-
-.interesting-research-image-caption {
+/* ✅ The special intro card */
+.blog-intro-card {
+  width: 100%;
+  max-width: 75ch;
+  margin-bottom: 4rem;
+  padding: 2rem;
   text-align: center;
-  font-size: 1rem;
+
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* VISITS */
+.blog-intro-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--light-gray);
+  margin: 0 0 1rem 0;
+}
 
+.blog-tagline {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--white) !important;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* ✅ The list of blog posts */
+.blog-post-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Replaces the <hr> tags */
+}
+
+/* ✅ The base style for ALL post cards */
+.blog-post-card {
+  padding: 2.5rem;
+  background: rgba(28, 28, 32, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.post-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--white);
+  margin: 0 0 0.5rem 0;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+/* --- Special Grid for Research Post --- */
+.post-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: start;
+  gap: 2.5rem;
+}
+
+.post-text-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--light-gray);
+  margin-bottom: 2rem;
+}
+
+.post-media-content figure {
+  margin: 0;
+  padding: 0;
+}
+
+.post-media-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.post-media-content figcaption {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Making the research post responsive */
+@media (max-width: 850px) {
+  .post-layout-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+}
+
+/* We reuse this style from the publications section for consistency */
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.publication-link:hover {
+  background-color: var(--blue-ryb);
+  border-color: var(--blue-ryb);
+}
+
+/* --- Slideshow Styling --- */
+/* Your existing slideshow CSS is great. We just adjust the container. */
 .slideshow-container {
   position: relative;
-  height: 40vh;
-  margin: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%; /* Make it fill the card */
+  max-width: none; /* Override previous max-width */
+  margin: 0; /* Remove auto margins */
+  overflow: hidden;
+  border-radius: 12px;
+  -webkit-tap-highlight-color: transparent;
 }
-
-.slideshow-container .slide {
+/* Keep all your other slideshow CSS (.slides-wrapper, .slide, .prev-btn, etc.) */
+/* I've included them here for completeness */
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: #000;
+}
+.slide img {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
-  object-fit: contain;
-  transition: opacity 1s ease-in-out;
-  border-radius: 7px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
-
-/* ========================================================================= */
-/*                                  CONTACT                                  */
-/* ========================================================================= */
-.contact {
-  margin-bottom: 50px;
-}
-
-.contact-div-1 {
-  width: 70%;
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 50px;
-  margin: 0 auto;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.3s;
+  pointer-events: auto;
+}
+.slideshow-container:hover .prev-btn,
+.slideshow-container:hover .next-btn {
+  opacity: 1;
+}
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.prev-btn {
+  left: 10px;
+}
+.next-btn {
+  right: 10px;
+}
+.dots-container {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.dot.active {
+  background-color: #fff;
 }
 
-.contact header h2 {
-  margin: auto;
+/* ========================================================================= */
+/*                    CONTACT - FULL AESTHETIC OVERHAUL                      */
+/* ========================================================================= */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
 }
 
-.map-box,
-.google-form {
-  flex-direction: row;
-  max-width: 30vw;
-  font-size: 1.1rem;
+.contact h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
 }
 
-.contact-details a {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--orange-ryb-hover);
+/* ✅ The main glass card that holds everything */
+.contact-container-card {
+  width: 100%;
+  max-width: 1200px;
+  padding: 3rem;
+  
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ The new two-column grid layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Info takes less space than the map */
+  align-items: center;
+  gap: 3rem;
+}
+
+.contact-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between each contact link */
+  margin-bottom: 2.5rem; /* Space between links and the address */
+}
+
+/* ✅ The redesigned contact link "pills" */
+.contact-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem; /* Space between icon and text */
+  padding: 0.8rem 1.2rem;
   text-decoration: none;
+  
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  
+  color: var(--light-gray);
+  transition: all 0.3s ease;
 }
 
-.contact-details a:hover {
-  text-decoration: underline;
-  color: var(--orange-ryb-hover);
+.contact-link-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  transform: translateY(-3px);
 }
 
-.contact-details a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+.contact-link-item i {
+  font-size: 1.2rem;
+  width: 20px; /* Ensures icons are aligned */
+  text-align: center;
+  color: var(--blue-ryb);
 }
 
-.contact-details p {
-  text-align: left;
+/* Styling for the physical address */
+.address {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--light-gray);
 }
 
-iframe {
-  .research header h2 {
-    margin: auto;
-  }
-  width: 40vw;
-  border-radius: 7px;
+.address strong {
+  color: var(--white);
 }
 
-.map-box iframe {
+/* Container for the map */
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  border-radius: 12px;
+  overflow: hidden; /* This clips the iframe's corners */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* ✅ Keeping your excellent dark mode filter! */
   filter: invert(1) hue-rotate(180deg);
 }
 
-.address p {
-  max-width: 50vw;
-  text-align: justify;
-}
-
-.contact-details {
-  flex: 1 1 300px;
-  max-width: 500px;
-}
-
-.map-box {
-  flex: 1 1 300px;
-  max-width: 600px;
-}
-
-.map-box iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  border: none;
-}
-
-/* ========================================================================= */
-/*                                 RESPONSIVE                                */
-/* ========================================================================= */
-
-@media (max-width: 1280px) {
-  section h2 {
-    font-size: 2rem;
-  }
-
-  .research-interests-section {
-    justify-content: center;
-  }
-
-  section h3 {
-    font-size: 1.5rem;
-  }
-
-  .ongoing-projects p {
-    font-size: 1rem;
-  }
-
-  .conference-presentations p {
-    font-size: 1rem;
-  }
-
-  .blog p {
-    font-size: 1rem;
-  }
-
-  .contact p,
-  .contact a {
-    font-size: 1rem;
-  }
-
-  .shubhit-image-div img {
-    max-width: 80vw;
-    min-height: auto;
-    margin-bottom: 20px;
-  }
-
-  .home-img-cntnt {
-    flex-direction: column;
-    justify-content: center;
-    max-width: 85vw;
-  }
-
-  nav {
-    padding: 5px 0;
-    padding-left: 5px;
-    padding-right: 5px;
-    z-index: 5;
-    width: 100vw;
-    max-width: 100vw;
-    max-height: 25vh;
-  }
-
-  nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px 15px;
-    padding: 0px 10px;
-  }
-
-  .home {
-    margin: 0px;
-    padding: 0px 20px;
-  }
-
-  .home-content {
-    max-width: 90vw;
-  }
-
-  section ul > li,
-  h4,
-  h3,
-  h2 {
-    max-width: 90vw;
-  }
-
-  .blog > div {
-    max-width: 90vw;
-  }
-  .interesting-research-image img {
-    max-width: 80%;
-  }
-  .contact-details {
-    text-align: left;
-    max-width: 90vw;
-  }
-
-  .contact-details p {
-    text-align: left;
-  }
-
-  .address {
-    max-width: 80vw;
-  }
-
-  .contact-details a {
-    text-align: left;
-  }
-
-  .contact-div-1 {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    max-width: 90vw;
-    width: 90vw;
-    text-align: center;
-  }
-
-  .contact-details {
-    max-width: 90vw;
-  }
-
-  .map-box {
-    max-width: 90vw;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .map-box iframe {
-    width: 100%;
-    height: 450px;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-  }
-}
-
-@media (max-width: 800px) {
-  .pdf-embed-container {
-    position: relative;
-    padding-top: 85vh;
-    max-width: 90vw;
-    margin-inline: auto;
-    background-color: var(--rich-black-fogra-39);
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow: var(--shadow-2);
-  }
-
-  .pdf-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90vw;
-    height: 85vh;
-  }
-
-  #home-section,
-  #research-interests-section,
-  #publications-section,
-  #cv-section,
-  #ongoing-projects-section,
-  #conference-presentations-section,
-  #blog-section,
-  #contact-section {
-    scroll-margin-top: 90px;
-  }
-  .interesting-research-image {
-    max-width: 90vw;
-  }
-  .interesting-research-image img {
-    max-width: 100%;
-  }
-  .address p {
-    max-width: 80vw;
-    text-align: justify;
-  }
-  nav ul {
-    padding: 0px 10px;
-  }
-}
-
-@media (max-width: 650px) {
-  .slideshow-container .slide {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    transition: opacity 1s ease-in-out;
-    border-radius: 7px;
+/* --- Responsive Adjustments --- */
+@media (max-width: 950px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    gap: 4rem; /* Increase gap for vertical stacking */
   }
 }
