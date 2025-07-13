@@ -7,21 +7,10 @@
 /*                              CUSTOM PROPERTIES                            */
 /* ========================================================================= */
 :root {
-  /* Colors */
-  --rich-black-fogra-29: hsl(0, 0%, 0%);
-  --rich-black-fogra-39: hsla(0, 0%, 1%, 0.212);
-  --raisin-black: hsl(0, 0%, 0%);
-  --blue-ryb: hsl(0, 0%, 66%);
-  --orange-ryb-hover: hsl(36, 54%, 48%);
   --light-gray: hsl(0, 0%, 80%);
-  --light-gray-alpha: hsla(0, 0%, 0%, 0.1);
-  --xiketic: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
-  --white-alpha-10: hsla(0, 0%, 0%, 0.1);
 
-  /* Typography */
   --ff-poppins: "Poppins", sans-serif;
-  --ff-source-code: "Source Code Pro", monospace;
 
   --fs-1: 2.8rem;
   --fs-2: 1.8rem;
@@ -36,13 +25,6 @@
   --fw-800: 800;
   --fw-900: 900;
 
-  /* Spacing & Shadows */
-  --section-padding: 80px;
-  --card-padding: 30px;
-  --shadow-1: 0 5px 20px 0 hsla(226, 78%, 57%, 0.1);
-  --shadow-2: 0 3px 10px 0 hsla(0, 0%, 0%, 0.2);
-
-  /* Transitions */
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease;
 }
@@ -71,38 +53,17 @@ html {
 }
 
 body {
-  background-color: var(--rich-black-fogra-29);
-  color: var(--light-gray);
-}
-
-body {
-  /* background-image: url("../images/bg.jpg"); */
+  background-image: url("../images/bg.jpg");
+  /* background-color: #171e29; */
+  /* background-color: #111; */
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 body.active {
   overflow: hidden;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--rich-black-fogra-29);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--raisin-black);
-  border-radius: 7px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--blue-ryb);
 }
 
 /* ========================================================================= */
@@ -113,9 +74,6 @@ button,
 ion-icon {
   color: inherit;
   text-decoration: none;
-}
-
-button {
   font: inherit;
   cursor: pointer;
   border: none;
@@ -151,20 +109,16 @@ h5 {
 }
 
 strong {
-  color: var(--blue-ryb);
+  color: hsl(0, 0%, 66%);
   font-weight: bolder;
 }
 
 a {
-  color: var(--blue-ryb);
-  transition: var(--transition-1);
+  color: hsl(0, 0%, 66%);
+  /* transition: var(--transition-1); */
 }
 
-a:hover {
-  color: var(--orange-ryb-hover);
-}
-
-header > h2 {
+h2 {
   font-size: var(--fs-1);
   padding: 30px 20px 10px 20px;
   text-align: left;
@@ -179,7 +133,7 @@ time {
   display: block;
   font-size: var(--fs-6);
   font-weight: var(--fw-500);
-  color: var(--blue-ryb);
+  color: hsl(0, 0%, 66%);
   font-size: 15px;
   padding-bottom: 10px;
 }
@@ -200,10 +154,35 @@ main {
 #conference-presentations-section,
 #blog-section,
 #contact-section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 70px;
 }
 
-/* THICK LINE */
+@media (max-width: 760px) {
+  #home-section,
+  #research-interests-section,
+  #publications-section,
+  #cv-section,
+  #ongoing-projects-section,
+  #conference-presentations-section,
+  #blog-section,
+  #contact-section {
+  scroll-margin-top: 120px;
+  }
+}
+
+@media (max-width: 550px) {
+  #home-section,
+  #research-interests-section,
+  #publications-section,
+  #cv-section,
+  #ongoing-projects-section,
+  #conference-presentations-section,
+  #blog-section,
+  #contact-section {
+  scroll-margin-top: 200px;
+  }
+}
+
 
 .thick-line {
   height: 4px;
@@ -213,8 +192,6 @@ main {
   border-radius: 7px;
 }
 
-/* THIN LINE */
-
 .thin-line {
   height: 4px;
   background-color: #b9b9b9;
@@ -222,8 +199,6 @@ main {
   margin: 2rem auto;
   border-radius: 7px;
 }
-
-/* UNDER LINE */
 
 .under-line {
   height: 4px;
@@ -258,8 +233,8 @@ nav ul {
   list-style: none;
 }
 
-nav a {
-  margin: 10px;
+nav li {
+  margin: 5px;
 }
 
 .nav-link {
@@ -267,14 +242,11 @@ nav a {
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
-
   position: relative;
   z-index: 1;
   overflow: hidden;
-
   transition: color 0.4s ease;
 }
 
@@ -285,13 +257,10 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
-
   transform: scale(0);
   opacity: 0;
-
   z-index: -1;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -314,13 +283,12 @@ nav a {
 .nav-link.active::before {
   transform: scale(1);
   opacity: 1;
-  background-color: var(--blue-ryb);
+  background-color: hsl(0, 0%, 66%);
 }
 
 /* ========================================================================= */
 /*                          HOME - AESTHETIC UPGRADE                     */
 /* ========================================================================= */
-
 .home {
   position: relative;
   display: flex;
@@ -365,7 +333,7 @@ nav a {
 .profile-image-wrapper {
   padding: 5px;
   border-radius: 50%;
-  background: linear-gradient(45deg, var(--blue-ryb), #111);
+  background: linear-gradient(45deg, hsl(0, 0%, 66%), #111);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -405,8 +373,8 @@ nav a {
 }
 
 .social-links i {
-  font-size: 28px; /* This controls the icon size */
-  line-height: 1; /* Ensures proper vertical alignment */
+  font-size: 28px; 
+  line-height: 1;
 }
 
 .tech-tag {
@@ -493,7 +461,7 @@ nav a {
   .home-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .home-content p {
@@ -509,12 +477,11 @@ nav a {
 /* ========================================================================= */
 /*             RESEARCH INTERESTS - FULL SECTION GLASS EFFECT                */
 /* ========================================================================= */
-
 .research {
-  width: auto; /* Allow it to shrink-to-fit content, up to a max-width */
-  max-width: 90%; /* Keeps it from touching the viewport edges */
-  margin: 2rem auto; /* Vertical space and centers the section */
-  padding: 3rem; /* Generous inner spacing */
+  width: auto;
+  max-width: 90%;
+  margin: auto;
+  padding: 2rem;
 }
 
 .research h2 {
@@ -526,28 +493,30 @@ nav a {
 
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(280px, 1fr)
-  ); /* Adjusted min-width */
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* The card is now just a clean container for the video */
 .research-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   aspect-ratio: 1 / 1;
-  /* A more subtle shadow since the container provides the main effect */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .research-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(var(--blue-ryb-rgb), 0.25); /* The glow effect */
+  box-shadow: 0 12px 30px rgba(var(--blue-ryb-rgb), 0.25);
 }
 
 .research-card .hover-video {
@@ -564,7 +533,6 @@ nav a {
   filter: blur(4px);
 }
 
-/* The dark overlay remains the same to ensure text is readable */
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -577,7 +545,6 @@ nav a {
   opacity: 1;
 }
 
-/* ✅ The content panel is now a simple translucent overlay, NOT glass */
 .card-content {
   position: absolute;
   bottom: 0;
@@ -585,14 +552,9 @@ nav a {
   right: 0;
   padding: 1.5rem;
   margin: 1rem;
-
-  /* A solid, dark overlay for maximum readability against the blurred video */
   background: rgba(12, 12, 15, 0.75);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* A slightly brighter border */
-
-  /* We REMOVED backdrop-filter here to avoid a messy glass-on-glass look */
-
+  border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
@@ -619,13 +581,11 @@ nav a {
 /* ========================================================================= */
 /*                   PUBLICATIONS - AESTHETIC UPGRADE                        */
 /* ========================================================================= */
-
 .publications {
-  /* This centers the list on the page */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem
 }
 
 .publications h2 {
@@ -639,46 +599,32 @@ nav a {
   list-style: none;
   padding: 0;
   width: 100%;
-  max-width: 80ch; /* Limits width for optimal readability */
-
-  /* ✅ This sets up the automatic counter */
-  counter-reset: publications-counter;
+  max-width: 80ch; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .publication-item {
-  position: relative; /* Needed for the ::before pseudo-element */
-  margin-bottom: 2rem;
-  padding: 2rem;
-  padding-left: 5rem; /* Make space for the large number */
-  overflow: hidden; /* Important for border-radius on pseudo-elements */
-
-  /* ✅ The Glass Effect for each list item */
   background: rgba(28, 28, 32, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-
+  padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .publication-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* ✅ The magic for the automatic, stylish numbering */
-.publication-item::before {
-  counter-increment: publications-counter;
-  content: counter(publications-counter);
-  position: absolute;
-  top: -0.1em;
-  left: 0.1em;
-  font-size: 6rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.05); /* Very subtle text color */
-  line-height: 1;
-  z-index: -1;
 }
 
 .publication-item h4 {
@@ -688,7 +634,6 @@ nav a {
   margin: 0 0 1.5rem 0;
 }
 
-/* This div contains the date and the link button */
 .publication-meta {
   display: flex;
   justify-content: space-between;
@@ -699,10 +644,9 @@ nav a {
 .publication-meta time {
   font-size: 0.9rem;
   color: var(--light-gray);
-  flex-shrink: 0; /* Prevents the date from shrinking on small screens */
+  flex-shrink: 0;
 }
 
-/* ✅ The new link button style */
 .publication-link {
   display: inline-flex;
   align-items: center;
@@ -713,19 +657,24 @@ nav a {
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.6em 1.2em;
-  border-radius: 999px; /* Pill shape */
+  border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .publication-link:hover {
-  background-color: var(--blue-ryb); /* Your brand color for hover */
-  border-color: var(--blue-ryb);
+  background-color: hsl(0, 0%, 66%);
+  border-color: hsl(0, 0%, 66%);
 }
 
-/* Styles the little "external link" icon */
 .publication-link i {
   font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .publication-meta {
+    flex-direction: column;
+  }
 }
 /* ========================================================================= */
 /*                            BUTTON STYLES                                  */
@@ -749,31 +698,24 @@ nav a {
   color: var(--white);
 }
 
-.button-primary:hover {
-  background-color: var(--orange-ryb-hover);
-  color: var(--white);
-}
-
 .button-secondary {
   background: transparent;
-  color: var(--blue-ryb);
+  color: hsl(0, 0%, 66%);
 }
 
 .button-secondary:hover {
   background-color: hsla(226, 78%, 57%, 0.1);
-  /* Faint blue background on hover */
-  color: var(--blue-ryb);
+  color: hsl(0, 0%, 66%);
 }
 
 /* ========================================================================= */
 /*               CV SECTION - BUTTONS MATCHING NAVBAR STYLE                  */
 /* ========================================================================= */
-
 .cv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 }
 
 .cv h2 {
@@ -783,7 +725,6 @@ nav a {
   color: var(--white);
 }
 
-/* Container for the action buttons */
 .cv-actions {
   display: flex;
   justify-content: center;
@@ -792,33 +733,24 @@ nav a {
   flex-wrap: wrap;
 }
 
-/* ✅ --- NEW BUTTON STYLE --- */
-/* This is the base style for the link, adapted from .nav-link */
 .cv-button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-
   color: var(--light-gray);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-
   padding: 0.8em 1.5em;
-  border-radius: 999px; /* Pill shape */
-
-  position: relative; /* Crucial for the pseudo-element */
+  border-radius: 999px;
+  position: relative; 
   z-index: 1;
-  overflow: hidden; /* Hides the pseudo-element when it's scaled down */
-
-  /* The button starts with a transparent border */
+  overflow: hidden; 
   border: 1px solid rgba(255, 255, 255, 0.2);
-
-  /* Transition for text color */
   transition: color 0.4s ease;
 }
 
-/* This is the "pill" that expands on hover */
+
 .cv-button::before {
   content: "";
   position: absolute;
@@ -826,20 +758,15 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* Use your brand color for the expanding background */
-  background-color: #222;
+  background-color: #77777749;
   border-radius: 999px;
-
-  /* Initial state: scaled down and invisible */
   transform: scale(0);
   opacity: 0;
-
-  z-index: -1; /* Place it BEHIND the link text */
+  z-index: -1;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* On hover, scale up the pill and change the text color */
+
 .cv-button:hover::before {
   transform: scale(1);
   opacity: 1;
@@ -847,21 +774,20 @@ nav a {
 
 .cv-button:hover {
   color: var(--white);
-  border-color: transparent; /* Hide the border when the pill is visible */
+  border-color: transparent; 
 }
 
 .cv-button i {
   font-size: 0.9rem;
 }
 
-/* --- The Glass Frame (remains unchanged) --- */
-.cv-embed-container {
+.cv-container {
   width: 100%;
   max-width: 1000px;
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -878,12 +804,11 @@ nav a {
 /* ========================================================================= */
 /*                ONGOING PROJECTS - AESTHETIC UPGRADE                       */
 /* ========================================================================= */
-
 .ongoing-projects {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 }
 
 .ongoing-projects h2 {
@@ -897,21 +822,25 @@ nav a {
   list-style: none;
   padding: 0;
   width: 100%;
-  max-width: 80ch; /* Optimal width for reading long-form text */
+  max-width: 80ch;
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* The space between project cards */
+  gap: 1.5rem; 
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ This is the new glass card for each project */
 .project-card {
-  /* --- The Glass Effect --- */
   background: rgba(28, 28, 32, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -921,40 +850,36 @@ nav a {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ Styling for the date metadata */
 .project-date {
-  display: block; /* Puts it on its own line */
+  display: block; 
   font-size: 0.9rem;
   color: var(--light-gray);
   margin-bottom: 0.75rem;
 }
 
-/* ✅ Styling for the main project title */
 .project-title {
   font-size: 1.5rem;
   color: var(--white);
   line-height: 1.3;
-  margin: 0 0 1rem 0; /* Space below the title */
+  margin: 0 0 1rem 0; 
 }
 
-/* ✅ Styling for the project description */
 .project-description {
-  font-size: 1.05rem; /* Slightly larger for better readability */
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--light-gray);
   margin: 0;
-  text-align: left; /* Justify can create awkward spacing, left-align is often better */
+  text-align: left; 
 }
 
 /* ========================================================================= */
 /*               CONFERENCE PRESENTATIONS - AESTHETIC UPGRADE                */
 /* ========================================================================= */
-
 .conference-presentations {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 }
 
 .conference-presentations h2 {
@@ -968,15 +893,20 @@ nav a {
   list-style: none;
   padding: 0;
   width: 100%;
-  max-width: 80ch; /* Optimal width for readability */
+  max-width: 80ch; 
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* Space between presentation cards */
+  gap: 1.5rem; 
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ Reusing the glass card style for consistency */
 .presentation-card {
-  /* --- The Glass Effect --- */
   background: rgba(28, 28, 32, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -992,7 +922,6 @@ nav a {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling for the date metadata */
 .presentation-date {
   display: block;
   font-size: 0.9rem;
@@ -1000,7 +929,6 @@ nav a {
   margin-bottom: 0.75rem;
 }
 
-/* Styling for the main presentation title */
 .presentation-title {
   font-size: 1.5rem;
   color: var(--white);
@@ -1008,7 +936,6 @@ nav a {
   margin: 0 0 1rem 0;
 }
 
-/* Styling for the presentation description */
 .presentation-description {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -1020,12 +947,11 @@ nav a {
 /* ========================================================================= */
 /*                      BLOG - FULL AESTHETIC OVERHAUL                       */
 /* ========================================================================= */
-
 .blog {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 }
 
 .blog h2 {
@@ -1035,17 +961,15 @@ nav a {
   color: var(--white);
 }
 
-/* ✅ The special intro card */
 .blog-intro-card {
   width: 100%;
   max-width: 75ch;
   margin-bottom: 4rem;
   padding: 2rem;
   text-align: center;
-
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1065,7 +989,6 @@ nav a {
   opacity: 0.9;
 }
 
-/* ✅ The list of blog posts */
 .blog-post-list {
   list-style: none;
   padding: 0;
@@ -1073,12 +996,18 @@ nav a {
   max-width: 1100px;
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* Replaces the <hr> tags */
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ The base style for ALL post cards */
 .blog-post-card {
-  padding: 2.5rem;
+  padding: 1.5rem;
   background: rgba(28, 28, 32, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1086,7 +1015,7 @@ nav a {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.post-header {
+.post-heading {
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -1102,12 +1031,11 @@ nav a {
   color: var(--light-gray);
 }
 
-/* --- Special Grid for Research Post --- */
 .post-layout-grid {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   align-items: start;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .post-text-content p {
@@ -1135,14 +1063,12 @@ nav a {
   text-align: center;
 }
 
-/* Making the research post responsive */
 @media (max-width: 850px) {
   .post-layout-grid {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    grid-template-columns: 1fr; 
   }
 }
 
-/* We reuse this style from the publications section for consistency */
 .publication-link {
   display: inline-flex;
   align-items: center;
@@ -1159,23 +1085,20 @@ nav a {
 }
 
 .publication-link:hover {
-  background-color: var(--blue-ryb);
-  border-color: var(--blue-ryb);
+  background-color: hsl(0, 0%, 66%);
+  border-color: hsl(0, 0%, 66%);
 }
 
-/* --- Slideshow Styling --- */
-/* Your existing slideshow CSS is great. We just adjust the container. */
 .slideshow-container {
   position: relative;
-  width: 100%; /* Make it fill the card */
-  max-width: none; /* Override previous max-width */
-  margin: 0; /* Remove auto margins */
+  width: 100%; 
+  max-width: none; 
+  margin: 0; 
   overflow: hidden;
   border-radius: 12px;
   -webkit-tap-highlight-color: transparent;
 }
-/* Keep all your other slideshow CSS (.slides-wrapper, .slide, .prev-btn, etc.) */
-/* I've included them here for completeness */
+
 .slides-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -1257,12 +1180,11 @@ nav a {
 /* ========================================================================= */
 /*                    CONTACT - FULL AESTHETIC OVERHAUL                      */
 /* ========================================================================= */
-
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -1273,46 +1195,42 @@ nav a {
   color: var(--white);
 }
 
-/* ✅ The main glass card that holds everything */
 .contact-container-card {
   width: 100%;
   max-width: 1200px;
-  padding: 3rem;
-  
+  padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ✅ The new two-column grid layout */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr; /* Info takes less space than the map */
+  grid-template-columns: 1fr 1.2fr; 
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .contact-links-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Space between each contact link */
-  margin-bottom: 2.5rem; /* Space between links and the address */
+  gap: 0.75rem;
+  margin-bottom: 2.5rem; 
 }
 
-/* ✅ The redesigned contact link "pills" */
 .contact-link-item {
   display: inline-flex;
   align-items: center;
-  gap: 1rem; /* Space between icon and text */
+  gap: 1rem; 
   padding: 0.8rem 1.2rem;
   text-decoration: none;
-  
+
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  
+
   color: var(--light-gray);
   transition: all 0.3s ease;
 }
@@ -1326,12 +1244,11 @@ nav a {
 
 .contact-link-item i {
   font-size: 1.2rem;
-  width: 20px; /* Ensures icons are aligned */
+  width: 20px; 
   text-align: center;
-  color: var(--blue-ryb);
+  color: hsl(0, 0%, 66%);
 }
 
-/* Styling for the physical address */
 .address {
   font-size: 1rem;
   line-height: 1.6;
@@ -1342,27 +1259,24 @@ nav a {
   color: var(--white);
 }
 
-/* Container for the map */
 .map-container {
   width: 100%;
   height: 100%;
   min-height: 450px;
   border-radius: 12px;
-  overflow: hidden; /* This clips the iframe's corners */
+  overflow: hidden; 
 }
 
 .map-container iframe {
   width: 100%;
   height: 100%;
   border: none;
-  /* ✅ Keeping your excellent dark mode filter! */
   filter: invert(1) hue-rotate(180deg);
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 950px) {
   .contact-grid {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    gap: 4rem; /* Increase gap for vertical stacking */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
   }
 }
