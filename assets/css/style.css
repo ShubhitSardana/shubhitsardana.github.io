@@ -11,7 +11,7 @@
   --white: hsl(0, 0%, 100%);
 
   --ff-poppins: "Poppins", sans-serif;
-
+  
   --fs-1: 2.8rem;
   --fs-2: 1.8rem;
   --fs-3: 1.5rem;
@@ -27,6 +27,19 @@
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease;
+
+  --blur3: 3px;
+  --blur4: 4px;
+  --blur5: 5px;
+  --blur6: 6px;
+  --blur7: 7px;
+
+  --opacity-1: 0.0;
+  --opacity-2: 0.05;
+  --opacity-3: 0.45;
+
+  --b-radius: 12px;
+
 }
 
 /* ========================================================================= */
@@ -54,11 +67,12 @@ html {
 
 body {
   background-image: url("../images/bg.jpg");
+  backdrop-filter: blur(4px);
   /* background-color: #171e29; */
   /* background-color: #111; */
-  background-size: contain;
-  background-repeat: repeat;
-  background-position: center;
+  background-size: cover;
+  /* background-repeat: repeat; */
+  /* background-position: center; */
   background-attachment: fixed;
 }
 
@@ -189,7 +203,7 @@ main {
   background-color: #b9b9b9;
   width: 60%;
   margin: 2rem auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .thin-line {
@@ -197,7 +211,7 @@ main {
   background-color: #b9b9b9;
   width: 30%;
   margin: 2rem auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .under-line {
@@ -205,7 +219,7 @@ main {
   background-color: #b9b9b9;
   width: 10%;
   margin: auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 /* ========================================================================= */
@@ -217,7 +231,7 @@ nav {
   z-index: 1000;
   width: 100%;
   background-color: rgba(28, 28, 32, 0.7);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(7px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -314,7 +328,7 @@ nav li {
   background-image: url("../images/Fractals.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(10px) brightness(40%);
+  filter: blur(7px) brightness(40%);
   transform: scale(1.1);
   z-index: -1;
 }
@@ -375,6 +389,7 @@ nav li {
   line-height: 1.7;
   max-width: 65ch;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .social-links i {
@@ -387,7 +402,7 @@ nav li {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.3em 0.8em;
-  border-radius: 12px;
+  border-radius: 16px;
   font-family: "Fira Code", "Roboto Mono", monospace;
   font-size: 0.9rem;
   color: var(--light-gray);
@@ -503,16 +518,17 @@ nav li {
   margin: 0 auto;
   padding: clamp(1rem, 4vw, 1.5rem);
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
+
 .research-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
   aspect-ratio: 1 / 1;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -535,7 +551,7 @@ nav li {
 }
 
 .research-card:hover .hover-video {
-  filter: blur(4px);
+  filter: blur(7px);
 }
 
 .card-overlay {
@@ -558,7 +574,7 @@ nav li {
   padding: 1.5rem;
   margin: 1rem;
   background: rgba(12, 12, 15, 0.75);
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 0;
   transform: translateY(20px);
@@ -610,18 +626,18 @@ nav li {
   gap: 1.5rem; 
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .publication-item {
   background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -689,7 +705,7 @@ nav li {
   align-items: center;
   gap: 10px;
   padding: 12px 12px;
-  border-radius: 12px;
+  border-radius: 16px;
   font-weight: var(--fw-600);
   transition: var(--transition-1);
   height: 50px;
@@ -791,9 +807,9 @@ nav li {
   max-width: 1000px;
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
@@ -803,7 +819,7 @@ nav li {
   width: 100%;
   height: 85vh;
   max-height: 800px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: none;
 }
 /* ========================================================================= */
@@ -833,18 +849,18 @@ nav li {
   gap: 1.5rem; 
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .project-card {
   background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -874,7 +890,7 @@ nav li {
   line-height: 1.7;
   color: var(--light-gray);
   margin: 0;
-  text-align: left; 
+  text-align: justify; 
 }
 
 /* ========================================================================= */
@@ -904,18 +920,18 @@ nav li {
   gap: 1.5rem; 
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .presentation-card {
   background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   padding: 2rem;
@@ -946,7 +962,7 @@ nav li {
   line-height: 1.7;
   color: var(--light-gray);
   margin: 0;
-  text-align: left;
+  text-align: justify;
 }
 
 /* ========================================================================= */
@@ -973,9 +989,9 @@ nav li {
   padding: 2rem;
   text-align: center;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1004,9 +1020,9 @@ nav li {
   gap: 1.5rem;
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
@@ -1014,9 +1030,9 @@ nav li {
 .blog-post-card {
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1048,6 +1064,8 @@ nav li {
   line-height: 1.8;
   color: var(--light-gray);
   margin-bottom: 2rem;
+  text-align: justify;
+
 }
 
 .post-media-content figure {
@@ -1057,7 +1075,7 @@ nav li {
 
 .post-media-content img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1rem;
 }
 
@@ -1100,7 +1118,7 @@ nav li {
   max-width: none; 
   margin: 0; 
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -1122,7 +1140,7 @@ nav li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   display: block;
 }
 .prev-btn,
@@ -1205,9 +1223,9 @@ nav li {
   max-width: 1200px;
   padding: 1.5rem;
   background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  border-radius: 12px;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1234,7 +1252,7 @@ nav li {
 
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 16px;
 
   color: var(--light-gray);
   transition: all 0.3s ease;
@@ -1258,6 +1276,8 @@ nav li {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--light-gray);
+  text-align: justify;
+
 }
 
 .address strong {
@@ -1268,7 +1288,7 @@ nav li {
   width: 100%;
   height: 100%;
   min-height: 450px;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden; 
 }
 
