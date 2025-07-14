@@ -67,7 +67,7 @@ html {
 
 body {
   background-image: url("../images/bg.jpg");
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px);
   /* background-color: #171e29; */
   /* background-color: #111; */
   background-size: cover;
