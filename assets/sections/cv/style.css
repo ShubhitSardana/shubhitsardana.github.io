@@ -27,7 +27,7 @@ html {
   line-height: 1.6;
   color: var(--color-text);
   /* background: transparent !important; */
-  background-color: #111;
+/*   background-color: #111; */
 }
 
 .container {
