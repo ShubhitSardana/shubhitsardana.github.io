@@ -25,7 +25,7 @@
   --fw-800: 800;
   --fw-900: 900;
 
-  --transition-1: 0.25s ease;
+  --transition-1: 0.15s ease;
   --transition-2: 0.5s ease;
 
   --blur3: 3px;
@@ -36,7 +36,7 @@
 
   --opacity-1: 0.0;
   --opacity-2: 0.05;
-  --opacity-3: 0.45;
+  --opacity-3: 0.15;
 
   --b-radius: 12px;
 
@@ -67,7 +67,7 @@ html {
 
 body {
   background-image: url("../images/bg.jpg");
-/*   backdrop-filter: blur(7px); */
+  /* backdrop-filter: blur(4px); */
   /* background-color: #171e29; */
   /* background-color: #111; */
   background-size: cover;
@@ -185,7 +185,7 @@ main {
 }
 
 @media (max-width: 550px) {
-  #home-section,
+  /* #home-section,
   #research-interests-section,
   #publications-section,
   #cv-section,
@@ -194,7 +194,7 @@ main {
   #blog-section,
   #contact-section {
   scroll-margin-top: 200px;
-  }
+  } */
 }
 
 
@@ -210,7 +210,7 @@ main {
   height: 4px;
   background-color: #b9b9b9;
   width: 30%;
-  margin: 2rem auto;
+  margin: 1.5rem auto 0rem auto;
   border-radius: 16px;
 }
 
@@ -230,7 +230,7 @@ nav {
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: rgba(28, 28, 32, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(7px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -505,9 +505,11 @@ nav li {
 /* ========================================================================= */
 .research {
   width: auto;
-  max-width: 90%;
   margin: auto;
   padding: clamp(1.5rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .research h2 {
@@ -515,17 +517,25 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .research-grid {
+  width: 100%;
+  max-width: 90vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
-  margin: 0 auto;
   padding: clamp(1rem, 4vw, 1.5rem);
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -543,7 +553,7 @@ nav li {
 
 .research-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(var(--blue-ryb-rgb), 0.25);
+  box-shadow: 0 12px 30px rgba(var(--blue-ryb-rgb), 0.15);
 }
 
 .research-card .hover-video {
@@ -557,7 +567,7 @@ nav li {
 }
 
 .research-card:hover .hover-video {
-  filter: blur(7px);
+  filter: blur(10px);
 }
 
 .card-overlay {
@@ -620,6 +630,13 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .publication-list {
@@ -631,18 +648,20 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .publication-item {
-  background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
@@ -750,6 +769,13 @@ nav li {
   margin-bottom: 2rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .cv-actions {
@@ -812,9 +838,9 @@ nav li {
   width: 100%;
   max-width: 1000px;
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -843,6 +869,13 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .project-list {
@@ -854,18 +887,20 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .project-card {
-  background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
@@ -914,6 +949,13 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .presentation-list {
@@ -925,18 +967,20 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .presentation-card {
-  background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -986,6 +1030,13 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .section-sub-heading {
@@ -1001,9 +1052,9 @@ nav li {
   margin-bottom: 4rem;
   padding: 2rem;
   text-align: center;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1030,10 +1081,11 @@ nav li {
   max-width: 1100px;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
   gap: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -1052,13 +1104,19 @@ nav li {
   padding: 1.5rem;
   max-height: 70vh;
   overflow-y: auto;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .blog-post-card {
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1066,7 +1124,7 @@ nav li {
 .blog-section-wrapper {
   width: 100%;
   max-width: 1100px;  
-  padding-top: 3.5rem; 
+  padding-top: 2.5rem; 
 }
 
 .blog-post-list::-webkit-scrollbar {
@@ -1268,15 +1326,22 @@ nav li {
   margin-bottom: 3rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .contact-container-card {
   width: 100%;
   max-width: 1200px;
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
