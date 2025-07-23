@@ -305,6 +305,12 @@ nav li {
   }
 }
 
+@media (max-width: 500px) {
+  nav {
+  position:relative;
+}
+}
+
 /* ========================================================================= */
 /*                                      HOME                                 */
 /* ========================================================================= */
@@ -982,6 +988,13 @@ nav li {
   color: var(--white);
 }
 
+.section-sub-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--white);
+}
+
 .blog-intro-card {
   width: 100%;
   max-width: 75ch;
@@ -1010,6 +1023,24 @@ nav li {
   opacity: 0.9;
 }
 
+.blog-main-div {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(28, 28, 32, 0.45);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 .blog-post-list {
   list-style: none;
   padding: 0;
@@ -1019,12 +1050,8 @@ nav li {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: rgba(28, 28, 32, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .blog-post-card {
@@ -1034,6 +1061,31 @@ nav li {
   -webkit-backdrop-filter: blur(7px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-section-wrapper {
+  width: 100%;
+  max-width: 1100px;  
+  padding-top: 3.5rem; 
+}
+
+.blog-post-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.blog-post-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blog-post-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.blog-post-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .post-heading {
