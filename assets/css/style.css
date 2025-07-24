@@ -230,9 +230,9 @@ nav {
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(7px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 nav ul {
@@ -406,9 +406,9 @@ nav li {
 .tech-tag {
   display: inline-block;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 0.3em 0.8em;
-  border-radius: 16px;
+  border-radius: 12px;
   font-family: "Fira Code", "Roboto Mono", monospace;
   font-size: 0.9rem;
   color: var(--light-gray);
@@ -518,7 +518,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -533,7 +533,7 @@ nav li {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
   padding: clamp(1rem, 4vw, 1.5rem);
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -622,7 +622,7 @@ nav li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem
+  /* padding: 2rem; */
 }
 
 .publications h2 {
@@ -631,7 +631,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -648,18 +648,18 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  max-height: 60vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
 .publication-item {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -770,7 +770,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -838,7 +838,7 @@ nav li {
   width: 100%;
   max-width: 1000px;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -870,7 +870,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -887,18 +887,18 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  max-height: 60vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
 .project-card {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -950,7 +950,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -967,18 +967,18 @@ nav li {
   flex-direction: column;
   gap: 1.5rem; 
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  max-height: 60vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
 .presentation-card {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1031,7 +1031,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1052,7 +1052,7 @@ nav li {
   margin-bottom: 4rem;
   padding: 2rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1083,7 +1083,7 @@ nav li {
   flex-direction: column;
   padding: 1.5rem;
   gap: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1104,7 +1104,7 @@ nav li {
   padding: 1.5rem;
   max-height: 70vh;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1113,18 +1113,12 @@ nav li {
 }
 
 .blog-post-card {
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0rem;
 }
 
 .blog-section-wrapper {
   width: 100%;
   max-width: 1100px;  
-  padding-top: 2.5rem; 
 }
 
 .blog-post-list::-webkit-scrollbar {
@@ -1136,14 +1130,14 @@ nav li {
 }
 
 .blog-post-list::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 
 .blog-post-list::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .post-heading {
@@ -1327,7 +1321,7 @@ nav li {
   font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--white);
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
@@ -1339,7 +1333,7 @@ nav li {
   width: 100%;
   max-width: 1200px;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
