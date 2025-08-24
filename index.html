@@ -81,11 +81,840 @@
 
   <body>
     <div id="starfield"></div>
-
     <main id="main-content"></main>
 
+    <!-- HOME SECTION -->
+    <section class="_home" id="home-section">
+      <!-- 
+        Navbar 
+        -->
+      <!-- NAV BAR - IMPROVED HTML -->
+      <nav>
+        <ul>
+          <li><a href="#home-section" class="nav-link">Home</a></li>
+          <li>
+            <a href="#research-interests-section" class="nav-link"
+              >Research Interests</a
+            >
+          </li>
+          <li>
+            <a href="#publications-section" class="nav-link">Publications</a>
+          </li>
+          <li><a href="#cv-section" class="nav-link">CV</a></li>
+          <li>
+            <a href="#ongoing-projects-section" class="nav-link"
+              >Ongoing Projects</a
+            >
+          </li>
+          <li>
+            <a href="#conference-presentations-section" class="nav-link"
+              >Conference Presentations</a
+            >
+          </li>
+          <li><a href="#blog-section" class="nav-link">Blog</a></li>
+          <li><a href="#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="home">
+        <div class="home-grid">
+          <div class="profile-image-container">
+            <div class="profile-image-wrapper">
+              <img
+                src="./assets/images/Profile-photo/Shubhit_Sardana_Image.webp"
+                alt="Shubhit Sardana smiling"
+              />
+            </div>
+          </div>
+
+          <div class="home-content">
+            <h1>
+              <span class="waving-hand">👋</span>
+              Hi there! I'm Shubhit.
+            </h1>
+            <p>
+              I'm a final year Integrated Bachelor-Master student at IISER Bhopal
+              and an aspiring astrophysicist, captivated by the universe's greatest
+              mysteries—from black holes and pulsars to the atmospheres of distant
+              exoplanets.
+            </p>
+            <p>
+              My journey at IISER has allowed me to dive deep into these passions,
+              especially through research on PTA exoplanets and collaborations with
+              incredible mentors. For me, astronomy is more than a field of study;
+              it's a lifelong quest to help uncover the cosmos's secrets.
+            </p>
+            <p class="tech-tag">I use Arch, BTW</p>
+            <div class="social-links">
+              <!-- Email -->
+              <a
+                href="mailto:shubhit21@iiserb.ac.in"
+                aria-label="Send an Email"
+                title="Email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <!-- GitHub -->
+              <a
+                href="https://github.com/ShubhitSardana"
+                target="_blank"
+                aria-label="GitHub Profile"
+                title="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <!-- NASA/ADS -->
+              <a
+                href="https://ui.adsabs.harvard.edu/public-libraries/RczJUmIqShmr6k0ot1XIow"
+                target="_blank"
+                aria-label="NASA ADS Profile"
+                title="NASA/ADS"
+              >
+                <i class="fa-solid fa-star"></i>
+              </a>
+              <!-- Google Scholar -->
+              <a
+                href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl=en"
+                target="_blank"
+                aria-label="Google Scholar Profile"
+                title="Google Scholar"
+              >
+                <i class="fa-brands fa-google-scholar"></i>
+              </a>
+              <!-- ORCID -->
+              <a
+                href="https://orcid.org/0009-0007-2913-7704"
+                target="_blank"
+                aria-label="ORCID Profile"
+                title="ORCID"
+              >
+                <i class="fa-brands fa-orcid"></i>
+              </a>
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/shubhitsardana/"
+                target="_blank"
+                aria-label="LinkedIn Profile"
+                title="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <!-- Twitter / X (No link provided, so it remains #) -->
+              <a
+                href="https://x.com/ShubhitSardana"
+                target="_blank"
+                aria-label="Twitter Profile"
+                title="Twitter"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS -->
+    <hr class="thick-line">
+    <section class="research" id="research-interests-section">
+      <div>
+        <h2>Research Interests 
+          <hr class="thin-line">
+        </h2>
+      </div>
+      <div class="research-grid">
+        <!-- Card 1: Gravitational Waves -->
+        <div class="research-card">
+          <video class="hover-video" muted playsinline>
+            <source src="assets/videos/Grav-waves.mp4" type="video/mp4" />
+          </video>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Gravitational Waves</h3>
+            <p>Ripples in spacetime from massive cosmic events.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Pulsar Timing Arrays -->
+        <div class="research-card">
+          <video class="hover-video" muted playsinline>
+            <source src="assets/videos/PTAs.mp4" type="video/mp4" />
+          </video>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Pulsar Timing Arrays</h3>
+            <p>Detecting low-freq waves using millisecond pulsars.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Exoplanets -->
+        <div class="research-card">
+          <video class="hover-video" muted playsinline>
+            <source src="assets/videos/Exoplanet.mp4" type="video/mp4" />
+          </video>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Exoplanets</h3>
+            <p>Worlds beyond our Sun orbiting distant stars.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Cosmology -->
+        <div class="research-card">
+          <video class="hover-video" muted playsinline>
+            <source src="assets/videos/cosmology.mp4" type="video/mp4" />
+          </video>
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Cosmology</h3>
+            <p>Understanding the origin, structure, and fate of the Universe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS SECTION -->
+    <hr class="thick-line" />
+    <section class="publications" id="publications-section">
+      <div class="heading">
+        <h2>Recent Publications
+          <hr class="thin-line">
+        </h2>
+      </div>
+      <ul class="publication-list">
+        <!-- Publication 1 -->
+        <li class="publication-item">
+          <h4>Ensemble noise properties of the European Pulsar Timing Array</h4>
+          <div class="publication-meta">
+            <time datetime="2025-02-03">February 3, 2025</time>
+            <a
+              href="https://academic.oup.com/mnras/article/537/4/3470/7997699?login=true"
+              target="_blank"
+              class="cv-button"
+            >
+              View on MNRAS <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </li>
+
+        <!-- Publication 2 -->
+        <li class="publication-item">
+          <h4>
+            Fewer supermassive binary black holes in pulsar timing array
+            observations
+          </h4>
+          <div class="publication-meta">
+            <time datetime="2024-11-07">November 7, 2024</time>
+            <a
+              href="https://arxiv.org/pdf/2409.03627"
+              target="_blank"
+              class="cv-button"
+            >
+              Read on arXiv <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CV SECTION -->
+    <hr class="thick-line" />
+    <section class="cv" id="cv-section">
+      <header>
+        <h2>Curriculum Vitae
+          <hr class="thin-line">
+        </h2>
+      </header>
+      <div class="cv-container">
+        <div class="cv-actions">
+          <a 
+            href="./assets/pdf/Shubhit_Sardana_CV.pdf" 
+            target="_blank" 
+            class="cv-button"
+          >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            View Fullscreen
+          </a>
+          <a 
+            href="./assets/pdf/Shubhit_Sardana_CV.pdf" 
+            download="Shubhit-Sardana-CV.pdf" 
+            class="cv-button"
+          >
+            <i class="fa-solid fa-download"></i>
+            Download PDF
+          </a>
+        </div>
+        <div class="cv-embed-container">
+          <iframe
+            src="/assets/sections/cv/cv_content.html"
+            title="Embedded preview of Shubhit Sardana's CV"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONGOING PROJECTS -->
+    <hr class="thick-line" />
+    <section class="ongoing-projects" id="ongoing-projects-section">
+      <div>
+        <h2>Ongoing Projects
+          <hr class="thin-line">
+        </h2>
+      </div>
+
+      <ul class="project-list">
+        <!-- Project 1 -->
+        <li class="project-card">
+          <time class="project-date">June 15, 2025</time>
+          <h4 class="project-title">
+            Helipspheric Density Mapping Using IPS for correcting DM excess in
+            Pulsar
+          </h4>
+          <p class="project-description">
+            The Ooty Radio Telescope (ORT) regularly observes interplanetary
+            scintillation (IPS) of compact radio sources, enabling measurements of
+            plasma density fluctuations in the inner heliosphere—the region between
+            the Earth and the Sun. Pulsars located near the ecliptic plane exhibit
+            annual variations in their dispersion measure (DM) due to excess
+            electron density along the line of sight caused by the heliosphere. My
+            thesis focuses on correlating these IPS‑based heliospheric density
+            measurements with DM variations observed in the open‑access IPTA DR2
+            pulsar timing data set. The goal is to improve our understanding of
+            heliospheric contributions to pulsar timing noise, which is crucial for
+            enhancing the sensitivity of Pulsar Timing Arrays (PTAs) in the search
+            for nanohertz‑frequency gravitational waves.
+          </p>
+        </li>
+
+        <!-- Project 2 -->
+        <li class="project-card">
+          <time class="project-date">May 29, 2025</time>
+          <h4 class="project-title">
+            Resolving the Hubble Tension using Pulsar Timing
+          </h4>
+          <p class="project-description">
+            This project explores measuring the Hubble constant using pulsar timing
+            data, independent of traditional cosmological probes. By modeling the
+            effect of cosmic expansion on pulsar time-of-arrival (TOA) measurements,
+            I simulate the Hubble-induced delay and extract its signature from
+            residuals using quadratic fitting. This offers an alternative pathway to
+            address the Hubble tension.
+          </p>
+        </li>
+
+        <!-- Project 3 -->
+        <!-- <li class="project-card">
+          <time class="project-date" datetime="2025-03-06">March 6, 2025</time>
+          <h4 class="project-title">Solar Wind Gaussian Process (SWGP) Modeling</h4>
+          <p class="project-description">
+            I am working on the Gaussian Process modelling of solar wind effects in
+            pulsar timing arrays (PTAs). This involves analyzing the influence of
+            solar wind plasma on pulsar timing data and separating its effects from
+            other noise sources. My research focuses on understanding correlations
+            between solar wind parameters and their impact on pulsar timing
+            precision.
+          </p>
+        </li> -->
+      </ul>
+    </section>
+
+    <!-- CONFERENCE PRESENTATIONS -->
+    <hr class="thick-line" />
+    <section class="conference-presentations" id="conference-presentations-section">
+      <div>
+        <h2>Conference Presentations
+          <hr class="thin-line">
+        </h2>
+      </div>
+
+      <ul class="presentation-list">
+        <!-- Presentation 1 -->
+        <li class="presentation-card">
+          <time class="presentation-date" datetime="2025-03-05">March 5, 2025</time>
+          <h4 class="presentation-title">InPTA bi-weekly meeting</h4>
+          <p class="presentation-description">
+            Presented on the importance of including solar wind effects in pulsar
+            timing. I showed results from an analysis script I built, highlighting
+            the impact of plasma and electron density on the dispersion measure of
+            signals from pulsars near the solar disk.
+          </p>
+        </li>
+
+        <!-- Presentation 2 -->
+        <li class="presentation-card">
+          <time class="presentation-date" datetime="2024-10-17"
+            >October 17, 2024</time
+          >
+          <h4 class="presentation-title">Gravitational-wave Analysis Telecon</h4>
+          <p class="presentation-description">
+            I gave a presentation in the GWA's bi-weekly Telecon, focusing on the
+            key findings from work done under the supervision of Dr. Boris
+            Goncharov, which has also been published as two academic research
+            papers.
+          </p>
+        </li>
+
+        <!-- Presentation 3 -->
+        <li class="presentation-card">
+          <time class="presentation-date" datetime="2024-07-29">July 29, 2024</time>
+          <h4 class="presentation-title">EPTA-wide Telecon</h4>
+          <p class="presentation-description">
+            In the EPTA's bi-weekly meeting, I presented on the Ensemble noise
+            properties of Pulsars, a research work done under the supervision of Dr.
+            Boris Goncharov that was also published as a research paper.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!--                               BLOG SECTION                                -->
+    <!-- ========================================================================= -->
+    <hr class="thick-line" />
+    <section class="blog" id="blog-section">
+      <div>
+        <h2>
+          Blog & Updates
+          <hr class="thin-line" />
+        </h2>
+      </div>
+
+      <div class="blog-intro-card">
+        <p>
+          This is where I share what I'm working on, thinking about, or just find
+          fascinating. You'll find a mix of astrophysics, Linux tweaks, coding
+          experiments, and the occasional rant about how weird (and wonderful) the
+          universe is.
+        </p>
+        <p>
+          I'm also a bit of a Linux distro-hopper. I've tried most of them, broken
+          quite a few, and learned a lot. Expect posts on setups, configs, and
+          occasional terminal wizardry.
+        </p>
+        <p class="blog-tagline">
+          I post often. The sky's not the limit — it's the playground.
+        </p>
+      </div>
+
+      <div class="blog-main-div">
+        <div class="blog-section-wrapper">
+          <ul class="blog-post-list">
+            <!-- ================================================================== -->
+            <!-- Post 1: Ujjain Visit -->
+            <li class="blog-post-card">
+              <div class="post-heading">
+                <h3 class="post-title">Mahakaleshwar Jyotirling Temple - Ujjain</h3>
+                <time class="post-date">27 July 2025</time>
+              </div>
+              <div class="slideshow-container">
+                <div class="slides-wrapper">
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img1.webp"
+                      alt="Devotees at the Kumbh Mela"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img2.webp"
+                      alt="Sadhus at Sangam"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img3.webp"
+                      alt="Evening Aarti ceremony"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img4.webp"
+                      alt="Aerial view of the Kumbh Nagri"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img5.webp"
+                      alt="Holy dip in the Ganges"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img6.webp"
+                      alt="Crowds at the Kumbh Mela"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img7.webp"
+                      alt="Pilgrims at Prayagraj"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img8.webp"
+                      alt="Pilgrims at Prayagraj"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img9.webp"
+                      alt="Pilgrims at Prayagraj"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/ujjain/img10.webp"
+                      alt="Pilgrims at Prayagraj"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <button class="prev-btn" aria-label="Previous image">❮</button>
+                <button class="next-btn" aria-label="Next image">❯</button>
+                <div class="dots-container"></div>
+              </div>
+            </li>
+            <!-- Post -->
+            <li class="blog-post-card">
+              <div class="post-heading">
+                <h3 class="post-title">
+                  Cosmic Consciousness: Are we all Trippin?
+                </h3>
+                <time class="post-date">July 25, 2025</time>
+              </div>
+              <div>
+                <div class="post-text-content">
+                  <p>
+                    Is your reality actually real? What if the feeling of being a
+                    separate "you" is just an illusion? A powerful psychedelic known
+                    as DMT seems to trigger an experience of cosmic oneness that was
+                    first mapped out by ancient yogis. This journey beyond the self,
+                    they claim, reveals the fundamental truth of existence. Could a
+                    chemical compound be the key to unlocking ancient spiritual
+                    wisdom? We'll dive into the phenomenon of "ego death" and
+                    compare it to the Vedantic goal of Self-realization, where the
+                    lines between the scientific and the sacred begin to blur. Join
+                    us as we explore how a single molecule and a timeless philosophy
+                    might be pointing to the very same, ultimate truth.
+                  </p>
+                  <a
+                    href="/assets/sections/complete_blogs/trippin.html"
+                    target="_blank"
+                    class="publication-link"
+                  >
+                    Read More
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <!-- ================================================================== -->
+            <!-- Post -->
+            <li class="blog-post-card">
+              <div class="post-heading">
+                <h3 class="post-title">Is Dark Energy a Cosmic Illusion?</h3>
+                <time class="post-date">Mar 7, 2025</time>
+              </div>
+              <div class="post-layout-grid">
+                <div class="post-text-content">
+                  <p>
+                    New analysis of the Pantheon+ supernova dataset suggests the
+                    "timescape cosmology" model may explain cosmic acceleration
+                    better than ΛCDM. Instead of dark energy, timescape attributes
+                    the effect to "backreaction" from the universe's inhomogeneous
+                    structure. This challenges the standard paradigm and may reshape
+                    our understanding of cosmic expansion.
+                  </p>
+                  <a
+                    href="https://academic.oup.com/mnrasl/article/537/1/L55/79976647?login=true"
+                    target="_blank"
+                    class="publication-link"
+                  >
+                    Read The Paper
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+                <div class="post-media-content">
+                  <figure>
+                    <img
+                      src="./assets/images/Blog-research/timescape.webp"
+                      alt="Graph of Timescape Model Evidence"
+                      loading="lazy"
+                    />
+                    <figcaption>
+                      <strong>Y-axis:</strong> Strength of Evidence for Timescape
+                      Model.<br />
+                      <strong>X-axis:</strong> How much of the nearby universe is
+                      included.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </li>
+            <!-- Post 2: Pragraj Visit -->
+            <li class="blog-post-card">
+              <div class="post-heading">
+                <h3 class="post-title">Prayagraj - The Kumbh Nagri</h3>
+                <time class="post-date">Jan 26 - Jan 28, 2025</time>
+              </div>
+              <div class="slideshow-container">
+                <div class="slides-wrapper">
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img1.webp"
+                      alt="Devotees at the Kumbh Mela"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img2.webp"
+                      alt="Sadhus at Sangam"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img3.webp"
+                      alt="Evening Aarti ceremony"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img4.webp"
+                      alt="Aerial view of the Kumbh Nagri"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img5.webp"
+                      alt="Holy dip in the Ganges"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img6.webp"
+                      alt="Crowds at the Kumbh Mela"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img7.webp"
+                      alt="Pilgrims at Prayagraj"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img8.webp"
+                      alt="Tents for pilgrims at night"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/mahakumbh/img9.webp"
+                      alt="A sadhu meditating"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <button class="prev-btn" aria-label="Previous image">❮</button>
+                <button class="next-btn" aria-label="Next image">❯</button>
+                <div class="dots-container"></div>
+              </div>
+            </li>
+
+            <!-- Post 3: Germany Visit -->
+            <li class="blog-post-card">
+              <div class="post-heading">
+                <h3 class="post-title">
+                  Internship at Max Planck Institute, Germany
+                </h3>
+                <time class="post-date">July – August, 2024</time>
+              </div>
+              <div class="slideshow-container">
+                <div class="slides-wrapper">
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img1.webp"
+                      alt="View of Hannover, Germany"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img2.webp"
+                      alt="Max Planck Institute for Gravitational Physics"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img3.webp"
+                      alt="German architecture"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img4.webp"
+                      alt="Inside the AEI facility"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img5.webp"
+                      alt="Exploring the city of Hannover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img6.webp"
+                      alt="A German park or garden"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img7.webp"
+                      alt="Colleagues at the internship"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img8.webp"
+                      alt="German street scene"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img9.webp"
+                      alt="Local German cuisine"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="./assets/images/germany/img10.webp"
+                      alt="Farewell from Germany"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <button class="prev-btn" aria-label="Previous image">❮</button>
+                <button class="next-btn" aria-label="Next image">❯</button>
+                <div class="dots-container"></div>
+              </div>
+            </li>
+            <!-- Add more visit <li> items here and this list will scroll -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <hr class="thick-line" />
+    <section class="contact" id="contact-section">
+      <div>
+        <h2>Get in Touch
+          <hr class="thin-line">
+        </h2>
+      </div>
+      <div class="contact-container-card">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-links-list">
+              <a href="mailto:shubhit21@iiserb.ac.in" class="contact-link-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>shubhit21@iiserb.ac.in</span>
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl=en"
+                target="_blank"
+                class="contact-link-item"
+              >
+                <i class="fa-brands fa-google-scholar"></i>
+                <span>Google Scholar</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shubhitsardana/"
+                target="_blank"
+                class="contact-link-item"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/ShubhitSardana"
+                target="_blank"
+                class="contact-link-item"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://ui.adsabs.harvard.edu/public-libraries/RczJUmIqShmr6k0ot1XIow"
+                target="_blank"
+                class="contact-link-item"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>ADS Library</span>
+              </a>
+              <a
+                href="https://orcid.org/0009-0007-2913-7704"
+                target="_blank"
+                class="contact-link-item"
+              >
+                <i class="fa-brands fa-orcid"></i>
+                <span>ORCID</span>
+              </a>
+            </div>
+            <div class="address">
+              <p>
+                <strong>Address:</strong><br />
+                207, Academic Building 1 (Gravity), Indian Institute of Science
+                Education and Research (IISER) Bhopal, Madhya Pradesh, India -
+                462066
+              </p>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.8253874855945!2d77.27293267623581!3d23.28579357899024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c60d9f8872aef%3A0x9b99241b1431032!2sIndian%20Institute%20of%20Science%20Education%20and%20Research%20Bhopal%20(IISERB)!5e0!3m2!1sen!2sin!4v1733697742131!5m2!1sen!2sin"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Location of IISER Bhopal on Google Maps"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  </body>
     <!--Loader Script-->
-    <script src="./assets/js/loader.js"></script>
+    <!-- <script src="./assets/js/loader.js"></script> -->
 
     <!--ionicon link -->
     <script
@@ -130,5 +959,4 @@
         // Create stars when page loads
         document.addEventListener('DOMContentLoaded', createStarfield);
     </script>
-  </body>
 </html>
