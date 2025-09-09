@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     lineColor: "rgba(255, 255, 255, 0.0)",
     parallaxFactor: 0.1,
-    maxShootingStars: 200
+    maxShootingStars: 10,
+    targetFPS: 30
   };
 
   // --- EVENT LISTENERS ---
@@ -86,9 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
       this.radius = radius;
       // Enhanced twinkling properties
       this.opacity = Math.random() * 0.6 + 0.2;
-      this.twinkleSpeed = (Math.random() - 0.5) * 0.04;
+      this.twinkleSpeed = (Math.random() - 0.5) * 0.02;
       this.pulse = Math.random() * Math.PI * 2;
-      this.pulseSpeed = 0.02 + Math.random() * 0.02;
+      this.pulseSpeed = 0.02 + Math.random() * 0.01;
       // NEW: Random color for each star
       this.color = config.starColors[Math.floor(Math.random() * config.starColors.length)];
     }
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // NEW: Add glow effect
       ctx.shadowColor = `rgba(${this.color}, ${finalOpacity * 0.5})`;
-      ctx.shadowBlur = this.radius * 4;
+      ctx.shadowBlur = this.radius * 2;
       
       ctx.beginPath();
       ctx.arc(this.x, y, this.radius, 0, Math.PI * 2, false);
