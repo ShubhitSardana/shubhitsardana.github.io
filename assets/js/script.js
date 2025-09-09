@@ -1,3 +1,17 @@
+// This script now handles all page-level functionality directly.
+document.addEventListener("DOMContentLoaded", () => {
+  // Now that all content is in a single file, we can
+  // directly initialize all the functions.
+  initializeSlideshows();
+  initializeVideoHovers();
+  initializeActiveNav();
+  
+  console.log(
+    "Page content loaded and scripts initialized."
+  );
+});
+
+// --- SLIDESHOW SCRIPT ---
 function initializeSlideshows() {
   document.querySelectorAll(".slideshow-container").forEach((container) => {
     const slidesWrapper = container.querySelector(".slides-wrapper");
@@ -87,40 +101,33 @@ function initializeVideoHovers() {
 
       card.addEventListener("mouseleave", () => {
         video.pause();
-        // ✅ ADDED: This line resets the video to the very beginning.
+        // This line resets the video to the very beginning.
         video.currentTime = 0; 
       });
     }
   });
 }
 
-// Call the function when the page loads
-document.addEventListener("DOMContentLoaded", initializeVideoHovers);
-
-
 // --- NAVBAR ACTIVE STATE ON SCROLL ---
 function initializeActiveNav() {
-  const sections = document.querySelectorAll("section[id]"); // Assumes your sections have IDs
+  const sections = document.querySelectorAll("section[id]"); 
   const navLinks = document.querySelectorAll(".nav-link");
 
   if (sections.length === 0 || navLinks.length === 0) return;
 
   const observerOptions = {
-    root: null, // observes intersections in the viewport
-    rootMargin: "-50% 0px -50% 0px", // triggers when the middle of the section is in the middle of the viewport
+    root: null, 
+    rootMargin: "-50% 0px -50% 0px", 
     threshold: 0,
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      // Find the link that corresponds to the intersecting section
       const id = entry.target.getAttribute("id");
       const correspondingLink = document.querySelector(`.nav-link[href="#${id}"]`);
 
       if (entry.isIntersecting) {
-        // Remove 'active' from all links first
         navLinks.forEach((link) => link.classList.remove("active"));
-        // Then add 'active' to the correct one
         if (correspondingLink) {
           correspondingLink.classList.add("active");
         }
@@ -128,11 +135,7 @@ function initializeActiveNav() {
     });
   }, observerOptions);
 
-  // Observe each section
   sections.forEach((section) => {
     observer.observe(section);
   });
 }
-
-// Run this function when the DOM is ready
-document.addEventListener("DOMContentLoaded", initializeActiveNav);

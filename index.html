@@ -80,7 +80,9 @@
   </head>
 
   <body>
-    <div id="starfield"></div>
+    <!-- <canvas id="particleCanvas"></canvas> -->
+     <canvas id="starfieldCanvas"></canvas>
+    <!-- <div id="starfield"></div> -->
     <main id="main-content"></main>
 
     <!-- HOME SECTION -->
@@ -907,16 +909,11 @@
       </div>
     </section>
 
-
-
-
-
-
   </body>
     <!--Loader Script-->
-    <!-- <script src="./assets/js/loader.js"></script> -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/interactive-bg.js"></script>
 
-    <!--ionicon link -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -926,37 +923,5 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-        <script>
-        function createStarfield() {
-            const starfield = document.getElementById('starfield');
-            const numStars = 200;
-
-            for (let i = 0; i < numStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                
-                // Random position
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.top = Math.random() * 100 + 'vh';
-                
-                // Random size (1-3px)
-                const size = Math.random() * 2 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                
-                // Random animation duration (2-4s)
-                const duration = Math.random() * 2 + 2;
-                star.style.animationDuration = duration + 's';
-                
-                // Random brightness
-                const opacity = Math.random() * 0.8 + 0.2;
-                star.style.opacity = opacity;
-                
-                starfield.appendChild(star);
-            }
-        }
-
-        // Create stars when page loads
-        document.addEventListener('DOMContentLoaded', createStarfield);
-    </script>
+</script>
 </html>
