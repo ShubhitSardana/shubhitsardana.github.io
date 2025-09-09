@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let distance = Math.hypot(stars[i].x - stars[j].x, starI_Y - starJ_Y);
 
         if (distance < config.lineDistance) {
-          const opacity = (1 - distance / config.lineDistance) * 0.15;
+          const opacity = (1 - distance / config.lineDistance) * 0.3;
           ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
           ctx.lineWidth = 0.3;
           ctx.beginPath();
