@@ -87,9 +87,14 @@ html {
   border-color: #999;
 }
 
+.My-ADS-Library {
+  color: var(--color-text);
+  text-decoration: none;
+  text-decoration: underline;
+}
+
 .content {
   padding: 40px;
-  /* background-image: url("./images/bg.jpg"); */
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
