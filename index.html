@@ -1156,22 +1156,43 @@
         animateStars();
         window.addEventListener("resize", initStars);
 
-        /* --- 5. SIDEREAL CLOCK --- */
-        function updateSiderealTime() {
-          const now = new Date();
-          const offset = 1.0027379; 
-          const base = now.getTime();
-          const siderealMs = base * offset; 
-          const siderealDate = new Date(siderealMs);
-          
-          const hours = String(siderealDate.getUTCHours()).padStart(2, '0');
-          const mins = String(siderealDate.getUTCMinutes()).padStart(2, '0');
-          const secs = String(siderealDate.getUTCSeconds()).padStart(2, '0');
-          
-          document.getElementById('siderealClock').textContent = `LST: ${hours}:${mins}:${secs}`;
+        /* --- SIDEREAL CLOCK --- */
+        function startSiderealClock() {
+            // IISER Bhopal is approx 77.2755 E
+            const OBSERVER_LONGITUDE = 77.2755; 
+
+            function update() {
+                const now = new Date();
+                const jd = (now.getTime() / 86400000) + 2440587.5;
+                const d = jd - 2451545.0;
+
+                let gmst = 18.697374558 + 24.06570982441908 * d;
+                gmst = gmst % 24;
+                if (gmst < 0) gmst += 24;
+
+                const offset = OBSERVER_LONGITUDE / 15.0;
+                let lst = gmst + offset;
+
+                // Normalize to 0-24h
+                lst = lst % 24;
+                if (lst < 0) lst += 24;
+
+                const h = Math.floor(lst);
+                const m = Math.floor((lst - h) * 60);
+                const s = Math.floor(((lst - h) * 60 - m) * 60);
+
+                const pad = (n) => String(n).padStart(2, '0');
+                const display = document.getElementById('siderealClock');
+                if (display) {
+                    display.textContent = `LST: ${pad(h)}:${pad(m)}:${pad(s)}`;
+                }
+            }
+            setInterval(update, 1000);
+            update();
         }
-        setInterval(updateSiderealTime, 1000);
-        updateSiderealTime();
+
+        // Start the clock
+        startSiderealClock();
 
         /* --- 6. TERMINAL LOGIC --- */
         const termToggle = document.getElementById('terminalToggle');
