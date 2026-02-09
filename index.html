@@ -1,1428 +1,645 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Shubhit Sardana | Astrophysics and Cosmology Enthusiast</title>
-    <meta
-      name="description"
-      content="Personal website of Shubhit Sardana – astrophysics and cosmology enthusiast. Learn about research in pulsar timing arrays, gravitational waves, and more."
-    />
-    <meta name="author" content="Shubhit Sardana" />
-    <meta
-      name="keywords"
-      content="Shubhit Sardana, Astrophysics, Cosmology, Gravitational Waves, Pulsar Timing Arrays, Physics, Astronomy, Research"
-    />
-    <meta property="og:site_name" 
-      content="Shubhit Sardana"
-    />
-    <meta
-      property="og:title"
-      content="Shubhit Sardana | Astrophysics and Cosmology Enthusiast"
-    />
-    <meta
-      property="og:description"
-      content="Explore research in gravitational waves, pulsar timing arrays, and cosmology. Projects, CV, and contact info."
-    />
-    <meta property="og:url" content="https://shubhitsardana.github.io/" />
-    <meta
-      property="og:image"
-      content="https://shubhitsardana.github.io/assets/images/Profile-photo/Shubhit_Sardana_Image.jpg"
-    />
-    <meta property="og:type" content="website" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubhit Sardana | Observational Cosmology & Gravitational Waves</title>
+  <meta name="description"
+    content="Personal website of Shubhit Sardana – researcher in gravitational waves, pulsar timing arrays, and cosmology." />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Shubhit Sardana | Astrophysics and Cosmology Enthusiast"
-    />
-    <meta
-      name="twitter:description"
-      content="Explore research in gravitational waves, pulsar timing arrays, and cosmology. Projects, CV, and contact info."
-    />
-    <meta
-      name="twitter:image"
-      content="https://shubhitsardana.github.io/assets/images/Profile-photo/Shubhit_Sardana_Image.jpg"
-    />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/x-icon" />
 
-    <!-- Google Site Verification -->
-    <meta
-      name="google-site-verification"
-      content="PvUSCQLIhzCLU9iyH0h1uNVJEED7XfSd-H4br-bHAEc"
-    />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
 
-    <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo.svg"
-      type="image/x-icon"
-    />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-    <!-- Fonts and Icons -->    
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
 
-    <style>
-      /* =========================================
-         CSS VARIABLES & THEME SETUP
-         ========================================= */
-      :root {
-        /* Default (Dark Mode) - Space Theme */
-        --bg-color: #050505;
-        --text-main: #e0e0e0;
-        --text-muted: #a0a0a0;
-        --accent-color: #64ffda;
-        --accent-glow: rgba(100, 255, 218, 0.25);
-        --accent-glow-strong: rgba(100, 255, 218, 0.6);
-        
-        /* Ultra Glass Settings */
-        --glass-bg: rgba(20, 25, 30, 0.4);
-        --glass-border: rgba(100, 255, 218, 0.15);
-        --glass-highlight: rgba(255, 255, 255, 0.05);
-        --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-        --glass-blur: 20px;
-        
-        --nav-bg: rgba(5, 5, 10, 0.6);
-        --font-main: 'Poppins', sans-serif;
-        --font-heading: 'Space Grotesk', sans-serif;
-        --font-mono: 'Space Mono', monospace;
-        
-        --terminal-bg: rgba(10, 10, 15, 0.95);
-        --terminal-text: #64ffda;
-      }
+<body>
+  <!-- Gravitational Wave Canvas Animation -->
+  <canvas id="gw-canvas"></canvas>
 
-      [data-theme="light"] {
-        /* Light Mode - Day Sky Theme */
-        --bg-color: #f0f4f8;
-        --text-main: #1a202c;
-        --text-muted: #4a5568;
-        --accent-color: #2b6cb0;
-        --accent-glow: rgba(43, 108, 176, 0.2);
-        --accent-glow-strong: rgba(43, 108, 176, 0.5);
+  <!-- Animated Space Background -->
+  <div class="bg-stars">
+    <div class="stars-layer"></div>
+    <div class="stars-layer stars-layer-2"></div>
+  </div>
 
-        --glass-bg: rgba(255, 255, 255, 0.65);
-        --glass-border: rgba(255, 255, 255, 0.8);
-        --glass-highlight: rgba(255, 255, 255, 0.4);
-        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-        --glass-blur: 16px;
+  <div class="bg-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
 
-        --nav-bg: rgba(255, 255, 255, 0.8);
-        --terminal-bg: rgba(240, 244, 248, 0.95);
-        --terminal-text: #2b6cb0;
-      }
+  <!-- Gravitational Wave Ripples -->
+  <div class="gw-ripples">
+    <div class="gw-ripple"></div>
+    <div class="gw-ripple"></div>
+    <div class="gw-ripple"></div>
+    <div class="gw-ripple"></div>
+  </div>
 
-      /* =========================================
-         RESET & BASE STYLES
-         ========================================= */
-      * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
-      html { scroll-behavior: smooth; }
-      
-      body {
-        font-family: var(--font-main);
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        line-height: 1.7;
-        min-height: 100vh;
-        overflow-x: hidden;
-        transition: background-color 0.3s, color 0.3s;
-      }
+  <!-- Photo Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+      <img src="" alt="" class="lightbox-image" id="lightboxImage">
+      <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+      <span class="lightbox-counter" id="lightboxCounter">1 / 5</span>
+    </div>
+  </div>
 
-      a, button, input { cursor: none; }
-      a { text-decoration: none; color: inherit; transition: color 0.2s; }
-      ul { list-style: none; }
-      img { max-width: 100%; display: block; }
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="nav-logo">S.Sardana</a>
 
-      /* =========================================
-         GLOBAL SCI-FI OVERLAYS
-         ========================================= */
-      /* Scanlines */
-      .scanlines {
-        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
-        background-size: 100% 4px;
-        z-index: 999; pointer-events: none; opacity: 0.3;
-      }
-      /* Vignette */
-      .vignette {
-        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.4) 100%);
-        z-index: 998; pointer-events: none;
-      }
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+      <li><a href="#cv" class="nav-link">CV</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#blog" class="nav-link">Blog</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
 
-      /* =========================================
-         CUSTOM CURSOR
-         ========================================= */
-      .cursor-dot, .cursor-outline {
-        position: fixed; top: 0; left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%; z-index: 9999;
-        pointer-events: none;
-      }
-      .cursor-dot {
-        width: 6px; height: 6px;
-        background-color: var(--accent-color);
-        box-shadow: 0 0 10px var(--accent-color);
-      }
-      .cursor-outline {
-        width: 40px; height: 40px;
-        border: 1px solid var(--accent-color);
-        transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-        mix-blend-mode: difference;
-      }
-      body.hovering .cursor-outline {
-        width: 60px; height: 60px;
-        background-color: var(--accent-glow);
-        border-color: transparent;
-        mix-blend-mode: normal;
-      }
+    <div class="nav-right">
+      <div class="sidereal-clock" id="siderealClock">LST: 00:00:00</div>
+      <div class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </nav>
 
-      /* =========================================
-         BACKGROUNDS
-         ========================================= */
-      #canvas-container {
-        position: fixed; top: 0; left: 0;
-        width: 100vw; height: 100vh;
-        z-index: -1; pointer-events: none;
-      }
+  <!-- ==================== HERO ==================== -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <span class="hero-greeting">
+          <i class="fa-solid fa-satellite-dish"></i> Observing the Cosmos
+        </span>
+        <h1 class="hero-name">I'm <span class="gradient">Shubhit Sardana</span></h1>
+        <p class="hero-title">
+          <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+        </p>
+        <p class="hero-bio">
+          Unraveling the universe's greatest mysteries—from the cosmic symphony of
+          gravitational waves to the precision timing of pulsars. Final year BS-MS
+          student at IISER Bhopal, working at the frontier of observational cosmology.
+        </p>
 
-      body::before {
-        content: ""; position: fixed; top: 0; left: 0;
-        width: 100%; height: 100%; z-index: -2;
-        background: radial-gradient(circle at bottom left, #0b0b14 0%, #000000 100%);
-        transition: opacity 0.5s ease; pointer-events: none;
-      }
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+          </a>
+          <a href="#research" class="btn btn-glass">
+            <i class="fa-solid fa-telescope"></i> My Research
+          </a>
+        </div>
 
-      [data-theme="light"] body::before {
-        background: linear-gradient(135deg, #e0f7fa 0%, #e2e8f0 100%);
-      }
-      [data-theme="light"] #canvas-container { opacity: 0.3; }
+        <div class="social-links">
+          <a href="mailto:shubhit21@iiserb.ac.in" class="social-icon" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/ShubhitSardana" target="_blank" class="social-icon" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl=en" target="_blank" class="social-icon"
+            title="Google Scholar">
+            <i class="fa-brands fa-google-scholar"></i>
+          </a>
+          <a href="https://linkedin.com/in/shubhitsardana/" target="_blank" class="social-icon" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/RczJUmIqShmr6k0ot1XIow" target="_blank"
+            class="social-icon" title="ADS Library">
+            <i class="fa-solid fa-star"></i>
+          </a>
+        </div>
+      </div>
 
-      /* =========================================
-         NAVIGATION (Frosted Glass)
-         ========================================= */
-      nav {
-        position: fixed; top: 20px; left: 50%;
-        transform: translateX(-50%); z-index: 1000;
-        width: 95%; max-width: 1200px;
-        background: var(--nav-bg);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        border: 1px solid var(--glass-border);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        border-radius: 50px; padding: 0.8rem 1.5rem;
-        display: flex; justify-content: space-between; align-items: center;
-      }
+      <div class="hero-visual">
+        <div class="profile-container">
+          <!-- Pulsar Radio Beams -->
+          <div class="pulsar-beam"></div>
+          <div class="pulsar-beam pulsar-beam-2"></div>
 
-      .nav-left { display: flex; align-items: center; gap: 1rem; }
-      .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+          <!-- Orbital Rings -->
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
 
-      .nav-links { display: flex; gap: 1.5rem; }
+          <img src="./assets/images/Profile-photo/Shubhit_Sardana_Image.webp" alt="Shubhit Sardana"
+            class="profile-img" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-      .nav-link {
-        color: var(--text-main); font-weight: 500; font-size: 0.9rem;
-        position: relative; padding: 5px 0; cursor: pointer; white-space: nowrap;
-        text-transform: uppercase; letter-spacing: 0.05em;
-      }
-      .nav-link.active { color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
-      .nav-link::after {
-        content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
-        background: var(--accent-color); transition: width 0.3s ease;
-        box-shadow: 0 0 8px var(--accent-color);
-      }
-      .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-      /* Sidereal Clock */
-      .sidereal-clock {
-        font-family: var(--font-mono); font-size: 0.75rem;
-        color: var(--accent-color); 
-        background: rgba(0, 0, 0, 0.3);
-        padding: 4px 10px; border-radius: 4px; 
-        border: 1px solid var(--accent-color);
-        box-shadow: 0 0 5px var(--accent-glow);
-        display: none; white-space: nowrap;
-      }
-      /* Specific override for Light Mode Clock */
-      [data-theme="light"] .sidereal-clock {
-        background: rgba(255, 255, 255, 0.8);
-        border-color: var(--accent-color);
-        box-shadow: 0 0 10px rgba(43, 108, 176, 0.2);
-      }
-
-      @media(min-width: 900px) { .sidereal-clock { display: block; } }
-
-      .theme-toggle, .mobile-menu-btn, .terminal-toggle {
-        padding: 8px; border-radius: 50%;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--glass-border);
-        color: var(--accent-color); width: 36px; height: 36px;
-        display: flex; align-items: center; justify-content: center;
-        transition: all 0.3s; font-size: 0.9rem;
-      }
-      .theme-toggle:hover, .mobile-menu-btn:hover, .terminal-toggle:hover { 
-        background: var(--accent-glow); 
-        box-shadow: 0 0 15px var(--accent-glow);
-      }
-      .mobile-menu-btn { display: none; }
-
-      /* =========================================
-         TERMINAL OVERLAY
-         ========================================= */
-      #terminal-overlay {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
-        z-index: 2000; display: none;
-        align-items: center; justify-content: center;
-        opacity: 0; transition: opacity 0.3s ease;
-      }
-      #terminal-overlay.open { display: flex; opacity: 1; }
-      
-      .terminal-window {
-        width: 80%; max-width: 800px; height: 60vh;
-        background: var(--terminal-bg);
-        border: 1px solid var(--accent-color);
-        border-radius: 8px;
-        box-shadow: 0 0 30px rgba(100, 255, 218, 0.15);
-        display: flex; flex-direction: column;
-        font-family: var(--font-mono);
-        color: var(--terminal-text);
-        overflow: hidden; position: relative;
-      }
-      
-      .terminal-header {
-        background: rgba(100, 255, 218, 0.1);
-        padding: 10px 20px;
-        border-bottom: 1px solid rgba(100, 255, 218, 0.2);
-        display: flex; justify-content: space-between; align-items: center;
-        font-size: 0.9rem;
-      }
-      .terminal-close-btn { cursor: pointer; color: var(--accent-color); transition: color 0.2s; }
-      .terminal-close-btn:hover { color: #ff5f56; text-shadow: 0 0 8px red; }
-      
-      .terminal-body { flex: 1; padding: 20px; overflow-y: auto; font-size: 1rem; }
-      .output-line { margin-bottom: 8px; line-height: 1.5; }
-      .input-line { display: flex; align-items: center; gap: 10px; }
-      .prompt { color: var(--accent-color); font-weight: bold; text-shadow: 0 0 5px var(--accent-glow); }
-      
-      #terminal-input {
-        background: transparent; border: none; color: inherit;
-        font-family: inherit; font-size: inherit; flex: 1; outline: none;
-      }
-
-      /* =========================================
-         SECTIONS & ANIMATIONS
-         ========================================= */
-      section {
-        display: none; opacity: 0; min-height: 100vh;
-        padding: 140px 2rem 50px; max-width: 1200px; margin: 0 auto; 
-        transform: scale(0.9) translateZ(-100px); transform-origin: center center;
-        transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-
-      section.active-section {
-        display: block; opacity: 1; transform: scale(1) translateZ(0);
-        animation: arriveFromSpace 0.8s ease-out forwards;
-      }
-      
-      section.warping-out {
-        display: block; opacity: 0 !important;
-        transform: scale(1.5) translateZ(100px) !important;
-        transition: opacity 0.2s ease-in, transform 0.2s ease-in; 
-        pointer-events: none; 
-      }
-
-      #home.active-section { display: flex; align-items: center; justify-content: center; }
-      #home.warping-out { display: flex; }
-
-      @keyframes arriveFromSpace {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
-      }
-
-      /* =========================================
-         HERO
-         ========================================= */
-      .hero-container {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%;
-      }
-
-      /* Glitch Effect for Name */
-      .glitch-wrapper { position: relative; display: inline-block; }
-      h1 { 
-        font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); 
-        font-weight: 700; line-height: 1.1; margin-bottom: 1rem;
-        color: var(--text-main);
-        position: relative;
-      }
-      
-      h1:hover {
-        animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-        color: var(--accent-color);
-      }
-
-      @keyframes glitch-anim {
-        0% { transform: translate(0) }
-        20% { transform: translate(-2px, 2px) }
-        40% { transform: translate(-2px, -2px) }
-        60% { transform: translate(2px, 2px) }
-        80% { transform: translate(2px, -2px) }
-        100% { transform: translate(0) }
-      }
-      
-      .hero-greeting { 
-        font-family: 'Space Mono', monospace; color: var(--accent-color); 
-        margin-bottom: 1rem; display: block; 
-        text-shadow: 0 0 10px var(--accent-glow);
-      }
-
-      .typewriter-cursor {
-        display: inline-block; width: 8px; height: 1em; background-color: var(--accent-color);
-        animation: blink 1s infinite; vertical-align: middle;
-      }
-      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-      /* =========================================
-         GLASSY TECH TAG (Updated)
-         ========================================= */
-      .tech-tag {
-        font-family: 'Space Mono', monospace; font-size: 0.9rem;
-        padding: 8px 16px; border-radius: 8px;
-        margin-top: 2rem; display: inline-block;
-        
-        /* High-End Glass Effect */
-        background: rgba(100, 255, 218, 0.05);
-        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(100, 255, 218, 0.3);
-        box-shadow: 
-          0 0 15px rgba(100, 255, 218, 0.1), 
-          inset 0 0 20px rgba(100, 255, 218, 0.05);
-        color: var(--accent-color);
-        text-shadow: 0 0 5px var(--accent-glow);
-        position: relative; overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      /* Animated sheen for the tech tag */
-      .tech-tag::before {
-        content: '';
-        position: absolute; top: 0; left: -100%;
-        width: 100%; height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transform: skewX(-25deg);
-        animation: sheen 4s infinite;
-      }
-      
-      .tech-tag:hover {
-        box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
-        border-color: var(--accent-color);
-        transform: translateY(-2px);
-      }
-
-      @keyframes sheen {
-        0%, 80% { left: -100%; }
-        100% { left: 200%; }
-      }
-
-      .profile-img {
-        width: 300px; height: 300px; border-radius: 50%; object-fit: cover;
-        border: 2px solid var(--accent-color); 
-        box-shadow: 0 0 30px var(--accent-glow-strong), inset 0 0 20px var(--accent-glow);
-        position: relative; z-index: 2; animation: float 6s ease-in-out infinite;
-      }
-
-      .hero-image-wrapper { position: relative; display: flex; justify-content: center; }
-      .orbit-circle {
-        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-        border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; z-index: 1;
-      }
-      .orbit-1 { width: 340px; height: 340px; animation: spin 20s linear infinite; border-top-color: var(--accent-color); box-shadow: 0 0 10px rgba(100,255,218,0.1); }
-      .orbit-2 { width: 400px; height: 400px; animation: spin 30s linear infinite reverse; border-bottom-color: var(--accent-color); opacity: 0.6; }
-
-      .social-links { display: flex; gap: 1.5rem; margin-top: 2rem; }
-      .social-icon { 
-        font-size: 1.5rem; color: var(--text-muted); 
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      .social-icon:hover { color: var(--accent-color); transform: scale(1.2); text-shadow: 0 0 10px var(--accent-color); }
-
-      /* =========================================
-         NERDY GLASS CARDS (Tech Corners)
-         ========================================= */
-      .glass-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur));
-        border: 1px solid var(--glass-border); 
-        border-top: 1px solid var(--glass-highlight); /* Highlight top edge */
-        box-shadow: var(--glass-shadow);
-        border-radius: 12px; 
-        transform-style: preserve-3d; 
-        transform: perspective(1000px);
-        position: relative;
-        overflow: hidden;
-      }
-      
-      /* Tech Corners (The "nerdy" bracket look) */
-      .glass-card::before, .glass-card::after {
-        content: ''; position: absolute; width: 20px; height: 20px;
-        border: 2px solid var(--accent-color); 
-        transition: all 0.3s ease; opacity: 0.5; pointer-events: none;
-      }
-      .glass-card::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; border-radius: 8px 0 0 0; }
-      .glass-card::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; border-radius: 0 0 8px 0; }
-      
-      .glass-card:hover::before, .glass-card:hover::after {
-        width: 100%; height: 100%; opacity: 1; border-radius: 12px;
-        box-shadow: inset 0 0 20px rgba(100, 255, 218, 0.1);
-      }
-      
-      @media (hover: none) { .glass-card:hover { transform: translateY(-5px); } }
-
-      .section-title-wrapper { text-align: center; margin-bottom: 3rem; }
-      h2 { 
-        font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); 
-        display: inline-block; color: var(--text-main);
-        text-shadow: 0 0 15px rgba(0,0,0,0.5);
-      }
-      h2::after {
-        content: ''; display: block; width: 60px; height: 4px;
-        background: var(--accent-color); margin: 10px auto 0;
-        box-shadow: 0 0 10px var(--accent-glow);
-      }
-
-      .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-      .research-card { padding: 2rem; text-align: center; overflow: hidden; }
-      .research-card video {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        object-fit: cover; opacity: 0; transition: opacity 0.4s; z-index: 0; pointer-events: none;
-      }
-      .research-card:hover video { opacity: 0.2; }
-      .research-content { position: relative; z-index: 1; transform: translateZ(30px); }
-      .research-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; text-shadow: 0 0 15px var(--accent-glow); }
-
-      .list-item { padding: 2rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-      .list-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-      .list-date {
-        font-family: 'Space Mono', monospace; font-size: 0.85rem;
-        color: var(--accent-color); 
-        background: rgba(100, 255, 218, 0.1); border: 1px solid rgba(100, 255, 218, 0.3);
-        padding: 4px 8px; border-radius: 4px;
-      }
-      .btn-link {
-        display: inline-flex; align-items: center; gap: 0.5rem;
-        padding: 0.5rem 1.2rem; border: 1px solid var(--accent-color);
-        color: var(--accent-color); border-radius: 50px; font-size: 0.9rem;
-        width: fit-content; transition: all 0.3s;
-        box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
-      }
-      .btn-link:hover { 
-        background: var(--accent-glow); 
-        box-shadow: 0 0 20px var(--accent-glow);
-      }
-
-      .cv-frame-wrapper { width: 100%; height: 80vh; overflow: hidden; border-radius: 12px; }
-      iframe { width: 100%; height: 100%; border: none; }
-      
-      .blog-grid { display: grid; gap: 2rem; }
-      .blog-card { overflow: hidden; }
-      .blog-header { padding: 2rem; }
-      
-      .slideshow-container {position: relative; width: 100%; aspect-ratio: 16/9; margin-bottom: 2rem; overflow: hidden;}
-      .slides-wrapper {display: flex; transition: transform 0.5s ease; height: 100%;}
-      .slide {min-width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
-      .slide img {height: 100%; width: auto; object-fit: contain;}
-      
-      .slide-btn {
-        position: absolute; top: 50%; transform: translateY(-50%);
-        background: rgba(0,0,0,0.6); color: white; border: none;
-        width: 40px; height: 40px; border-radius: 50%; 
-        z-index: 2; opacity: 0; transition: opacity 0.3s;
-      }
-      .slideshow-container:hover .slide-btn { opacity: 1; }
-      .prev-btn { left: 10px; } .next-btn { right: 10px; }
-
-      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-      .contact-item { 
-        display: flex; align-items: center; gap: 1rem; padding: 1.5rem;
-        border-radius: 12px; margin-bottom: 1rem; 
-      }
-      .contact-item i { font-size: 1.2rem; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
-      .contact-item:hover { background: rgba(100, 255, 218, 0.05); border-color: var(--accent-color); }
-      .map-wrapper { height: 100%; min-height: 300px; overflow: hidden; padding: 1px;}
-      .map-wrapper iframe { filter: grayscale(1) invert(1) contrast(1.2); }
-      .map-wrapper iframe {
-        border-radius: 16px;
-        }
-
-      [data-theme="light"] .map-wrapper iframe { filter: grayscale(0) invert(0); }
-      
-      /* Invert CV colors in Light Mode so light text (designed for dark mode) becomes readable */
-      [data-theme="light"] .cv-frame-wrapper iframe {
-        filter: invert(1) hue-rotate(180deg);
-      }
-
-      /* =========================================
-         MEDIA QUERIES
-         ========================================= */
-      @media (max-width: 1024px) {
-        .nav-links { gap: 1rem; }
-        .nav-link { font-size: 0.85rem; }
-      }
-
-      @media (max-width: 900px) {
-        .sidereal-clock { display: none !important; }
-      }
-
-      @media (max-width: 768px) {
-        .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-        .hero-content { order: 2; } .hero-image-wrapper { order: 1; }
-        .social-links { justify-content: center; }
-        .contact-grid { grid-template-columns: 1fr; }
-        
-        .profile-img { width: 220px; height: 220px; }
-        .orbit-1 { width: 250px; height: 250px; }
-        .orbit-2 { width: 290px; height: 290px; }
-
-        .mobile-menu-btn { display: flex; }
-        .nav-links {
-          display: none; position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); width: 90%;
-          flex-direction: column; background: rgba(10, 10, 15, 0.95); padding: 1.5rem;
-          border-radius: 16px; border: 1px solid var(--glass-border);
-          text-align: center; backdrop-filter: blur(var(--glass-blur));
-          box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        
-        .nav-links.active { display: flex; }
-        nav { bottom: 20px; top: auto; justify-content: space-between; }
-        section { padding-bottom: 120px; }
-        
-        .cursor-dot, .cursor-outline { display: none; }
-        * { cursor: auto; }
-        
-        .tech-tag { margin-top: 1rem; }
-
-        .hero-content h3 {
-          justify-content: center !important;
-          text-align: center;
-          width: 100%;
-        }
-
-        .hero-content p {
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-      
-      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-      @keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Shubhit Sardana",
-      "url": "https://shubhitsardana.github.io/"
-    }
-    </script>
-  </head>
-
-  <body>
-    <!-- Global Overlays for Sci-Fi Feel -->
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
-
-    <!-- Background Canvas -->
-    <div id="canvas-container">
-      <canvas id="starfieldCanvas"></canvas>
+  <!-- ==================== RESEARCH ==================== -->
+  <section id="research">
+    <div class="section-header">
+      <h2>Research <span>Interests</span></h2>
+      <p>Exploring the cosmos through gravitational waves and precision pulsar timing</p>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-left">
-        <div class="logo" style="font-weight: 700; font-size: 1.2rem; color: var(--accent-color); font-family: var(--font-heading);">
-          S.Sardana
-        </div>
-        <!-- Sidereal Time Clock -->
-        <div class="sidereal-clock" id="siderealClock">LST: 00:00:00</div>
+    <div class="research-grid">
+      <div class="glass research-card">
+        <div class="research-icon"><i class="fa-solid fa-wave-square"></i></div>
+        <h3>Gravitational Waves</h3>
+        <p>Detecting ripples in spacetime from supermassive black hole binaries using pulsar timing arrays and
+          understanding cosmic mergers.</p>
       </div>
 
-      <ul class="nav-links">
-        <li><a class="nav-link active" data-target="home">Home</a></li>
-        <li><a class="nav-link" data-target="research">Research</a></li>
-        <li><a class="nav-link" data-target="publications">Publications</a></li>
-        <li><a class="nav-link" data-target="cv">CV</a></li>
-        <li><a class="nav-link" data-target="projects">Projects</a></li>
-        <li><a class="nav-link" data-target="blog">Blog</a></li>
-        <li><a class="nav-link" data-target="contact">Contact</a></li>
-      </ul>
+      <div class="glass research-card">
+        <div class="research-icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>Pulsar Timing Arrays</h3>
+        <p>Using millisecond pulsars as cosmic clocks to detect nanohertz gravitational waves and probe the
+          gravitational wave background.</p>
+      </div>
 
-      <div class="nav-right">
-        <!-- Terminal Toggle -->
-        <div class="terminal-toggle magnetic-btn" id="terminalToggle" title="Open Terminal (`)">
-          <i class="fa-solid fa-terminal"></i>
+      <div class="glass research-card">
+        <div class="research-icon"><i class="fa-solid fa-infinity"></i></div>
+        <h3>Cosmology</h3>
+        <p>Precision cosmology through standard siren techniques, constraining Hubble constant and dark energy using
+          gravitational wave sources.</p>
+      </div>
+
+      <div class="glass research-card">
+        <div class="research-icon"><i class="fa-solid fa-sun"></i></div>
+        <h3>Solar Wind Physics</h3>
+        <p>Modeling heliospheric electron density variations and their impact on pulsar timing through dispersion
+          measure corrections.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PUBLICATIONS ==================== -->
+  <section id="publications">
+    <div class="section-header">
+      <h2>Recent <span>Publications</span></h2>
+      <p>Contributions to peer-reviewed journals and preprints</p>
+    </div>
+
+    <div class="timeline">
+      <div class="glass timeline-item">
+        <div>
+          <h3>Reading signatures of supermassive binary black holes in pulsar timing array observations</h3>
+          <p class="venue">Nature Communications</p>
+          <a href="https://www.nature.com/articles/s41467-025-65450-3" target="_blank" class="btn-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Paper
+          </a>
         </div>
-        
-        <!-- Theme Toggle -->
-        <div class="theme-toggle magnetic-btn" id="themeToggle" title="Toggle Theme">
-          <i class="fa-solid fa-moon"></i>
+        <span class="timeline-date">Dec 2025</span>
+      </div>
+
+      <div class="glass timeline-item">
+        <div>
+          <h3>Ensemble noise properties of the European Pulsar Timing Array</h3>
+          <p class="venue">Monthly Notices of the Royal Astronomical Society</p>
+          <a href="https://academic.oup.com/mnras/article/537/4/3470/7997699" target="_blank" class="btn-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Read Paper
+          </a>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fa-solid fa-bars"></i>
+        <span class="timeline-date">Feb 2025</span>
+      </div>
+
+      <div class="glass timeline-item">
+        <div>
+          <h3>The Indian Pulsar Timing Array DR2: Customised Single-Pulsar Noise Analysis</h3>
+          <p class="venue">Submitted to Journal of High Energy Astrophysics</p>
+          <a href="https://arxiv.org/abs/2512.20455" target="_blank" class="btn-link">
+            <i class="fa-brands fa-arxiv"></i> arXiv
+          </a>
+        </div>
+        <span class="timeline-date">Dec 2025</span>
+      </div>
+
+      <div class="glass timeline-item">
+        <div>
+          <h3>Statistical Physics from Quantum Envariance Principles</h3>
+          <p class="venue">Submitted to Physical Review A</p>
+          <a href="https://arxiv.org/abs/2510.25253" target="_blank" class="btn-link">
+            <i class="fa-brands fa-arxiv"></i> arXiv
+          </a>
+        </div>
+        <span class="timeline-date">Oct 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CV ==================== -->
+  <section id="cv">
+    <div class="section-header">
+      <h2>Curriculum <span>Vitae</span></h2>
+      <p>Academic background, research experience, and achievements</p>
+    </div>
+
+    <div class="cv-actions">
+      <a href="./assets/pdf/Shubhit_Sardana_CV.pdf" target="_blank" class="btn btn-glass">
+        <i class="fa-solid fa-expand"></i> View Full PDF
+      </a>
+      <a href="./assets/pdf/Shubhit_Sardana_CV.pdf" download class="btn btn-primary">
+        <i class="fa-solid fa-download"></i> Download CV
+      </a>
+    </div>
+
+    <div class="cv-content">
+      <!-- Education -->
+      <div class="glass cv-card">
+        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <strong>Integrated BS-MS in Physics</strong>
+            <span class="cv-date">2021 - 2026</span>
+          </div>
+          <p class="cv-institution">Indian Institute of Science Education and Research (IISER) Bhopal</p>
+          <p class="cv-detail">Current CPI: 8.26/10 • Madhya Pradesh, India</p>
         </div>
       </div>
-    </nav>
 
-    <!-- Terminal Overlay -->
-    <div id="terminal-overlay">
-      <div class="terminal-window glass-card">
-        <div class="terminal-header">
-          <div class="terminal-title">shubhit-portfolio — -zsh</div>
-          <div class="terminal-close-btn" id="closeTerminal">
-            <i class="fa-solid fa-times"></i>
+      <!-- Research Experience -->
+      <div class="glass cv-card cv-card-scrollable">
+        <h3><i class="fa-solid fa-microscope"></i> Research Experience</h3>
+        <div class="cv-scroll-area">
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <strong>Master's Thesis Research</strong>
+              <span class="cv-date">Jun 2025 - Present</span>
+            </div>
+            <p class="cv-institution">IISER Bhopal • Supervisor: Dr. Mayuresh Surnis</p>
+            <p class="cv-detail">Using Interplanetary Scintillation for Dispersion Measure Corrections in PTA Datasets.
+              Working with MWA and ORT archival data.</p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <strong>Research Collaboration</strong>
+              <span class="cv-date">Aug 2025 - Present</span>
+            </div>
+            <p class="cv-institution">Max Planck Institute for Gravitational Physics, Hannover</p>
+            <p class="cv-detail">Precision cosmology with PTAs. Targeted CGW searches using Galactic MSPs to constrain
+              Hubble constant.</p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <strong>InPTA Collaboration</strong>
+              <span class="cv-date">Feb - Jun 2025</span>
+            </div>
+            <p class="cv-institution">Indian Pulsar Timing Array</p>
+            <p class="cv-detail">Solar Wind Gaussian Process modeling in pulsar noise for pulsars near ecliptic plane in
+              InPTA DR2.</p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <strong>Research Intern</strong>
+              <span class="cv-date">May - Aug 2024</span>
+            </div>
+            <p class="cv-institution">MPI Gravitational Physics, Hannover • Dr. Boris Goncharov</p>
+            <p class="cv-detail">Ensemble Noise Properties of EPTA. Novel prior reweighting for hierarchical Bayesian
+              inference. 2 papers published.</p>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <strong>Research Intern</strong>
+              <span class="cv-date">Dec 2023 - Apr 2024</span>
+            </div>
+            <p class="cv-institution">LMU Munich • Dr. Karan Molaverdikhani</p>
+            <p class="cv-detail">EVLA data analysis for TRAPPIST-1 star-planet interaction radio signatures.</p>
           </div>
         </div>
-        <div class="terminal-body" id="terminalBody">
-          <div class="output-line">Welcome to my Website</div>
-          <div class="output-line">Type <span class="prompt">'help'</span> to see available commands.</div>
-          <br>
-          <div class="input-line">
-            <span class="prompt">visitor@shubhit:~$</span>
-            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+      </div>
+
+      <!-- Publications -->
+      <div class="glass cv-card">
+        <h3><i class="fa-solid fa-book"></i> Publications</h3>
+        <p class="cv-summary">Total Citations: 25+ • 2 Published • 1 Submitted • <a
+            href="https://ui.adsabs.harvard.edu/public-libraries/RczJUmIqShmr6k0ot1XIow" target="_blank">ADS Library</a>
+        </p>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <strong>Reading signatures of SMBHBs in PTA observations</strong>
+            <span class="cv-badge published">Nature Comm.</span>
+          </div>
+          <p class="cv-detail">Goncharov, B., Sardana, S., et al. (2025) • 2nd Author</p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <strong>Ensemble noise properties of the EPTA</strong>
+            <span class="cv-badge published">MNRAS</span>
+          </div>
+          <p class="cv-detail">Goncharov, B., & Sardana, S. (2025) • 2nd Author</p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <strong>Statistical Physics from Quantum Envariance</strong>
+            <span class="cv-badge submitted">Phys Rev A</span>
+          </div>
+          <p class="cv-detail">Ojha, A., Sardana, S., & Ghosh, A. (2025) • 2nd Author</p>
+        </div>
+      </div>
+
+      <!-- Skills & Presentations Row -->
+      <div class="cv-row">
+        <div class="glass cv-card cv-card-half">
+          <h3><i class="fa-solid fa-code"></i> Technical Skills</h3>
+          <div class="cv-skills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">C/C++</span>
+            <span class="skill-pill">Bayesian Inference</span>
+            <span class="skill-pill">MCMC</span>
+            <span class="skill-pill">ENTERPRISE</span>
+            <span class="skill-pill">TEMPO2</span>
+            <span class="skill-pill">PRESTO</span>
+            <span class="skill-pill">CASA</span>
+            <span class="skill-pill">Linux/HPC</span>
+            <span class="skill-pill">JAX</span>
+          </div>
+        </div>
+
+        <div class="glass cv-card cv-card-half">
+          <h3><i class="fa-solid fa-microphone"></i> Presentations</h3>
+          <div class="cv-item">
+            <p class="cv-detail"><strong>IPTA GWA Telecon</strong> • Oct 2024</p>
+            <p class="cv-detail"><strong>EPTA-wide Telecon</strong> • Jul 2024</p>
+            <p class="cv-detail"><strong>InPTA Telecon</strong> • Mar 2025</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- 1. HOME SECTION -->
-    <section id="home" class="active-section">
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="hero-greeting">Hello, world.</span>
-          <h1>I'm Shubhit Sardana.</h1>
-          
-          <h3 style="color: var(--text-muted); margin-bottom: 1.5rem; height: 1.5em; display: flex; align-items: center; font-family: var(--font-mono);">
-            <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
-          </h3>
-          <p>
-            Unraveling the universe's greatest mysteries—from black holes and pulsars to the 
-            atmospheres of distant exoplanets. Final year BS-MS student at IISER Bhopal.
-          </p>
-          
-          <!-- The New Holographic Tag -->
-          <div class="tech-tag">I use Arch, BTW</div>
-          
-          <div class="social-links">
-             <a href="mailto:shubhit21@iiserb.ac.in" class="social-icon magnetic-btn"><i class="fa-solid fa-envelope"></i></a>
-             <a href="https://github.com/ShubhitSardana" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-github"></i></a>
-             <a href="https://ui.adsabs.harvard.edu/public-libraries/RczJUmIqShmr6k0ot1XIow" target="_blank" class="social-icon magnetic-btn"><i class="fa-solid fa-star"></i></a>
-             <a href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl=en" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-google-scholar"></i></a>
-             <a href="https://linkedin.com/in/shubhitsardana/" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects">
+    <div class="section-header">
+      <h2>Ongoing <span>Projects</span></h2>
+      <p>Current research initiatives and collaborations</p>
+    </div>
+
+    <div class="timeline">
+      <div class="glass timeline-item">
+        <div>
+          <h3>Targeted Siren Cosmology with Pulsar Timing Arrays</h3>
+          <p class="venue">Precision cosmology using PTAs to constrain cosmological parameters through targeted
+            continuous gravitational wave searches using Galactic millisecond pulsars.</p>
         </div>
-        <div class="hero-image-wrapper">
-          <div class="orbit-circle orbit-1"></div>
-          <div class="orbit-circle orbit-2"></div>
-          <img src="./assets/images/Profile-photo/Shubhit_Sardana_Image.webp" alt="Shubhit" class="profile-img" />
+        <span class="timeline-date">Aug 2025</span>
+      </div>
+
+      <div class="glass timeline-item">
+        <div>
+          <h3>Interplanetary Scintillation for Dispersion Measure Corrections</h3>
+          <p class="venue">Using IPS technique to understand heliospheric electron density variations and DM variations
+            in IPTA pulsar timing datasets.</p>
+        </div>
+        <span class="timeline-date">Jun 2025</span>
+      </div>
+
+      <div class="glass timeline-item">
+        <div>
+          <h3>Solar Wind Modelling in Single Pulsar Noise Analysis</h3>
+          <p class="venue">Incorporated solar wind effects into pulsar noise modeling for pulsars near the ecliptic
+            plane in InPTA DR2 dataset.</p>
+        </div>
+        <span class="timeline-date">Feb 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills">
+    <div class="section-header">
+      <h2>Technical <span>Arsenal</span></h2>
+      <p>Tools, languages, and expertise I work with</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C/C++</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">LaTeX</span>
+          <span class="skill-tag">Mathematica</span>
         </div>
       </div>
-    </section>
 
-    <!-- 2. RESEARCH SECTION -->
-    <section id="research">
-      <div class="section-title-wrapper"><h2>Research Interests</h2></div>
-      <div class="research-grid">
-        <div class="glass-card research-card tilt-element">
-          <div class="research-content">
-            <i class="fa-solid fa-wave-square research-icon"></i>
-            <h3>Gravitational Waves</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Ripples in spacetime from massive cosmic events.</p>
-          </div>
-        </div>
-        <div class="glass-card research-card tilt-element">
-          <div class="research-content">
-            <i class="fa-solid fa-clock research-icon"></i>
-            <h3>Pulsar Timing Arrays</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Detecting low-freq waves using millisecond pulsars.</p>
-          </div>
-        </div>
-        <div class="glass-card research-card tilt-element">
-          <div class="research-content">
-            <i class="fa-solid fa-globe research-icon"></i>
-            <h3>Exoplanets</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Worlds beyond our Sun orbiting distant stars.</p>
-          </div>
-        </div>
-        <div class="glass-card research-card tilt-element">
-          <div class="research-content">
-            <i class="fa-solid fa-infinity research-icon"></i>
-            <h3>Cosmology</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Origin, structure, and fate of the Universe.</p>
-          </div>
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-satellite-dish"></i> Radio Astronomy</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">TEMPO2</span>
+          <span class="skill-tag">ENTERPRISE</span>
+          <span class="skill-tag">PTAReplicator</span>
+          <span class="skill-tag">PINT</span>
+          <span class="skill-tag">PSRCHIVE</span>
         </div>
       </div>
-    </section>
 
-    <!-- 3. PUBLICATIONS SECTION -->
-    <section id="publications">
-      <div class="section-title-wrapper"><h2>Publications</h2></div>
-      <div class="pub-list">
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">Reading signatures of supermassive binary black holes in pulsar timing array observations</h3>
-            <span class="list-date">Dec 3, 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Nature Communications</p>
-          <a href="https://www.nature.com/articles/s41467-025-65450-3" target="_blank" class="btn-link magnetic-btn">Read Paper</a>
-        </div>
-        
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">Ensemble noise properties of the European Pulsar Timing Array</h3>
-            <span class="list-date">Feb 3, 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Monthly Notices of the Royal Astronomical Society (MNRAS)</p>
-          <a href="https://academic.oup.com/mnras/article/537/4/3470/7997699" target="_blank" class="btn-link magnetic-btn">Read Paper</a>
-        </div>
-        
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">The Indian Pulsar Timing Array Data Release 2: II. Customised Single-Pulsar Noise Analysis and Noise Budget</h3>
-            <span class="list-date">Dec 23, 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Submitted to Journal of High Energy Astrophysics</p>
-          <a href="https://arxiv.org/abs/2512.20455" target="_blank" class="btn-link magnetic-btn">Read on arXiv</a>
-        </div>
-        
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">Statistical Physics from Quantum Envariance Principles</h3>
-            <span class="list-date">Oct 29, 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Submitted to Physical Review A</p>
-          <a href="https://arxiv.org/abs/2510.25253" target="_blank" class="btn-link magnetic-btn">Read on arXiv</a>
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-chart-line"></i> Data Analysis</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">SciPy</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Astropy</span>
+          <span class="skill-tag">Bayesian Methods</span>
         </div>
       </div>
-    </section>
 
-    <!-- 4. CV SECTION -->
-    <section id="cv">
-      <div class="section-title-wrapper"><h2>Curriculum Vitae</h2></div>
-      <div class="cv-container" style="text-align: center;">
-        <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:2rem;">
-          <a href="./assets/pdf/Shubhit_Sardana_CV.pdf" target="_blank" class="btn-link magnetic-btn">View Fullscreen</a>
-          <a href="./assets/pdf/Shubhit_Sardana_CV.pdf" download class="btn-link magnetic-btn">Download PDF</a>
-        </div>
-        <div class="cv-frame-wrapper glass-card">
-          <iframe src="./assets/cv/cv_content.html" title="CV Preview"></iframe>
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-server"></i> Computing</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Linux/Arch</span>
+          <span class="skill-tag">HPC Clusters</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Slurm</span>
         </div>
       </div>
-    </section>
 
-    <!-- 5. PROJECTS SECTION -->
-    <section id="projects">
-      <div class="section-title-wrapper"><h2>Ongoing Projects</h2></div>
-      <div class="project-list">
-        
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">The Targeted Siren Cosmology with Pulsar Timing Arrays </h3>
-            <span class="list-date">August 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Working on precision cosmology using Pulsar Timing Arrays (PTAs) to constrain cosmological parameters (Hubble constant, matter density, dark energy density) through targeted continuous gravitational wave (CGW) searches using Galactic millisecond pulsars in PTAs. Utilizing realistically simulated CPTA and MPTA pulsar datasets to search for known supermassive black hole binaries (e.g., Gondor, Rohan, 3C 66B, 3C 454) exhibiting strong electromagnetic counterparts and strain amplitudes above the PTA sensitivity. I learned principles of CBC‑inspiral and simulating the cgw effect from SMBHB using PTA Replicator, analyzing the injection to obtain posteriors on source parameters, and combining them with cosmological priors to achieve high-precision cosmological constraints.</p>
-        </div>
-
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">Using Interplanetary Scintillation for Dispersion Measure Corrections in Pulsar Timing Array Datasets </h3>
-            <span class="list-date">June 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Working on using the interplanetary scintillation technique to understand heliospheric electron density variations and dispersion measure (DM) variations observed in the IPTA pulsar timing datasets. Developed a deep understanding of the mathematical modeling of heliospheric plasma. The methodology was validated using Murchison Widefield Array (MWA) archival data by performing calibration, cleaning, and imaging to estimate DM variations, yielding promising preliminary results. Currently extending this work using Ooty Radio Telescope (ORT) archival data to construct a heliospheric electron density map, compute corresponding DM variations, and develop a refined heliospheric model for Pulsar Timing Arrays (PTAs), further strengthening the overall analysis by improving consistency, reliability, and robustness across different observational datasets and processing stages.</p>
-        </div>
-
-        <div class="glass-card list-item tilt-element">
-          <div class="list-header">
-            <h3 class="list-title">Solar Wind Modelling in Single Pulsar Noise Analysis</h3>
-            <span class="list-date">Feb 2025</span>
-          </div>
-          <p style="color:var(--text-muted)">Incorporated solar wind effects into pre‑existing vanilla pulsar noise modeling for pulsars near the ecliptic plane in InPTA DR2 dataset. Developed and optimized pipelines, implemented Gaussian process framework to model solar wind contributions to the dataset and validated the results across multiple pulsars. Regularly presented progress and collaborated on methodological improvements in the weekly group meetings.</p>
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-telescope"></i> Observatories</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">uGMRT</span>
+          <span class="skill-tag">MWA</span>
+          <span class="skill-tag">ORT</span>
+          <span class="skill-tag">Effelsberg</span>
         </div>
       </div>
-    </section>
 
-    <!-- 6. BLOG SECTION -->
-    <section id="blog">
-      <div class="section-title-wrapper"><h2>Blog & Updates</h2></div>
-      <div class="glass-card" style="padding:2rem; margin-bottom:2rem; text-align:center;">
-        <p style="color:var(--text-muted); font-family:var(--font-mono)">"The sky's not the limit — it's the playground."</p>
-      </div>
-      <div class="blog-grid">
-        <!-- Blog 1 -->
-        <div class="glass-card blog-card">
-          <div class="blog-header">
-            <h3>Mahakaleshwar Jyotirling Temple - Ujjain</h3>
-            <span class="list-date">27 July 2025</span>
-          </div>
-          <div class="slideshow-container">
-            <div class="slides-wrapper">
-              <div class="slide"><img src="./assets/images/ujjain/img1.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img2.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img3.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img4.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img5.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img6.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img7.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img8.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img9.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/ujjain/img10.webp" loading="lazy"></div>
-            </div>
-            <button class="slide-btn prev-btn">❮</button>
-            <button class="slide-btn next-btn">❯</button>
-          </div>
-        </div>
-        <!-- Blog 2 -->
-        <div class="glass-card blog-card">
-          <div class="blog-header">
-            <h3>Prayagraj - The Kumbh Nagri</h3>
-            <span class="list-date">Jan 26 - Jan 28, 2025</span>
-          </div>
-          <div class="slideshow-container">
-            <div class="slides-wrapper">
-              <div class="slide"><img src="./assets/images/mahakumbh/img1.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img2.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img3.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img4.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img5.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img6.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img7.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img8.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/mahakumbh/img9.webp" loading="lazy"></div>
-            </div>
-            <button class="slide-btn prev-btn">❮</button>
-            <button class="slide-btn next-btn">❯</button>
-          </div>
-        </div>
-        <!-- Blog 3 -->
-        <div class="glass-card blog-card">
-          <div class="blog-header">
-            <h3>Max Planck Institute for Gravitational Physics - hannover</h3>
-            <span class="list-date">27 July 2025</span>
-          </div>
-          <div class="slideshow-container">
-            <div class="slides-wrapper">
-              <div class="slide"><img src="./assets/images/germany/img1.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img2.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img3.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img4.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img5.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img6.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img7.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img8.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img9.webp" loading="lazy"></div>
-              <div class="slide"><img src="./assets/images/germany/img10.webp" loading="lazy"></div>
-            </div>
-            <button class="slide-btn prev-btn">❮</button>
-            <button class="slide-btn next-btn">❯</button>
-          </div>
+      <div class="glass skill-card">
+        <h3><i class="fa-solid fa-users"></i> Collaborations</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">InPTA</span>
+          <span class="skill-tag">EPTA</span>
+          <span class="skill-tag">IPTA</span>
+          <span class="skill-tag">NANOGrav</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 7. CONTACT SECTION -->
-    <section id="contact">
-      <div class="section-title-wrapper"><h2>Get in Touch</h2></div>
-      <div class="contact-grid">
-        <div class="contact-details">
-          <a href="mailto:shubhit21@iiserb.ac.in" class="glass-card contact-item tilt-element">
-            <i class="fa-solid fa-envelope"></i><span>shubhit21@iiserb.ac.in</span>
-          </a>
-          <a href="https://linkedin.com/in/shubhitsardana/" target="_blank" class="glass-card contact-item tilt-element">
-            <i class="fa-brands fa-linkedin"></i><span>Connect on LinkedIn</span>
-          </a>
-          <div class="glass-card contact-item tilt-element">
-            <i class="fa-solid fa-location-dot"></i><span>IISER Bhopal, India</span>
-          </div>
+  <!-- ==================== BLOG ==================== -->
+  <section id="blog">
+    <div class="section-header">
+      <h2>Life <span>Updates</span></h2>
+      <p>Adventures beyond the observatory</p>
+    </div>
+
+    <div class="glass blog-quote">
+      The cosmos is within us. We are made of star-stuff. — Carl Sagan
+    </div>
+
+    <div class="blog-grid">
+      <div class="glass blog-card">
+        <div class="blog-header">
+          <h3>MPI for Gravitational Physics - Hannover</h3>
+          <span class="timeline-date">Jul 2025</span>
         </div>
-
-        <div class="map-wrapper glass-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.8253874855945!2d77.27293267623581!3d23.28579357899024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c60d9f8872aef%3A0x9b99241b1431032!2sIndian%20Institute%20of%20Science%20Education%20and%20Research%20Bhopal%20(IISERB)!5e0!3m2!1sen!2sin!4v1733697742131!5m2!1sen!2sin" loading="lazy"></iframe>
+        <div class="photo-gallery" data-gallery="germany">
+          <div class="photo-thumb" data-index="0"><img src="./assets/images/germany/img1.webp" loading="lazy"
+              alt="MPI Hannover"></div>
+          <div class="photo-thumb" data-index="1"><img src="./assets/images/germany/img2.webp" loading="lazy"
+              alt="Research Visit"></div>
+          <div class="photo-thumb" data-index="2"><img src="./assets/images/germany/img3.webp" loading="lazy"
+              alt="Lab Tour"></div>
+          <div class="photo-thumb" data-index="3"><img src="./assets/images/germany/img4.webp" loading="lazy"
+              alt="Collaboration"></div>
+          <div class="photo-thumb" data-index="4"><img src="./assets/images/germany/img5.webp" loading="lazy"
+              alt="Germany Trip"></div>
+          <div class="photo-thumb" data-index="5"><img src="./assets/images/germany/img6.webp" loading="lazy"
+              alt="Germany Trip"></div>
+          <div class="photo-thumb" data-index="6"><img src="./assets/images/germany/img7.webp" loading="lazy"
+              alt="Germany Trip"></div>
+          <div class="photo-thumb" data-index="7"><img src="./assets/images/germany/img8.webp" loading="lazy"
+              alt="Germany Trip"></div>
+          <div class="photo-thumb" data-index="8"><img src="./assets/images/germany/img9.webp" loading="lazy"
+              alt="Germany Trip"></div>
+          <div class="photo-thumb" data-index="9"><img src="./assets/images/germany/img10.webp" loading="lazy"
+              alt="Germany Trip"></div>
         </div>
       </div>
-    </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        
-        /* --- 1. TYPEWRITER EFFECT --- */
-        const textElement = document.getElementById("typewriter-text");
-        const texts = [
-          "Aspiring Astrophysicist", 
-          "Gravitational Waves", 
-          "Pulsar Timing Arrays",
-          "Cosmology Enthusiast"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function type() {
-          const currentText = texts[textIndex];
-          if (isDeleting) {
-            textElement.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
-          } else {
-            textElement.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
-          }
+      <div class="glass blog-card">
+        <div class="blog-header">
+          <h3>Mahakaleshwar Temple - Ujjain</h3>
+          <span class="timeline-date">Jul 2025</span>
+        </div>
+        <div class="photo-gallery" data-gallery="ujjain">
+          <div class="photo-thumb" data-index="0"><img src="./assets/images/ujjain/img1.webp" loading="lazy"
+              alt="Ujjain Temple"></div>
+          <div class="photo-thumb" data-index="1"><img src="./assets/images/ujjain/img2.webp" loading="lazy"
+              alt="Mahakal"></div>
+          <div class="photo-thumb" data-index="2"><img src="./assets/images/ujjain/img3.webp" loading="lazy"
+              alt="Heritage"></div>
+          <div class="photo-thumb" data-index="3"><img src="./assets/images/ujjain/img4.webp" loading="lazy"
+              alt="Visit"></div>
+          <div class="photo-thumb" data-index="4"><img src="./assets/images/ujjain/img5.webp" loading="lazy"
+              alt="Temple View"></div>
+          <div class="photo-thumb" data-index="5"><img src="./assets/images/ujjain/img6.webp" loading="lazy"
+              alt="Temple View"></div>
+          <div class="photo-thumb" data-index="6"><img src="./assets/images/ujjain/img7.webp" loading="lazy"
+              alt="Temple View"></div>
+          <div class="photo-thumb" data-index="7"><img src="./assets/images/ujjain/img8.webp" loading="lazy"
+              alt="Temple View"></div>
+          <div class="photo-thumb" data-index="8"><img src="./assets/images/ujjain/img9.webp" loading="lazy"
+              alt="Temple View"></div>
+          <div class="photo-thumb" data-index="9"><img src="./assets/images/ujjain/img10.webp" loading="lazy"
+              alt="Temple View"></div>
+        </div>
+      </div>
 
-          let typeSpeed = isDeleting ? 40 : 80;
+      <div class="glass blog-card">
+        <div class="blog-header">
+          <h3>Prayagraj - The Maha Kumbh Nagri</h3>
+          <span class="timeline-date">Jan 2025</span>
+        </div>
+        <div class="photo-gallery" data-gallery="mahakumbh">
+          <div class="photo-thumb" data-index="0"><img src="./assets/images/mahakumbh/img1.webp" loading="lazy"
+              alt="Maha Kumbh"></div>
+          <div class="photo-thumb" data-index="1"><img src="./assets/images/mahakumbh/img2.webp" loading="lazy"
+              alt="Prayagraj"></div>
+          <div class="photo-thumb" data-index="2"><img src="./assets/images/mahakumbh/img3.webp" loading="lazy"
+              alt="Sangam"></div>
+          <div class="photo-thumb" data-index="3"><img src="./assets/images/mahakumbh/img4.webp" loading="lazy"
+              alt="Festival"></div>
+          <div class="photo-thumb" data-index="4"><img src="./assets/images/mahakumbh/img5.webp" loading="lazy"
+              alt="Holy Dip"></div>
+          <div class="photo-thumb" data-index="5"><img src="./assets/images/mahakumbh/img6.webp" loading="lazy"
+              alt="Holy Dip"></div>
+          <div class="photo-thumb" data-index="6"><img src="./assets/images/mahakumbh/img7.webp" loading="lazy"
+              alt="Holy Dip"></div>
+          <div class="photo-thumb" data-index="7"><img src="./assets/images/mahakumbh/img8.webp" loading="lazy"
+              alt="Holy Dip"></div>
+          <div class="photo-thumb" data-index="8"><img src="./assets/images/mahakumbh/img9.webp" loading="lazy"
+              alt="Holy Dip"></div>
 
-          if (!isDeleting && charIndex === currentText.length) {
-            typeSpeed = 2000;
-            isDeleting = true;
-          } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            typeSpeed = 500;
-          }
+        </div>
+      </div>
+    </div>
+  </section>
 
-          setTimeout(type, typeSpeed);
-        }
-        type();
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Let's <span>Connect</span></h2>
+      <p>Have questions or want to collaborate? Reach out!</p>
+    </div>
 
-        /* --- 2. CUSTOM CURSOR & MAGNETIC BUTTONS --- */
-        const cursorDot = document.querySelector("[data-cursor-dot]");
-        const cursorOutline = document.querySelector("[data-cursor-outline]");
-        const magneticBtns = document.querySelectorAll(".magnetic-btn");
+    <div class="contact-grid">
+      <div class="contact-list">
+        <a href="mailto:shubhit21@iiserb.ac.in" class="glass contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>shubhit21@iiserb.ac.in</span>
+        </a>
+        <a href="https://linkedin.com/in/shubhitsardana/" target="_blank" class="glass contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>Connect on LinkedIn</span>
+        </a>
+        <a href="https://github.com/ShubhitSardana" target="_blank" class="glass contact-item">
+          <i class="fa-brands fa-github"></i>
+          <span>Follow on GitHub</span>
+        </a>
+        <div class="glass contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>IISER Bhopal, Madhya Pradesh, India</span>
+        </div>
+      </div>
 
-        window.addEventListener("mousemove", (e) => {
-          const posX = e.clientX;
-          const posY = e.clientY;
+      <div class="glass map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.8253874855945!2d77.27293267623581!3d23.28579357899024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c60d9f8872aef%3A0x9b99241b1431032!2sIndian%20Institute%20of%20Science%20Education%20and%20Research%20Bhopal%20(IISERB)!5e0!3m2!1sen!2sin!4v1733697742131!5m2!1sen!2sin"
+          loading="lazy" title="IISER Bhopal"></iframe>
+      </div>
+    </div>
+  </section>
 
-          cursorDot.style.left = `${posX}px`;
-          cursorDot.style.top = `${posY}px`;
+  <footer>
+    <p>© 2025 Shubhit Sardana · Observing spacetime ripples from IISER Bhopal 🔭</p>
+  </footer>
 
-          cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-          }, { duration: 500, fill: "forwards" });
-        });
+  <!-- Scripts -->
+  <script src="./scripts/waves.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
 
-        magneticBtns.forEach(btn => {
-          btn.addEventListener("mousemove", (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            cursorOutline.style.transform = `translate(-50%, -50%) scale(1.5)`;
-          });
-
-          btn.addEventListener("mouseleave", () => {
-            btn.style.transform = `translate(0, 0)`;
-            cursorOutline.style.transform = `translate(-50%, -50%) scale(1)`;
-          });
-        });
-
-        const interactiveElements = document.querySelectorAll("a, button, .glass-card, input");
-        interactiveElements.forEach(el => {
-          el.addEventListener("mouseenter", () => document.body.classList.add("hovering"));
-          el.addEventListener("mouseleave", () => document.body.classList.remove("hovering"));
-        });
-
-        /* --- 3. 3D TILT EFFECT (Nerdy Version) --- */
-        const tiltElements = document.querySelectorAll(".tilt-element");
-        tiltElements.forEach(card => {
-          card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; 
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -8; 
-            const rotateY = ((x - centerX) / centerX) * 8;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-          });
-
-          card.addEventListener("mouseleave", () => {
-            card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
-          });
-        });
-
-        /* --- 4. REALISTIC WARP JUMP 2.0 --- */
-        const canvas = document.getElementById("starfieldCanvas");
-        const ctx = canvas.getContext("2d");
-        let width, height;
-        let stars = [];
-        let warpSpeed = false;
-        let speed = 0.5;
-        let mouse = { x: null, y: null };
-
-        window.addEventListener("mousemove", (e) => {
-          mouse.x = e.clientX;
-          mouse.y = e.clientY;
-        });
-
-        class Star3D {
-          constructor() {
-            this.init();
-          }
-          
-          init() {
-            this.x = (Math.random() - 0.5) * width * 2; 
-            this.y = (Math.random() - 0.5) * height * 2;
-            this.z = Math.random() * width; 
-          }
-          
-          update() {
-            let targetSpeed = warpSpeed ? 50 : 2;
-            if (warpSpeed) {
-                speed += 1.5; 
-                if (speed > targetSpeed) speed = targetSpeed;
-            } else {
-                speed += (targetSpeed - speed) * 0.1;
-            }
-            
-            this.z -= speed;
-            
-            if (this.z < 1) {
-              this.z = width;
-              this.x = (Math.random() - 0.5) * width * 2;
-              this.y = (Math.random() - 0.5) * height * 2;
-            }
-          }
-          
-          draw() {
-            let sx = (this.x / this.z) * (width/2) + (width/2);
-            let sy = (this.y / this.z) * (width/2) + (height/2);
-            
-            let trailZ = this.z + (speed * 2);
-            let psx = (this.x / trailZ) * (width/2) + (width/2);
-            let psy = (this.y / trailZ) * (width/2) + (height/2);
-            
-            let r = (1 - this.z / width) * 2; 
-            
-            ctx.beginPath();
-            
-            if (speed > 5) {
-              // Warp streaks
-              ctx.strokeStyle = `rgba(160, 210, 255, ${1 - this.z/width})`;
-              ctx.lineWidth = r;
-              ctx.moveTo(psx, psy);
-              ctx.lineTo(sx, sy);
-              ctx.stroke();
-            } else {
-              // Static stars
-              ctx.fillStyle = "white";
-              ctx.arc(sx, sy, r, 0, Math.PI * 2);
-              ctx.fill();
-              
-              // Constellation lines on hover
-              if(mouse.x && !warpSpeed) {
-                const dx = sx - mouse.x;
-                const dy = sy - mouse.y;
-                const dist = Math.sqrt(dx*dx + dy*dy);
-                if(dist < 150) {
-                  ctx.beginPath();
-                  ctx.strokeStyle = `rgba(100, 255, 218, ${0.8 - dist/150})`;
-                  ctx.lineWidth = 0.5;
-                  ctx.moveTo(sx, sy);
-                  ctx.lineTo(mouse.x, mouse.y);
-                  ctx.stroke();
-                }
-              }
-            }
-          }
-        }
-
-        function initStars() {
-          width = window.innerWidth; 
-          height = window.innerHeight;
-          canvas.width = width; 
-          canvas.height = height;
-          stars = [];
-          for(let i=0; i<400; i++) { 
-            stars.push(new Star3D());
-          }
-        }
-
-        function animateStars() {
-          ctx.clearRect(0, 0, width, height);
-          
-          stars.forEach(star => {
-            star.update();
-            star.draw();
-          });
-          requestAnimationFrame(animateStars);
-        }
-
-        initStars();
-        animateStars();
-        window.addEventListener("resize", initStars);
-
-        /* --- SIDEREAL CLOCK --- */
-        function startSiderealClock() {
-            // IISER Bhopal is approx 77.2755 E
-            const OBSERVER_LONGITUDE = 77.2755; 
-
-            function update() {
-                const now = new Date();
-                const jd = (now.getTime() / 86400000) + 2440587.5;
-                const d = jd - 2451545.0;
-
-                let gmst = 18.697374558 + 24.06570982441908 * d;
-                gmst = gmst % 24;
-                if (gmst < 0) gmst += 24;
-
-                const offset = OBSERVER_LONGITUDE / 15.0;
-                let lst = gmst + offset;
-
-                // Normalize to 0-24h
-                lst = lst % 24;
-                if (lst < 0) lst += 24;
-
-                const h = Math.floor(lst);
-                const m = Math.floor((lst - h) * 60);
-                const s = Math.floor(((lst - h) * 60 - m) * 60);
-
-                const pad = (n) => String(n).padStart(2, '0');
-                const display = document.getElementById('siderealClock');
-                if (display) {
-                    display.textContent = `LST: ${pad(h)}:${pad(m)}:${pad(s)}`;
-                }
-            }
-            setInterval(update, 1000);
-            update();
-        }
-
-        // Start the clock
-        startSiderealClock();
-
-        /* --- 6. TERMINAL LOGIC --- */
-        const termToggle = document.getElementById('terminalToggle');
-        const termOverlay = document.getElementById('terminal-overlay');
-        const termClose = document.getElementById('closeTerminal');
-        const termInput = document.getElementById('terminal-input');
-        const termBody = document.getElementById('terminalBody');
-
-        function toggleTerminal() {
-          termOverlay.classList.toggle('open');
-          if(termOverlay.classList.contains('open')) {
-            termInput.focus();
-          }
-        }
-
-        termToggle.addEventListener('click', toggleTerminal);
-        termClose.addEventListener('click', toggleTerminal);
-        
-        document.addEventListener('keydown', (e) => {
-          if (e.key === '`') {
-            e.preventDefault();
-            toggleTerminal();
-          }
-        });
-
-        const commands = {
-          help: "Available commands: <br> - help <br> - clear <br> - theme [light/dark] <br> - cd [section] <br> - ls <br> - whoami <br> - date",
-          clear: () => {
-            termBody.innerHTML = `
-              <div class="output-line">Welcome to Shubhit's Portfolio v2.0</div>
-              <div class="output-line">Type <span class="prompt">'help'</span> to see available commands.</div>
-              <br>
-              <div class="input-line">
-                <span class="prompt">visitor@shubhit:~$</span>
-                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
-              </div>
-            `;
-            const newInp = document.getElementById('terminal-input');
-            newInp.focus();
-            newInp.addEventListener('keydown', handleCommand);
-            termInput = newInp; 
-          },
-          ls: "home  research  publications  cv  projects  blog  contact",
-          whoami: "guest user",
-          date: () => new Date().toString(),
-          sudo: "Permission denied: You are not root.",
-        };
-
-        function handleCommand(e) {
-          if (e.key === 'Enter') {
-            const input = e.target.value.trim();
-            const args = input.split(' ');
-            const cmd = args[0].toLowerCase();
-            
-            const oldLine = document.createElement('div');
-            oldLine.className = 'output-line';
-            oldLine.innerHTML = `<span class="prompt">visitor@shubhit:~$</span> ${input}`;
-            
-            const inputContainer = e.target.parentElement;
-            termBody.insertBefore(oldLine, inputContainer);
-            
-            let response = "";
-            
-            if (cmd === 'clear') {
-               commands.clear();
-               return; 
-            } else if (cmd === 'cd' || cmd === 'goto' || cmd === 'open') {
-               if (args[1]) {
-                 const section = args[1].toLowerCase();
-                 if (document.getElementById(section)) {
-                   response = `Navigating to ${section}...`;
-                   switchTab(section);
-                   toggleTerminal();
-                 } else {
-                   response = `Directory not found: ${section}`;
-                 }
-               } else {
-                 response = "Usage: cd [section_name]";
-               }
-            } else if (cmd === 'theme') {
-               if (args[1] === 'light' || args[1] === 'dark') {
-                 document.documentElement.setAttribute('data-theme', args[1]);
-                 localStorage.setItem('theme', args[1]);
-                 updateIcon(args[1]);
-                 response = `Theme switched to ${args[1]}`;
-               } else {
-                 response = "Usage: theme [light/dark]";
-               }
-            } else if (commands[cmd]) {
-               response = typeof commands[cmd] === 'function' ? commands[cmd]() : commands[cmd];
-            } else if (cmd !== "") {
-               response = `Command not found: ${cmd}`;
-            }
-
-            if (response) {
-              const resLine = document.createElement('div');
-              resLine.className = 'output-line';
-              resLine.innerHTML = response;
-              termBody.insertBefore(resLine, inputContainer);
-            }
-            
-            e.target.value = "";
-            termBody.scrollTop = termBody.scrollHeight;
-          }
-        }
-
-        termInput.addEventListener('keydown', handleCommand);
-
-        /* --- NAVIGATION WITH WARP SPEED --- */
-        const navLinks = document.querySelectorAll(".nav-link");
-        const sections = document.querySelectorAll("section");
-        
-        function switchTab(targetId) {
-          warpSpeed = true;
-          
-          sections.forEach(sec => {
-            if (sec.classList.contains("active-section")) {
-              sec.classList.remove("active-section");
-              sec.classList.add("warping-out");
-            }
-          });
-
-          navLinks.forEach(link => {
-            if(link.dataset.target === targetId) link.classList.add("active");
-            else link.classList.remove("active");
-          });
-
-          setTimeout(() => {
-            warpSpeed = false;
-            sections.forEach(sec => {
-              sec.classList.remove("warping-out");
-              sec.style.display = "none";
-              
-              if(sec.id === targetId) {
-                sec.style.display = (targetId === 'home') ? 'flex' : 'block';
-                setTimeout(() => sec.classList.add("active-section"), 50);
-              }
-            });
-            window.scrollTo(0,0);
-          }, 1000); 
-        }
-
-        navLinks.forEach(link => {
-          link.addEventListener("click", (e) => {
-            const targetId = e.target.dataset.target;
-            if(!document.getElementById(targetId).classList.contains("active-section")) {
-               switchTab(targetId);
-            }
-            document.querySelector(".nav-links").classList.remove("active");
-            document.querySelector("#mobileMenuBtn i").className = "fa-solid fa-bars";
-          });
-        });
-
-        // Initialize Home Properly
-        const homeSec = document.getElementById('home');
-        if(homeSec) {
-            homeSec.style.display = 'flex';
-            setTimeout(()=> homeSec.classList.add('active-section'), 10);
-        }
-
-        /* --- THEME TOGGLE --- */
-        const toggleBtn = document.getElementById("themeToggle");
-        const html = document.documentElement;
-        const icon = toggleBtn.querySelector("i");
-        
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        html.setAttribute("data-theme", savedTheme);
-        updateIcon(savedTheme);
-
-        toggleBtn.addEventListener("click", () => {
-          const currentTheme = html.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
-          html.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
-          updateIcon(newTheme);
-        });
-
-        function updateIcon(theme) {
-          icon.className = theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
-        }
-
-        /* --- MOBILE MENU --- */
-        const mobileBtn = document.getElementById("mobileMenuBtn");
-        mobileBtn.addEventListener("click", () => {
-          const nav = document.querySelector(".nav-links");
-          nav.classList.toggle("active");
-          const isOpen = nav.classList.contains("active");
-          mobileBtn.querySelector("i").className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
-        });
-
-        /* --- SLIDESHOWS --- */
-        document.querySelectorAll(".slideshow-container").forEach(container => {
-           const wrapper = container.querySelector(".slides-wrapper");
-           const slides = container.querySelectorAll(".slide");
-           let index = 0;
-           container.querySelector(".next-btn").addEventListener("click", () => {
-             index = (index + 1) % slides.length;
-             wrapper.style.transform = `translateX(-${index * 100}%)`;
-           });
-           container.querySelector(".prev-btn").addEventListener("click", () => {
-             index = (index - 1 + slides.length) % slides.length;
-             wrapper.style.transform = `translateX(-${index * 100}%)`;
-           });
-        });
-
-        document.querySelectorAll(".research-card video").forEach(vid => {
-          vid.parentElement.addEventListener("mouseenter", () => vid.play());
-          vid.parentElement.addEventListener("mouseleave", () => { vid.pause(); vid.currentTime = 0; });
-        });
-      });
-    </script>
-  </body>
 </html>
