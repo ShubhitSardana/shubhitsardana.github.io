@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSiderealClock();
     initTypewriter();
     initLightbox();
+    initColorPicker();
+    initSectionNav();
 });
 
 /* =========================================
@@ -267,6 +269,84 @@ function initLightbox() {
             }
         }
     }
+}
+
+/* =========================================
+   COLOR THEME PICKER
+   ========================================= */
+function initColorPicker() {
+    const dots = document.querySelectorAll('.color-dot');
+    if (!dots.length) return;
+
+    // Load saved accent
+    const saved = localStorage.getItem('accent-color') || 'cyan';
+    applyAccent(saved);
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const accent = dot.dataset.accent;
+            applyAccent(accent);
+            localStorage.setItem('accent-color', accent);
+        });
+    });
+
+    function applyAccent(accent) {
+        if (accent === 'cyan') {
+            document.body.removeAttribute('data-accent');
+        } else {
+            document.body.setAttribute('data-accent', accent);
+        }
+        dots.forEach(d => d.classList.toggle('active', d.dataset.accent === accent));
+    }
+}
+
+/* =========================================
+   SECTION NAVIGATION (UP / DOWN)
+   ========================================= */
+function initSectionNav() {
+    const upBtn = document.getElementById('sectionUp');
+    const downBtn = document.getElementById('sectionDown');
+    if (!upBtn || !downBtn) return;
+
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    function getCurrentIndex() {
+        const scrollY = window.scrollY + window.innerHeight / 3;
+        for (let i = sections.length - 1; i >= 0; i--) {
+            if (scrollY >= sections[i].offsetTop) return i;
+        }
+        return 0;
+    }
+
+    function isAtBottom() {
+        return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10;
+    }
+
+    function updateButtons() {
+        const idx = getCurrentIndex();
+        upBtn.disabled = idx === 0;
+        downBtn.disabled = isAtBottom();
+    }
+
+    upBtn.addEventListener('click', () => {
+        const idx = getCurrentIndex();
+        if (idx > 0) {
+            sections[idx - 1].scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    downBtn.addEventListener('click', () => {
+        const idx = getCurrentIndex();
+        if (idx < sections.length - 1) {
+            sections[idx + 1].scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Last section: scroll to page bottom to show footer
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    });
+
+    window.addEventListener('scroll', updateButtons, { passive: true });
+    updateButtons();
 }
 
 /* =========================================

@@ -33,7 +33,7 @@
 
     /* Layout */
     --container-max: 1200px;
-    --section-padding: 100px;
+    --section-padding: 150px;
     --radius: 12px;
 
     /* Motion */
@@ -537,6 +537,10 @@ nav::after {
    ========================================= */
 section {
     padding: var(--section-padding) 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: var(--container-max);
     margin: 0 auto;
 }
@@ -1245,6 +1249,147 @@ section {
     min-height: 300px;
     border: none;
     filter: invert(90%) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+/* =========================================
+   COLOR THEME PICKER
+   ========================================= */
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 8px;
+    background: var(--bg-card);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 8px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted);
+    background: var(--dot);
+    cursor: pointer;
+    transition: all var(--transition);
+    padding: 0;
+    outline: none;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+    border-color: var(--text);
+}
+
+.color-dot.active {
+    border-color: #fff;
+    box-shadow: 0 0 8px var(--dot);
+    transform: scale(1.15);
+}
+
+/* ── Accent: Cyan (default) ─────────────── */
+/* Already defined in :root */
+
+/* ── Accent: Pink ────────────────────────── */
+[data-accent="pink"] {
+    --accent: #ff2d7b;
+    --shadow-hover: 6px 6px 0px #ff2d7b;
+    --glow: 0 0 12px rgba(255, 45, 123, 0.25);
+    --glow-hover: 0 0 20px rgba(177, 77, 255, 0.3);
+    --grid-line: rgba(255, 45, 123, 0.06);
+}
+
+/* ── Accent: Purple ──────────────────────── */
+[data-accent="purple"] {
+    --accent: #b14dff;
+    --shadow-hover: 6px 6px 0px #b14dff;
+    --glow: 0 0 12px rgba(177, 77, 255, 0.25);
+    --glow-hover: 0 0 20px rgba(255, 45, 123, 0.3);
+    --grid-line: rgba(177, 77, 255, 0.06);
+}
+
+/* ── Accent: Green ───────────────────────── */
+[data-accent="green"] {
+    --accent: #39ff14;
+    --shadow-hover: 6px 6px 0px #39ff14;
+    --glow: 0 0 12px rgba(57, 255, 20, 0.25);
+    --glow-hover: 0 0 20px rgba(0, 240, 255, 0.3);
+    --grid-line: rgba(57, 255, 20, 0.06);
+}
+
+/* ── Accent: Gold ────────────────────────── */
+[data-accent="gold"] {
+    --accent: #ffe03d;
+    --shadow-hover: 6px 6px 0px #ffe03d;
+    --glow: 0 0 12px rgba(255, 224, 61, 0.25);
+    --glow-hover: 0 0 20px rgba(255, 45, 123, 0.3);
+    --grid-line: rgba(255, 224, 61, 0.06);
+}
+
+/* =========================================
+   SECTION NAVIGATION BUTTONS
+   ========================================= */
+.section-nav {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.section-nav-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    border: var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: var(--shadow);
+    font-family: var(--font-mono);
+}
+
+.section-nav-btn:hover {
+    background: var(--neon-cyan);
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.section-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: default;
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.section-nav-btn:disabled:hover {
+    background: var(--bg-card);
+    color: var(--text);
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 480px) {
+    .section-nav {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .section-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
 }
 
 /* =========================================
