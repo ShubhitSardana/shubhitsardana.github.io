@@ -178,13 +178,12 @@ function initLightbox() {
 
     // Click handlers for photo thumbnails
     document.querySelectorAll('.photo-gallery').forEach(gallery => {
-        const galleryName = gallery.dataset.gallery;
         const thumbs = gallery.querySelectorAll('.photo-thumb');
 
         thumbs.forEach((thumb, index) => {
             thumb.addEventListener('click', () => {
-                // Collect all images from this gallery
-                currentGallery = Array.from(thumbs).map(t => t.querySelector('img').src);
+                // Collect real paths from data-src — NO images have loaded yet
+                currentGallery = Array.from(thumbs).map(t => t.querySelector('img').dataset.src);
                 currentIndex = index;
                 openLightbox();
             });
@@ -200,9 +199,17 @@ function initLightbox() {
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        // Clear src so memory is released when closed
+        setTimeout(() => { lightboxImage.src = ''; }, 300);
     }
 
     function updateLightboxImage() {
+        // Show spinner while loading
+        lightboxImage.style.opacity = '0';
+        lightboxImage.onload = () => {
+            lightboxImage.style.opacity = '1';
+        };
+        // This is the ONLY moment the full image is fetched
         lightboxImage.src = currentGallery[currentIndex];
         lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
     }

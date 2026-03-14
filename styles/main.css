@@ -259,21 +259,38 @@ nav::after {
     }
 
     .nav-links {
-        display: none;
+        gap: 10px;
         position: absolute;
         top: calc(100% + 8px);
         left: 0;
         right: 0;
         flex-direction: column;
-        padding: 12px;
+        padding: 0 12px;
         background: var(--bg-card);
         border: var(--border);
         border-radius: 12px;
         box-shadow: var(--shadow);
+
+        /* Collapsed state */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition:
+            max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.30s cubic-bezier(0.4, 0, 0.2, 1),
+            padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-links.open {
         display: flex;
+        max-height: 420px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+        padding: 12px;
     }
 
     .mobile-menu-btn {
@@ -440,7 +457,7 @@ nav::after {
 
 .btn-glass {
     background: var(--bg-card);
-    color: var(--text);
+    color: var(--text-2);
     box-shadow: var(--shadow-sm);
 }
 
@@ -452,8 +469,7 @@ nav::after {
 .btn-glass:hover {
     transform: translate(-2px, -2px);
     box-shadow: var(--shadow-hover);
-    background: var(--accent);
-    color: var(--bg);
+    color: var(--text);
 }
 
 /* ── Profile Visual ──────────────────────── */
@@ -526,8 +542,7 @@ nav::after {
 }
 
 .social-icon:hover {
-    color: var(--bg);
-    background: var(--accent);
+    color: var(--text);
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0px var(--accent);
 }
@@ -1035,24 +1050,57 @@ section {
     position: relative;
 }
 
+/* Placeholder shown before image loads — a dark tile with a camera icon */
 .photo-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s var(--ease);
-}
-
-.photo-thumb:hover img {
-    transform: scale(1.1);
-}
-
-.photo-thumb::after {
-    content: '';
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+    /* Hide the broken empty src */
+    opacity: 0;
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3));
+}
+
+/* Camera icon placeholder shown by default */
+.photo-thumb::before {
+    content: '\f030';
+    /* fa-camera */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    background: var(--bg-card-alt);
+    z-index: 0;
+    transition: color var(--transition);
+}
+
+.photo-thumb:hover::before {
+    color: var(--accent);
+}
+
+/* Zoom icon overlay on hover */
+.photo-thumb::after {
+    content: '\f00e';
+    /* fa-magnifying-glass-plus */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.45);
     opacity: 0;
     transition: opacity var(--transition);
+    z-index: 2;
 }
 
 .photo-thumb:hover::after {
@@ -1097,11 +1145,13 @@ section {
     border: var(--border);
     box-shadow: var(--shadow);
     transform: scale(0.9);
-    transition: transform 0.3s var(--ease);
+    transition: transform 0.3s var(--ease), opacity 0.25s var(--ease);
+    opacity: 0;
 }
 
 .lightbox.active .lightbox-image {
     transform: scale(1);
+    /* opacity is controlled by JS onload for smooth fade-in */
 }
 
 .lightbox-close {
@@ -1252,18 +1302,82 @@ section {
 }
 
 /* =========================================
-   COLOR THEME PICKER
+   COLOR THEME PICKER — collapsible
    ========================================= */
 .color-picker {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 8px 8px;
+    align-items: center;
+    gap: 0;
+}
+
+/* Toggle — matches .section-nav-btn exactly */
+.color-picker-toggle {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--bg-card);
     border: var(--border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 8px;
+    color: var(--text-2);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: var(--shadow);
+    font-family: var(--font-mono);
+}
+
+.color-picker-toggle:hover {
+    color: var(--text);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Dots panel — slides up from above the toggle */
+.color-dots {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    background: var(--bg-card);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    /* Collapsed */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition:
+        max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-picker.is-open .color-dots {
+    max-height: 220px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    padding: 10px 10px;
+}
+
+@media (max-width: 480px) {
+    .color-picker-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+    }
 }
 
 .color-dot {
@@ -1273,20 +1387,20 @@ section {
     border: 2px solid var(--text-muted);
     background: var(--dot);
     cursor: pointer;
-    transition: all var(--transition);
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
     padding: 0;
     outline: none;
 }
 
 .color-dot:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
     border-color: var(--text);
 }
 
 .color-dot.active {
     border-color: #fff;
     box-shadow: 0 0 8px var(--dot);
-    transform: scale(1.15);
+    transform: scale(1.18);
 }
 
 /* ── Accent: Cyan (default) ─────────────── */
@@ -1350,7 +1464,7 @@ section {
     background: var(--bg-card);
     border: var(--border);
     border-radius: var(--radius);
-    color: var(--text);
+    color: var(--text-2);
     font-size: 1rem;
     cursor: pointer;
     transition: all var(--transition);
@@ -1360,7 +1474,7 @@ section {
 
 .section-nav-btn:hover {
     background: var(--neon-cyan);
-    color: #fff;
+    color: var(--text);
     transform: translate(-2px, -2px);
     box-shadow: var(--shadow-hover);
 }
