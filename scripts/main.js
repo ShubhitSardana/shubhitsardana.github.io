@@ -285,6 +285,16 @@ function initColorPicker() {
     const dots = document.querySelectorAll('.color-dot');
     if (!dots.length) return;
 
+    // Toggle open/close
+    const picker = document.getElementById('colorPicker');
+    const toggleBtn = document.getElementById('colorPickerToggle');
+    toggleBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        picker?.classList.toggle('is-open');
+    });
+    // Close when clicking outside
+    document.addEventListener('click', () => picker?.classList.remove('is-open'));
+
     // Load saved accent
     const saved = localStorage.getItem('accent-color') || 'cyan';
     applyAccent(saved);
