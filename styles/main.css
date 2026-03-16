@@ -1351,6 +1351,7 @@ section {
     pointer-events: auto;
     transform: translateY(0);
     padding: 10px 10px;
+    width: 36px;
 }
 
 @media (max-width: 480px) {
