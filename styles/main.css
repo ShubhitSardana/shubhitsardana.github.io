@@ -1351,7 +1351,6 @@ section {
     pointer-events: auto;
     transform: translateY(0);
     padding: 10px 10px;
-    width: 36px;
 }
 
 @media (max-width: 480px) {
@@ -1360,6 +1359,15 @@ section {
         height: 36px;
         font-size: 0.85rem;
     }
+
+    .color-picker .color-dots {
+        width: 36px;
+    }
+
+    .color-picker.is-open .color-dots {
+        width: 36px;
+    }
+
 }
 
 .color-dot {
@@ -1388,40 +1396,40 @@ section {
 /* ── Accent: Cyan (default) ─────────────── */
 /* Already defined in :root */
 
-/* ── Accent: Pink ────────────────────────── */
+/* ── Accent: Neon Pink ───────────────────── */
 [data-accent="pink"] {
-    --accent: #ff2d7b;
-    --shadow-hover: 6px 6px 0px #ff2d7b;
-    --glow: 0 0 12px rgba(255, 45, 123, 0.25);
-    --glow-hover: 0 0 20px rgba(177, 77, 255, 0.3);
-    --grid-line: rgba(255, 45, 123, 0.06);
+    --accent: #ff4fa3;
+    --shadow-hover: 6px 6px 0px #ff4fa3;
+    --glow: 0 0 14px rgba(255, 79, 163, 0.28);
+    --glow-hover: 0 0 22px rgba(255, 79, 163, 0.45);
+    --grid-line: rgba(255, 79, 163, 0.07);
 }
 
-/* ── Accent: Purple ──────────────────────── */
+/* ── Accent: Electric Purple ─────────────── */
 [data-accent="purple"] {
-    --accent: #b14dff;
-    --shadow-hover: 6px 6px 0px #b14dff;
-    --glow: 0 0 12px rgba(177, 77, 255, 0.25);
-    --glow-hover: 0 0 20px rgba(255, 45, 123, 0.3);
-    --grid-line: rgba(177, 77, 255, 0.06);
+    --accent: #9b6cff;
+    --shadow-hover: 6px 6px 0px #9b6cff;
+    --glow: 0 0 14px rgba(155, 108, 255, 0.28);
+    --glow-hover: 0 0 22px rgba(155, 108, 255, 0.45);
+    --grid-line: rgba(155, 108, 255, 0.07);
 }
 
-/* ── Accent: Green ───────────────────────── */
+/* ── Accent: Cyber Green ─────────────────── */
 [data-accent="green"] {
-    --accent: #39ff14;
-    --shadow-hover: 6px 6px 0px #39ff14;
-    --glow: 0 0 12px rgba(57, 255, 20, 0.25);
-    --glow-hover: 0 0 20px rgba(0, 240, 255, 0.3);
-    --grid-line: rgba(57, 255, 20, 0.06);
+    --accent: #2aff9b;
+    --shadow-hover: 6px 6px 0px #2aff9b;
+    --glow: 0 0 14px rgba(42, 255, 155, 0.28);
+    --glow-hover: 0 0 22px rgba(42, 255, 155, 0.45);
+    --grid-line: rgba(42, 255, 155, 0.07);
 }
 
-/* ── Accent: Gold ────────────────────────── */
+/* ── Accent: Soft Gold ───────────────────── */
 [data-accent="gold"] {
-    --accent: #ffe03d;
-    --shadow-hover: 6px 6px 0px #ffe03d;
-    --glow: 0 0 12px rgba(255, 224, 61, 0.25);
-    --glow-hover: 0 0 20px rgba(255, 45, 123, 0.3);
-    --grid-line: rgba(255, 224, 61, 0.06);
+    --accent: #ffd166;
+    --shadow-hover: 6px 6px 0px #ffd166;
+    --glow: 0 0 14px rgba(255, 209, 102, 0.28);
+    --glow-hover: 0 0 22px rgba(255, 209, 102, 0.45);
+    --grid-line: rgba(255, 209, 102, 0.07);
 }
 
 /* =========================================
