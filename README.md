@@ -19,8 +19,8 @@ This is the source code for my personal website, where I share my academic journ
 │   └── images/
 ├── css/              # Custom styles
 │   └── style.css
-├── js/               # Slideshow and other scripts
-│   └── slideshow.js
+├── js/               # main JS scripts
+│   └── main.js
 └── README.md         # You're here
 ```
 
@@ -28,7 +28,7 @@ This is the source code for my personal website, where I share my academic journ
 
 - HTML5
 - CSS3 (with custom variables & media queries)
-- JavaScript (vanilla, for slideshow functionality)
+- JavaScript (vanilla, for baic functionality)
 
 ## 📸 Live Preview
 
