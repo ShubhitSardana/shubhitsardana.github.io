@@ -1,409 +1,753 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shubhit Sardana | Observational Cosmology & Gravitational Waves</title>
-  <meta name="description"
-    content="Personal website of Shubhit Sardana – researcher in gravitational waves, pulsar timing arrays, and cosmology." />
+  <title>Shubhit Sardana — Physicist &amp; Gravitational-Wave Astronomer</title>
+  <meta name="description" content="Academic portfolio and research of Shubhit Sardana. Specializing in continuous gravitational waves, pulsar timing arrays (PTAs), stochastic backgrounds, and observational cosmology." />
+  <meta name="keywords" content="Shubhit Sardana, Physicist, Gravitational Waves, Continuous Gravitational Waves, Continuous Waves, CWs, Pulsar Timing Arrays, PTAs, Observational Cosmology, Standard Siren Cosmology, InPTA, EPTA, OzGrav, Swinburne University of Technology, IISER Bhopal, Bayesian Inference, Astrophysics" />
+  <meta name="author" content="Shubhit Sardana" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://shubhitsardana.github.io/" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/x-icon" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Shubhit Sardana — Physicist &amp; Gravitational-Wave Astronomer" />
+  <meta property="og:description" content="Academic portfolio and research of Shubhit Sardana. Specializing in continuous gravitational waves, pulsar timing arrays (PTAs), stochastic backgrounds, and observational cosmology." />
+  <meta property="og:url" content="https://shubhitsardana.github.io/" />
+  <meta property="og:site_name" content="Shubhit Sardana — Academic Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="profile:first_name" content="Shubhit" />
+  <meta property="profile:last_name" content="Sardana" />
 
-  <!-- Fonts -->
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Shubhit Sardana — Physicist &amp; Gravitational-Wave Astronomer" />
+  <meta name="twitter:description" content="Academic portfolio and research of Shubhit Sardana. Specializing in continuous gravitational waves, pulsar timing arrays (PTAs), stochastic backgrounds, and observational cosmology." />
+
+  <!-- Structured Data: JSON-LD for Google Knowledge Graph & Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shubhit Sardana",
+    "givenName": "Shubhit",
+    "familyName": "Sardana",
+    "url": "https://shubhitsardana.github.io",
+    "email": "mailto:shubhit21@iiserb.ac.in",
+    "jobTitle": "Physicist & Gravitational-Wave Astrophysicist",
+    "description": "Gravitational-wave astrophysicist researching continuous waves, pulsar timing arrays (PTAs), stochastic backgrounds, and observational cosmology.",
+    "affiliation": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Swinburne University of Technology & ARC Centre of Excellence for Gravitational Wave Discovery (OzGrav)",
+        "url": "https://www.swinburne.edu.au"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Indian Institute of Science Education and Research (IISER) Bhopal",
+        "url": "https://www.iiserb.ac.in"
+      }
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Indian Institute of Science Education and Research (IISER) Bhopal"
+    },
+    "knowsAbout": [
+      "Gravitational Waves",
+      "Continuous Gravitational Waves",
+      "Pulsar Timing Arrays (PTAs)",
+      "Observational Cosmology",
+      "Standard Siren Cosmology",
+      "Bayesian Inference",
+      "European Pulsar Timing Array (EPTA)",
+      "Indian Pulsar Timing Array (InPTA)",
+      "ARC Centre of Excellence for Gravitational Wave Discovery (OzGrav)"
+    ],
+    "sameAs": [
+      "https://inspirehep.net/authors/2825517",
+      "https://orcid.org/0009-0007-2913-7704",
+      "https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl",
+      "https://ui.adsabs.harvard.edu/search/q=author%3A%22Sardana%2C+Shubhit%22",
+      "https://github.com/shubhitsardana"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'Cambria', 'serif'],
+            cursive: ['"Great Vibes"', '"Dancing Script"', '"Alex Brush"', 'cursive', 'sans-serif'],
+          },
+          colors: {
+            page: '#fbfaf7',
+            pageDark: '#131312',
+            surface: '#ffffff',
+            surfaceDark: '#1b1b19',
+            cardBorder: '#e7e5e0',
+            cardBorderDark: '#292825',
+            accent: {
+              DEFAULT: '#b45309',
+              dark: '#f59e0b',
+              hover: '#92400e',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts: Inter, Newsreader & Cursive Fonts (Great Vibes, Dancing Script, Alex Brush) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Academicons for ORCID, ADS, INSPIRE, Scholar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles/main.css" />
+  <!-- Favicon: Gravitational Wave & Pulsar Emblem -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="bg-[#131312] text-neutral-200 font-sans antialiased selection:bg-amber-900/40 selection:text-neutral-100">
 
-  <!-- Photo Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-container">
-      <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
-      <img src="" alt="" class="lightbox-image" id="lightboxImage">
-      <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
-      <span class="lightbox-counter" id="lightboxCounter">1 / 5</span>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="#home" class="nav-logo">Sardana.S</a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#research" class="nav-link">Research</a></li>
-      <li><a href="#publications" class="nav-link">Publications</a></li>
-      <li><a href="#cv" class="nav-link">CV</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <div class="sidereal-clock" id="siderealClock">LST: 00:00:00</div>
-      <div class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ==================== HERO ==================== -->
-  <section id="home">
-    <div class="hero">
-      <div class="hero-content">
-        <span class="hero-greeting">
-          <i class="fa-solid fa-satellite-dish"></i> Observing the Cosmos
+  <!-- ─── FLOATING FROSTED BLUR NAVBAR ─── -->
+  <header class="fixed top-3 sm:top-4 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none">
+    <nav class="max-w-5xl mx-auto pointer-events-auto bg-[#131312]/45 backdrop-blur-md border border-neutral-800/60 rounded-full px-3.5 sm:px-5 py-2 flex items-center justify-between shadow-sm transition-all duration-300">
+      
+      <!-- Brand / Initials -->
+      <a href="#hero" class="flex items-center gap-2 sm:gap-2.5 group">
+        <span class="w-7 h-7 rounded-full bg-neutral-100 text-neutral-900 font-serif font-bold text-xs flex items-center justify-center tracking-tight transition-transform group-hover:scale-105 shadow-2xs">
+          SS
         </span>
-        <h1 class="hero-name">I'm <span class="gradient">Shubhit Sardana</span></h1>
-        <p class="hero-title">
-          <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+        <span class="font-serif font-medium text-[0.95rem] text-neutral-100 tracking-tight hidden md:inline">
+          Shubhit Sardana
+        </span>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <div class="hidden sm:flex items-center gap-1 md:gap-1.5 text-[0.83rem] font-medium">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#talks" class="nav-link">Talks</a>
+        <a href="#skills" class="nav-link">Skills</a>
+      </div>
+
+      <!-- Right Action & API Sync Status -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <!-- Live INSPIRE-HEP Sync Pill & Trigger -->
+        <button id="manual-sync-btn" title="Click to refresh live data from INSPIRE-HEP API"
+           class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.72rem] font-medium bg-neutral-800/60 text-neutral-300 border border-neutral-700/60 hover:bg-neutral-700/70 hover:text-amber-300 transition-colors cursor-pointer shadow-xs">
+          <span id="sync-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span id="sync-btn-label">INSPIRE-HEP</span>
+          <svg id="sync-spinner" class="w-3 h-3 text-neutral-400 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+        </button>
+
+        <!-- Contact Button -->
+        <a href="mailto:shubhit21@iiserb.ac.in"
+           class="px-3 py-1 rounded-full text-[0.78rem] font-medium bg-neutral-100 text-neutral-900 hover:bg-white hover:text-amber-950 transition-colors hidden xs:inline-block shadow-xs">
+          Contact
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" aria-label="Open Navigation Menu" class="sm:hidden p-1.5 rounded-md text-neutral-300 hover:bg-neutral-800/60 hover:text-white transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="max-w-5xl mx-auto pointer-events-auto hidden sm:hidden mt-2 bg-[#131312]/90 backdrop-blur-lg border border-neutral-800/70 rounded-2xl p-4 shadow-xl">
+      <div class="flex flex-col gap-2 text-sm font-medium text-neutral-200">
+        <a href="#about" class="mobile-link py-1.5 px-2.5 rounded-lg hover:bg-amber-950/40 hover:text-amber-300 transition-colors">About</a>
+        <a href="#publications" class="mobile-link py-1.5 px-2.5 rounded-lg hover:bg-amber-950/40 hover:text-amber-300 transition-colors">Publications</a>
+        <a href="#research" class="mobile-link py-1.5 px-2.5 rounded-lg hover:bg-amber-950/40 hover:text-amber-300 transition-colors">Research Experience</a>
+        <a href="#talks" class="mobile-link py-1.5 px-2.5 rounded-lg hover:bg-amber-950/40 hover:text-amber-300 transition-colors">Talks &amp; Presentations</a>
+        <a href="#skills" class="mobile-link py-1.5 px-2.5 rounded-lg hover:bg-amber-950/40 hover:text-amber-300 transition-colors">Technical Skills</a>
+        <div class="pt-2 mt-1 border-t border-neutral-800/60">
+          <a href="mailto:shubhit21@iiserb.ac.in" class="mobile-link py-1.5 px-2.5 rounded-lg bg-neutral-800/60 text-neutral-300 hover:text-amber-300 hover:bg-neutral-800 transition-colors text-xs flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            shubhit21@iiserb.ac.in
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ─── MAIN CONTENT CONTAINER (WIDER: max-w-5xl) ─── -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-8 pt-24 sm:pt-36 pb-24 space-y-20 sm:space-y-24">
+
+    <!-- ─── HERO & LIVE METRICS SECTION ─── -->
+    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      
+      <!-- Hero Left: Bio & Profiles (7 cols) -->
+      <div class="lg:col-span-7 space-y-5">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200/80 dark:border-neutral-700/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400"></span>
+          Gravitational-Wave Astrophysics
+        </div>
+
+        <!-- Name in Cursive -->
+        <h1 class="font-cursive text-5xl sm:text-6xl lg:text-7xl font-normal text-neutral-950 dark:text-neutral-50 tracking-wide leading-[1.15] py-1 break-words">
+          Shubhit Sardana
+        </h1>
+
+        <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-snug">
+          BS-MS Dual Degree Scholar &middot; Department of Physics<br />
+          <span class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400">Indian Institute of Science Education and Research (IISER) – Bhopal, India</span>
         </p>
-        <p class="hero-bio">
-          Unraveling the universe's greatest mysteries—from the cosmic symphony of
-          gravitational waves to the precision timing of pulsars.
+
+        <p class="text-[0.98rem] sm:text-[1.02rem] text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-2xl pt-1">
+          Investigating gravitational-wave astrophysics&thinsp;—&thinsp;focusing on continuous gravitational waves (CWs), pulsar timing arrays (PTAs), stochastic gravitational-wave backgrounds, and their intersection with observational cosmology.
+        </p>
+
+        <!-- Academic Profile Badges -->
+        <div class="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-medium">
+          <a href="https://inspirehep.net/authors/2825517" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <i class="ai ai-inspire text-amber-700 dark:text-amber-400 text-sm"></i>
+            <span>INSPIRE-HEP</span>
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <i class="ai ai-google-scholar text-blue-600 dark:text-blue-400 text-sm"></i>
+            <span>Google Scholar</span>
+          </a>
+
+          <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Sardana%2C+Shubhit%22" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <i class="ai ai-ads text-indigo-600 dark:text-indigo-400 text-sm"></i>
+            <span>NASA ADS</span>
+          </a>
+
+          <a href="https://orcid.org/0009-0007-2913-7704" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <i class="ai ai-orcid text-emerald-600 dark:text-emerald-400 text-sm"></i>
+            <span>0009-0007-2913-7704</span>
+          </a>
+
+          <a href="https://github.com/shubhitsardana" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="mailto:shubhit21@iiserb.ac.in"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors shadow-2xs">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            <span>shubhit21@iiserb.ac.in</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Hero Right: Live Metric Cards & Affiliation (5 cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <!-- Live INSPIRE-HEP Metric Box (Hydrated by JS) -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs">
+          
+          <div class="flex items-center justify-between pb-4 border-b border-neutral-100 dark:border-neutral-800/80">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Research Metrics</span>
+              <a href="https://inspirehep.net/authors/2825517" target="_blank" rel="noopener" class="px-1.5 py-0.5 rounded text-[0.65rem] font-medium bg-neutral-100/70 dark:bg-neutral-800/70 text-neutral-700 dark:text-neutral-300 hover:text-amber-700 transition-colors">
+                INSPIRE-HEP
+              </a>
+            </div>
+            <span id="api-sync-indicator" class="text-[0.7rem] text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Live sync active
+            </span>
+          </div>
+
+          <!-- Numbers Grid (Hydrated by JS) -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-4 text-center">
+            
+            <div class="p-2 rounded-lg bg-neutral-50/70 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-100/80 dark:border-neutral-800/50">
+              <p id="metric-citations" class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-100 num-serif animate-pulse-subtle">--</p>
+              <p class="text-[0.7rem] sm:text-[0.72rem] font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mt-0.5">Citations</p>
+            </div>
+
+            <div class="p-2 rounded-lg bg-neutral-50/70 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-100/80 dark:border-neutral-800/50">
+              <p id="metric-published" class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-100 num-serif animate-pulse-subtle">--</p>
+              <p class="text-[0.7rem] sm:text-[0.72rem] font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mt-0.5">Published</p>
+            </div>
+
+            <div class="p-2 rounded-lg bg-neutral-50/70 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-100/80 dark:border-neutral-800/50">
+              <p id="metric-preprints" class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-100 num-serif animate-pulse-subtle">--</p>
+              <p class="text-[0.7rem] sm:text-[0.72rem] font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mt-0.5">Pre-prints</p>
+            </div>
+
+          </div>
+
+          <!-- Small Note -->
+          <p id="api-cache-status" class="text-[0.75rem] text-neutral-500 dark:text-neutral-400 mt-3.5 text-center">
+            Querying INSPIRE-HEP API (Author ID: <a href="https://inspirehep.net/authors/2825517" target="_blank" class="underline hover:text-neutral-800 dark:hover:text-neutral-200">2825517</a>)...
+          </p>
+
+        </div>
+
+        <!-- Academic Affiliations: Upcoming PhD (OzGrav) first, then Current (IISER Bhopal) -->
+        <div class="space-y-3">
+          
+          <!-- Upcoming Destination Card: Swinburne & OzGrav (PhD) - FIRST -->
+          <div class="bg-gradient-to-br from-amber-50/80 via-neutral-50/40 to-white/60 dark:from-[#211e18]/80 dark:via-[#1c1a16]/50 dark:to-[#1b1b19]/60 backdrop-blur-md border border-amber-200/90 dark:border-amber-900/70 rounded-xl p-4 sm:p-5 shadow-xs text-sm relative overflow-hidden">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-700 dark:bg-amber-600 text-white flex items-center justify-center shrink-0 font-serif font-bold text-xs shadow-xs">
+                OzGrav
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center justify-between gap-2 flex-wrap mb-1">
+                  <span class="text-[0.68rem] uppercase tracking-wider font-semibold text-amber-900 dark:text-amber-300 bg-amber-100/80 dark:bg-amber-950/90 px-2 py-0.5 rounded border border-amber-300/70 dark:border-amber-800/60">
+                    Upcoming Destination &middot; Joining Late 2026
+                  </span>
+                  <span class="text-[0.7rem] font-semibold text-amber-800 dark:text-amber-400">PhD Scholar</span>
+                </div>
+                <p class="font-semibold text-neutral-950 dark:text-neutral-50 leading-tight">Swinburne University of Technology</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-0.5">Centre for Astrophysics and Supercomputing &amp; ARC Centre of Excellence for Gravitational Wave Discovery (OzGrav)</p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Melbourne, Victoria, Australia</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mt-2 italic">
+                  Incoming doctoral researcher in continuous gravitational waves (CWs), pulsar timing arrays, and observational cosmology.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Affiliation Card: IISER Bhopal - SECOND -->
+          <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-4 sm:p-5 shadow-xs text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-neutral-100/80 dark:bg-neutral-800/80 flex items-center justify-center shrink-0 text-neutral-700 dark:text-neutral-300 font-serif font-bold text-xs">
+                IISER
+              </div>
+              <div class="min-w-0">
+                <span class="text-[0.68rem] uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">Current Affiliation</span>
+                <p class="font-medium text-neutral-900 dark:text-neutral-100 leading-tight mt-0.5">Indian Institute of Science Education &amp; Research</p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Bhopal, Madhya Pradesh &ndash; 462066, India</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-1.5 font-mono">Tel: (+91) 7827194709</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ─── ABOUT & EDUCATION (Wider 2-Col Grid) ─── -->
+    <section id="about" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">About &amp; Education</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Bio Narrative (7 cols) -->
+        <div class="lg:col-span-7 space-y-4 text-neutral-700 dark:text-neutral-300 text-[0.96rem] leading-relaxed">
+          <p>
+            I recently completed my BS-MS dual degree in physics from the Indian Institute of Science Education and Research (IISER) Bhopal, focusing on gravitational-wave astrophysics, continuous gravitational waves, and pulsar astronomy.
+          </p>
+          <p>
+            Later in 2026, I will join <strong>Swinburne University of Technology</strong> and the <strong>ARC Centre of Excellence for Gravitational Wave Discovery (OzGrav)</strong> in Melbourne for my PhD. My doctoral research will center on continuous gravitational waves from rapidly rotating neutron stars and the intersection of gravitational waves, pulsar timing arrays (PTAs), and observational cosmology.
+          </p>
+          <p>
+            As an <strong>EPTA</strong> collaborator and <strong>InPTA</strong> associate member, I develop Bayesian pipelines to isolate correlated noise processes, constrain supermassive black hole binaries, and construct targeted standard-siren cosmological distance indicators.
+          </p>
+        </div>
+
+        <!-- Education Card (5 cols) -->
+        <div class="lg:col-span-5 bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-4">
+          <div>
+            <span class="text-[0.7rem] uppercase tracking-wider font-semibold text-amber-800 dark:text-amber-400 bg-amber-50/80 dark:bg-amber-950/50 px-2 py-0.5 rounded border border-amber-200/80 dark:border-amber-800/50">Degree Program</span>
+            <h3 class="font-semibold text-neutral-950 dark:text-neutral-100 text-base mt-2">BS-MS Dual Degree in Physics</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">IISER Bhopal, India &middot; Dec 2021 – June 2026</p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-neutral-100 dark:border-neutral-800/80">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-neutral-600 dark:text-neutral-400">MS Coursework Average (1 yr)</span>
+              <span class="font-semibold text-neutral-900 dark:text-neutral-100 num-serif text-base">9.27 / 10</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-neutral-600 dark:text-neutral-400">BS Coursework Average (4 yrs)</span>
+              <span class="font-semibold text-neutral-900 dark:text-neutral-100 num-serif text-base">8.26 / 10</span>
+            </div>
+            <div class="flex items-center justify-between text-sm pt-2 border-t border-dashed border-neutral-200/80 dark:border-neutral-800/80">
+              <span class="font-medium text-neutral-800 dark:text-neutral-200">Overall Cumulative CPI</span>
+              <span class="font-bold text-amber-800 dark:text-amber-400 num-serif text-lg">8.48 / 10</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── PUBLICATIONS (DYNAMICALLY POPULATED FROM INSPIRE-HEP API) ─── -->
+    <section id="publications" class="space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-2">
+        <div class="flex items-center gap-3">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">Publications</h2>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 w-12 hidden sm:block"></div>
+        </div>
+        <p id="pub-status-msg" class="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>Pulling live records from INSPIRE-HEP API...</span>
         </p>
       </div>
 
-      <div class="hero-visual">
-        <div class="profile-container">
-          <img src="./assets/images/Profile-photo/Shubhit_Sardana_Image.png" alt="Shubhit Sardana"
-            class="profile-img" />
+      <!-- Dynamic Publication Container (Built by JavaScript) -->
+      <div id="publications-container" class="space-y-4">
+        
+        <!-- Loading Skeleton Placeholder -->
+        <div class="space-y-4" id="pub-skeleton">
+          <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-6 shadow-xs animate-pulse space-y-3">
+            <div class="h-4 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-1/4"></div>
+            <div class="h-5 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-3/4"></div>
+            <div class="h-4 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-1/2"></div>
+          </div>
+          <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-6 shadow-xs animate-pulse space-y-3">
+            <div class="h-4 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-1/3"></div>
+            <div class="h-5 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-4/5"></div>
+            <div class="h-4 bg-neutral-200/70 dark:bg-neutral-800/70 rounded w-2/3"></div>
+          </div>
         </div>
+
       </div>
-    </div>
-  </section>
-
-  <!-- ==================== RESEARCH ==================== -->
-  <section id="research">
-    <div class="section-header">
-      <h2>Research <span>Interests</span></h2>
-      <p>Exploring the cosmos through gravitational waves and precision pulsar timing</p>
-    </div>
-
-    <div class="research-grid">
-      <div class="glass research-card">
-        <div class="research-icon"><i class="fa-solid fa-wave-square"></i></div>
-        <h3>Gravitational Waves</h3>
-        <p>Detecting ripples in spacetime from supermassive black hole binaries using pulsar timing arrays and
-          understanding cosmic mergers.</p>
-      </div>
-
-      <div class="glass research-card">
-        <div class="research-icon"><i class="fa-solid fa-clock"></i></div>
-        <h3>Pulsar Timing Arrays</h3>
-        <p>Using millisecond pulsars as cosmic clocks to detect nanohertz gravitational waves and probe the
-          gravitational wave background.</p>
-      </div>
-
-      <div class="glass research-card">
-        <div class="research-icon"><i class="fa-solid fa-infinity"></i></div>
-        <h3>Cosmology</h3>
-        <p>Precision cosmology through standard siren techniques, constraining Hubble constant and dark energy using
-          gravitational wave sources.</p>
-      </div>
-
-    </div>
-  </section>
-
-<!-- ==================== PUBLICATIONS ==================== -->
-<section id="publications">
-
-  <div class="section-header">
-    <h2>Recent <span>Publications</span></h2>
-    <p>Contributions to peer-reviewed journals and preprints</p>
-  </div>
-
-  <div class="publications-grid">
-
-    <article class="publication-card">
-      <span class="publication-year">MAR 2026</span>
-
-      <h3>
-        The Targeted Standard Siren Cosmology with Pulsar Timing Arrays
-      </h3>
-
-      <p>Submitted: Nature Astronomy</p>
-
-      <a href="https://arxiv.org/abs/2603.12168" target="_blank">
-        Read Paper
-      </a>
-    </article>
-
-    <article class="publication-card">
-      <span class="publication-year">DEC 2025</span>
-
-      <h3>
-        Reading signatures of supermassive binary black holes in pulsar timing array observations
-      </h3>
-
-      <p>Published: Nature Communications</p>
-
-      <a href="https://www.nature.com/articles/s41467-025-65450-3" target="_blank">
-        Read Paper
-      </a>
-    </article>
-
-    <article class="publication-card">
-      <span class="publication-year">FEB 2025</span>
-
-      <h3>
-        Ensemble noise properties of the European Pulsar Timing Array
-      </h3>
-
-      <p>Published: Monthly Notices of the Royal Astronomical Society</p>
-
-      <a href="https://academic.oup.com/mnras/article/537/4/3470/7997699" target="_blank">
-        Read Paper
-      </a>
-    </article>
-
-    <article class="publication-card">
-      <span class="publication-year">DEC 2025</span>
-
-      <h3>
-        The Indian Pulsar Timing Array DR2: Customised Single-Pulsar Noise Analysis
-      </h3>
-
-      <p>Published: Journal of High Energy Astrophysics</p>
-
-      <a href="https://doi.org/10.1016/j.jheap.2026.100594" target="_blank">
-        Read Paper
-      </a>
-    </article>
-
-    <article class="publication-card">
-      <span class="publication-year">OCT 2025</span>
-
-      <h3>
-        Statistical mechanics from quantum envariance and exchange symmetry
-      </h3>
-
-      <p>Published: Physical Review A</p>
-
-      <a href="https://doi.org/10.1103/dh9r-4ybq" target="_blank">
-        Read Paper
-      </a>
-    </article>
-    
-  </div>
-  
-</section>
-<section id="cv">
-  
-  <div class="section-header">
-    <h2>Curriculum <span>Vitae</span></h2>
-    <p>Academic background, research experience, and achievements</p>
-  </div>
-  
-  <div class="cv-footer">
-    <a href="./assets/pdf/Shubhit_Sardana_CV.pdf" target="_blank" class="btn">
-      View Full CV →
-    </a>
-  </div>
-  <div class="cv-grid">
-
-    <div class="cv-block">
-      <span class="cv-label">Education</span>
-
-      <h3>BS-MS Dual Degree in Physics</h3>
-      <ul>
-        <li>IISER Bhopal · CPI: 8.48/10 (Overall) · 2021-2026</li>
-        <li><strong>MS</strong> average (2-sem/1-year): 9.27/10</li>
-        <li><strong>BS</strong> average (8-sem/4-years): 8.26/10</li>
-      </ul>
-    </div>
-
-    <div class="cv-block">
-      <span class="cv-label">Research</span>
-      <ol>
-        <li>Master's Thesis @ IISER Bhopal</li>
-        <li>Internships @ Albert Einstein Institute Hannover</li>
-        <li>Collaboration @ InPTA</li>
-        <li>Internship @ LMU Munich</li>
-        <li>Internship @IISER Bhopal</li>
-      </ol>
-    </div>
-
-    <div class="cv-block">
-      <span class="cv-label">Presentations</span>
-
-      <ul>
-        <li>IPTA GWA Telecon</li>
-        <li>EPTA-wide Telecon</li>
-        <li>InPTA Telecon</li>
-      </ul>
-    </div>
-
-  </div>
+    </section>
 
 
-</section>
-
-  <!-- ==================== SKILLS ==================== -->
-  <section id="skills">
-    <div class="section-header">
-      <h2>Technical <span>Arsenal</span></h2>
-      <p>Tools, languages, and expertise I work with</p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-code"></i> Programming / Scripting</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> Python</span>
-          <span class="skill-tag"> C/C++</span>
-          <span class="skill-tag"> Bash</span>
+    <!-- ─── RESEARCH EXPERIENCE & TALKS (2-Column Responsive Layout) ─── -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Research Experience (7 cols) -->
+      <section id="research" class="lg:col-span-7 space-y-6">
+        <div class="flex items-center gap-3">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">Research Experience</h2>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
         </div>
-      </div>
 
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-satellite-dish"></i> Statistical Techniques</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> Bayesian inference</span>
-          <span class="skill-tag"> MCMC</span>
-          <span class="skill-tag"> HMC</span>
-          <!-- <span class="skill-tag"> Frequentist inference</span> -->
+        <div id="research-container" class="space-y-6 max-h-[430px] overflow-y-auto pr-2 sm:pr-3 custom-scrollbar">
+
+          <!-- Item 0: Upcoming PhD Destination -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">PhD Researcher (Incoming)</h3>
+                <span class="px-2 py-0.5 rounded-full text-[0.68rem] font-semibold bg-amber-100 text-amber-900 dark:bg-amber-950/70 dark:text-amber-300 border border-amber-200 dark:border-amber-800/70">
+                  Upcoming Destination &middot; PhD
+                </span>
+              </div>
+              <span class="text-xs text-amber-800 dark:text-amber-400 font-mono font-medium">Starting Late 2026</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">
+              Swinburne University of Technology &amp; ARC Centre of Excellence for Gravitational Wave Discovery (OzGrav) &middot; Melbourne, Australia
+            </p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Doctoral research in continuous gravitational waves (CWs), pulsar timing array observation, and observational cosmology.
+            </p>
+          </div>
+
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Master's Thesis Research</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Jun 2025 – May 2026</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">IISER Bhopal &middot; Advisors: Dr. Mayuresh Surnis, M. A. Krishnakumar (NCRA, TIFR)</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Using Interplanetary Scintillation (IPS) to understand the Pulsar Timing Array noise budget.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Research Intern</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Aug 2025 – Mar 2026</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">Max Planck Institute for Gravitational Physics, Hannover &middot; Host: Dr. Boris Goncharov</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              The Targeted Standard Siren Cosmology with Pulsar Timing Arrays.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Research Collaboration</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Feb 2025 – Jun 2025</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">Noise Analysis Group, Indian Pulsar Timing Array (InPTA)</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Incorporating Solar Wind Gaussian Processes in high-precision pulsar noise modeling.
+            </p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Research Intern</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">May 2024 – Aug 2024</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">Max Planck Institute for Gravitational Physics, Hannover &middot; Host: Dr. Boris Goncharov</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Ensemble noise properties of the European Pulsar Timing Array.
+            </p>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Research Intern</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Dec 2023 – Apr 2024</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">Ludwig Maximilian University of Munich (LMU Munich) &middot; Host: Dr. Karan Molaverdikhani</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Analysis of EVLA Archival Data for Exoplanet Host Star Radio Emissions.
+            </p>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-semibold text-[0.96rem] text-neutral-900 dark:text-neutral-100">Research Intern</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">May 2023 – Dec 2023</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-0.5">IISER Bhopal &middot; Host: Dr. Mayuresh Surnis</p>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-1.5 italic">
+              Pulsar Search and Analysis Pipeline Development for GMRT Data.
+            </p>
+          </div>
+
         </div>
-      </div>
+      </section>
 
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-chart-line"></i> ML tools</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> Normalizing flows</span>
-          <span class="skill-tag"> JAX</span>
-          <span class="skill-tag"> PyTorch</span>
-          <!-- <span class="skill-tag"> TensorFlow</span> -->
+      <!-- Presentations & Talks (5 cols) -->
+      <section id="talks" class="lg:col-span-5 space-y-6">
+        <div class="flex items-center gap-3">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">Talks</h2>
+          <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
         </div>
-      </div>
 
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-server"></i> PTA & Astronomy Tools</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> Enterprise</span>
-          <span class="skill-tag"> Discovery</span>
-          <!-- <span class="skill-tag"> AstroPy</span> -->
-          <span class="skill-tag"> TEMPO2</span>
-          <span class="skill-tag"> CASA / WSClean</span>
+        <div class="space-y-5">
+
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-medium text-sm text-neutral-900 dark:text-neutral-100">EPTA-wide Teleconference</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">May 20, 2026</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-1 italic">
+              The Targeted Standard Siren Cosmology with Pulsar Timing Arrays
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-medium text-sm text-neutral-900 dark:text-neutral-100">InPTA-wide Teleconference</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Mar 5, 2025</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-1 italic">
+              Exploring the time variability of the solar wind using LOFAR pulsar data
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-medium text-sm text-neutral-900 dark:text-neutral-100">IPTA GW-Analysis Telecon</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Oct 17, 2024</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-1 italic">
+              Ensemble noise properties of pulsars in EPTA and implications
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+              <h3 class="font-medium text-sm text-neutral-900 dark:text-neutral-100">EPTA-wide Teleconference</h3>
+              <span class="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Jul 29, 2024</span>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-300 mt-1 italic">
+              Ensemble noise properties of pulsars in EPTA
+            </p>
+          </div>
+
         </div>
-      </div>
-
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-users"></i> Collaborations</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> InPTA</span>
-          <span class="skill-tag"> IPTA</span>
-        </div>
-      </div>
-
-      <div class="glass skill-card">
-        <h3><i class="fa-solid fa-users"></i> Other Tools</h3>
-        <div class="skill-tags">
-          <span class="skill-tag"> LINUX</span>
-          <span class="skill-tag"> HPC</span>
-          <span class="skill-tag"> MATHEMATICA</span>
-          <span class="skill-tag"> HTML5</span>
-          <span class="skill-tag"> CSS</span>
-        </div>
-      </div>
-  </section>
-
-
-<section id="contact">
-
-  <div class="contact-container">
-
-    <p class="contact-label">
-      OPEN FOR RESEARCH COLLABORATIONS
-    </p>
-
-    <h2>
-      Let's Connect
-    </h2>
-
-    <p class="contact-description">
-      Interested in gravitational waves, pulsar timing arrays,
-      cosmology, or collaborative research? Feel free to reach out.
-    </p>
-
-    <a href="mailto:sardanashubhit@gmail.com"
-       class="contact-email">
-       sardanashubhit@gmail.com
-    </a>
-
-    <div class="research-profiles">
-
-      <a href="mailto:sardanashubhit@gmail.com" target="_blank" class="profile-link">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Email</span>
-      </a>
-
-      <a href="https://scholar.google.com/citations?user=ini6S2MAAAAJ&hl=en" target="_blank" class="profile-link">
-        <i class="fa-brands fa-google"></i>
-        <span>Google Scholar</span>
-      </a>
-
-      <a href="https://orcid.org/0009-0007-2913-7704" target="_blank" class="profile-link">
-        <i class="fa-solid fa-id-card"></i>
-        <span>ORCID</span>
-      </a>
-
-      <a href="https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&filter_author_facet_hier_fq_author=author_facet_hier%3A%221%2FSardana%2C%20S%2FSardana%2C%20Shubhit%22&fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&fq_author=(author_facet_hier%3A%221%2FSardana%2C%20S%2FSardana%2C%20Shubhit%22)&p_=0&q=author%3A%22Sardana%2C%20Shubhit%22&sort=date%20desc%2C%20bibcode%20desc" target="_blank" class="profile-link">
-        <i class="fa-solid fa-satellite"></i>
-        <span>NASA ADS</span>
-      </a>
-
-      <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=a%20Shubhit.Sardana.1&ui-citation-summary=true" target="_blank" class="profile-link">
-        <i class="fa-solid fa-atom"></i>
-        <span>INSPIRE-HEP</span>
-      </a>
-
-      <a href="https://arxiv.org/search/?searchtype=author&query=Sardana%2C+S" target="_blank" class="profile-link">
-        <i class="fa-solid fa-file-lines"></i>
-        <span>arXiv</span>
-      </a>
-
-      <a href="https://github.com/ShubhitSardana" target="_blank" class="profile-link">
-        <i class="fa-brands fa-github"></i>
-        <span>GitHub</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/shubhitsardana/" target="_blank" class="profile-link">
-        <i class="fa-brands fa-linkedin"></i>
-        <span>LinkedIn</span>
-      </a>
-
-      <a href="./assets/pdf/Shubhit_Sardana_CV.pdf"
-         target="_blank"
-         class="profile-link">
-        <i class="fa-solid fa-file-pdf"></i>
-        <span>CV</span>
-      </a>
+      </section>
 
     </div>
+
+
+    <!-- ─── TECHNICAL SKILLS (Clean Grid) ─── -->
+    <section id="skills" class="space-y-6">
+      <div class="flex items-center gap-3">
+        <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 dark:text-neutral-50">Technical Skills</h2>
+        <div class="h-px bg-neutral-200 dark:bg-neutral-800 flex-1"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Card 1: Programming -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Programming &amp; Scientific</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Python <span class="text-neutral-400 text-[0.7rem]">&bull; Proficient</span></span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">NumPy</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">SciPy</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Pandas</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Matplotlib</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">C / C++</span>
+          </div>
+        </div>
+
+        <!-- Card 2: GPU & ML -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">GPU &amp; Deep Learning</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">PyTorch</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">JAX</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Normalizing Flows</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Variational Inference</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Discovery-NANOGrav (GPU)</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Stats & Inference -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Statistical Methods</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Bayesian Inference</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Markov Chain Monte Carlo (MCMC)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Hamiltonian MC (HMC)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Frequentist Statistics</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Astronomy Software -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Astronomy &amp; PTA Software</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Astropy</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">CASA</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">WSClean (Interferometry)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">PRESTO</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Tempo2</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Tools & Compute (md:col-span-2) -->
+        <div class="bg-white/60 dark:bg-[#1b1b19]/60 backdrop-blur-md border border-neutral-200/70 dark:border-neutral-800/70 rounded-xl p-5 shadow-xs space-y-3 md:col-span-2">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Infrastructure &amp; Scientific Tools</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Linux / UNIX <span class="text-neutral-400 text-[0.7rem]">&bull; Proficient</span></span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">High-Performance Computing (HPC) <span class="text-neutral-400 text-[0.7rem]">&bull; Proficient</span></span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Bash / Shell Scripting</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Mathematica</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">Git / GitHub</span>
+            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-neutral-50/70 dark:bg-neutral-900/60 border border-neutral-200/70 dark:border-neutral-800/70 text-neutral-800 dark:text-neutral-200">HTML5 / CSS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </div>
 
-</section>
+
+  <!-- ─── PAPER ABSTRACT POPUP MODAL (INSIDE WEBSITE) ─── -->
+  <div id="paper-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3.5 sm:p-6 bg-black/70 backdrop-blur-sm transition-opacity duration-200" aria-modal="true" role="dialog" aria-labelledby="modal-paper-title">
+    <div class="bg-white/90 dark:bg-[#1b1b19]/90 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/80 rounded-2xl max-w-2xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden animate-modal">
+      
+      <!-- Modal Header -->
+      <div class="px-5 sm:px-6 py-4 border-b border-neutral-100 dark:border-neutral-800/80 flex items-start justify-between gap-3 sm:gap-4 bg-neutral-50/70 dark:bg-neutral-900/60 backdrop-blur-sm">
+        <div class="space-y-1.5 min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-2 text-xs" id="modal-badges">
+            <!-- Badges dynamically inserted -->
+          </div>
+          <h3 id="modal-paper-title" class="font-serif text-lg sm:text-xl font-semibold text-neutral-950 dark:text-neutral-50 leading-snug break-words">
+            <!-- Title dynamically inserted -->
+          </h3>
+          <p id="modal-paper-authors" class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 break-words">
+            <!-- Authors & year dynamically inserted -->
+          </p>
+        </div>
+        
+        <button id="modal-close-btn" aria-label="Close abstract popup" class="p-2 -mr-1.5 -mt-1 text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 hover:bg-neutral-200/60 dark:hover:bg-neutral-800 rounded-full transition-colors shrink-0 cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable Abstract) -->
+      <div class="px-5 sm:px-6 py-5 overflow-y-auto space-y-3.5 custom-scrollbar flex-1">
+        <div class="flex items-center justify-between gap-2 border-b border-neutral-100 dark:border-neutral-800/80 pb-2">
+          <span class="text-[0.72rem] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg>
+            Abstract
+          </span>
+          <span id="modal-cite-count" class="text-xs text-neutral-500 dark:text-neutral-400"></span>
+        </div>
+        <div id="modal-paper-abstract" class="text-sm sm:text-[0.96rem] text-neutral-800 dark:text-neutral-200 leading-relaxed font-sans space-y-3 whitespace-pre-line break-words">
+          <!-- Abstract text inserted here -->
+        </div>
+      </div>
+
+      <!-- Modal Footer (Actions) -->
+      <div class="px-5 sm:px-6 py-3.5 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-wrap items-center justify-between gap-3 bg-neutral-50/70 dark:bg-neutral-900/60 backdrop-blur-sm text-xs">
+        <div id="modal-paper-meta" class="text-neutral-500 dark:text-neutral-400 text-xs flex items-center gap-2 flex-wrap">
+          <!-- Citations or DOI info -->
+        </div>
+        <div id="modal-paper-links" class="flex items-center gap-2 flex-wrap">
+          <!-- Links to Arxiv, DOI, Inspire -->
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
-  <footer>
-    <p>© 2026 Shubhit Sardana · Observing spacetime ripples from India 🔭</p>
+  <!-- ─── FOOTER ─── -->
+  <footer class="border-t border-neutral-200/60 dark:border-neutral-800/60 bg-white/40 dark:bg-[#161614]/40 backdrop-blur-md py-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-500">
+      <div class="space-y-1 text-center sm:text-left">
+        <p class="font-medium text-neutral-700 dark:text-neutral-300">&copy; 2026 Shubhit Sardana</p>
+        <p>Department of Physics &middot; IISER Bhopal, Madhya Pradesh, India</p>
+      </div>
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <a href="mailto:shubhit21@iiserb.ac.in" class="link-underline hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">shubhit21@iiserb.ac.in</a>
+        <span>&middot;</span>
+        <a href="https://inspirehep.net/authors/2825517" target="_blank" rel="noopener" class="link-underline hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors">INSPIRE-HEP (2825517)</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="./scripts/main.js"></script>
-</body>
 
+  <!-- ─── EXTERNAL CLIENT JAVASCRIPT ─── -->
+  <script src="main.js" defer></script>
+
+</body>
 </html>
